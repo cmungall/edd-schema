@@ -19,10 +19,10 @@ while(<>) {
         else {
             print STDERR "Writing to $t\n";
             open(F, ">tmp/$t.tsv");
+            print F join("\t", @hdr)."\n";;
             $seen{$t}++;
         }
             
-        print F join("\t", @hdr)."\n";;
         while(<>) {
             chomp;
             if (m@^\\\.@) {
