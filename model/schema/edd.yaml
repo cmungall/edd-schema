@@ -7,7 +7,9 @@ prefixes:
   linkml: https://w3id.org/linkml/
   edd: https://w3id.org/edd
 default_prefix: edd
-types: {}
+types:
+  https identifier:
+    typeof: string
 classes:
   measurement_type:
     slots:
@@ -63,7 +65,7 @@ classes:
     slot_usage: {}
 slots:
   id:
-    range: string
+    range: integer
     examples:
     - value: '262273'
   type_name:
@@ -123,7 +125,7 @@ slots:
   input_type:
     range: input_type_enum
     examples:
-    - value: prefix
+    - value: replicate
   default_value:
     range: default_value_enum
     examples:
@@ -145,7 +147,7 @@ slots:
     examples:
     - value: 71f5cd94-4dd4-45ca-a926-9f0717631799
   object_ref_id:
-    range: string
+    range: integer
     examples:
     - value: '134910'
   categorization:
@@ -153,11 +155,11 @@ slots:
     examples:
     - value: '6'
   default_units_id:
-    range: default_units_id_enum
+    range: integer
     examples:
     - value: '18'
   owned_by_id:
-    range: owned_by_id_enum
+    range: integer
     examples:
     - value: '1939'
   variant_of_id:
@@ -169,7 +171,7 @@ slots:
     examples:
     - value: b8da7ca4-5346-4b3a-b5a9-86289b50d7d3
   registry_url:
-    range: string
+    range: https identifier
     examples:
     - value: https://registry.jbei.org/entry/157591
 enums:
@@ -177,530 +179,428 @@ enums:
     permissible_values:
       m:
         description: m
-      h:
-        description: h
-      type_group:
-        description: type_group
-      _:
-        description: _
       p:
         description: p
+      h:
+        description: h
       g:
         description: g
+      _:
+        description: _
   provisional_enum:
     permissible_values:
-      provisional:
-        description: provisional
       f:
         description: f
       t:
         description: t
   db_instance_enum:
     permissible_values:
-      metadata_plus.jbei.sql:
-        description: metadata_plus.jbei.sql
-      db_instance:
-        description: db_instance
       metadata_plus.abf.sql:
         description: metadata_plus.abf.sql
-      metadata_plus.jbei-public.sql:
-        description: metadata_plus.jbei-public.sql
       metadata_plus.abf-public.sql:
         description: metadata_plus.abf-public.sql
+      metadata_plus.jbei.sql:
+        description: metadata_plus.jbei.sql
+      metadata_plus.jbei-public.sql:
+        description: metadata_plus.jbei-public.sql
   unit_name_enum:
     permissible_values:
-      CPM:
-        description: CPM
-      TPM:
-        description: TPM
-      MEFL:
-        description: MEFL
-      intensity:
-        description: intensity
-      Percent:
-        description: Percent
-      mmol:
-        description: mmol
-      milliliters:
-        description: milliliters
-      uL:
-        description: uL
-      L/h:
-        description: L/h
-      uM:
-        description: uM
-      hours:
-        description: hours
-      Productivity (g/L/hr):
-        description: Productivity (g/L/hr)
-      g/L:
-        description: g/L
+      mM:
+        description: mM
+      grams:
+        description: grams
       g:
         description: g
-      moles / moles glucose:
-        description: moles / moles glucose
-      FPKM:
-        description: FPKM
-      counts:
-        description: counts
-      Liters:
-        description: Liters
+      Productivity (g/L/hr):
+        description: Productivity (g/L/hr)
+      mol:
+        description: mol
+      n/a:
+        description: n/a
+      RPM:
+        description: RPM
+      Celsius:
+        description: Celsius
+      Cmol:
+        description: Cmol
+      uM:
+        description: uM
+      ug/L:
+        description: ug/L
+      nanograms:
+        description: nanograms
       Cmol/L:
         description: Cmol/L
+      intensity:
+        description: intensity
+      lpm:
+        description: lpm
+      g/L:
+        description: g/L
+      uL:
+        description: uL
+      Liters:
+        description: Liters
+      TMM:
+        description: TMM
+      spectral count:
+        description: spectral count
+      RPKM:
+        description: RPKM
+      mg/L:
+        description: mg/L
+      MEFL:
+        description: MEFL
+      kilograms:
+        description: kilograms
+      moles / moles glucose:
+        description: moles / moles glucose
+      TPM:
+        description: TPM
+      CPM:
+        description: CPM
+      relative:
+        description: relative
+      FPKM:
+        description: FPKM
+      mmol:
+        description: mmol
+      L/m:
+        description: L/m
+      ppm:
+        description: ppm
+      proteins/cell:
+        description: proteins/cell
+      mol/L/hr:
+        description: mol/L/hr
+      Histogram 0.15:7.95:0.10:
+        description: Histogram 0.15:7.95:0.10
+      nM:
+        description: nM
+      hours:
+        description: hours
+      Yield (mmole/mmole):
+        description: Yield (mmole/mmole)
+      percent:
+        description: percent
       mol/L:
         description: mol/L
       milligrams:
         description: milligrams
-      nanograms:
-        description: nanograms
-      nM:
-        description: nM
-      mol/L/hr:
-        description: mol/L/hr
-      ppm:
-        description: ppm
-      mol:
-        description: mol
-      Histogram 0.15:7.95:0.10:
-        description: Histogram 0.15:7.95:0.10
-      mL:
-        description: mL
-      RPKM:
-        description: RPKM
-      Yield (mmole/mmole):
-        description: Yield (mmole/mmole)
-      mg SolSgr / 10 mg CW:
-        description: mg SolSgr / 10 mg CW
-      Cmol:
-        description: Cmol
-      Celsius:
-        description: Celsius
-      percent:
-        description: percent
-      ug/L:
-        description: ug/L
       mmol/L/h:
         description: mmol/L/h
-      mg/L:
-        description: mg/L
-      RPM:
-        description: RPM
-      proteins/cell:
-        description: proteins/cell
-      mM:
-        description: mM
-      relative:
-        description: relative
-      lpm:
-        description: lpm
-      kilograms:
-        description: kilograms
-      grams:
-        description: grams
-      n/a:
-        description: n/a
-      spectral count:
-        description: spectral count
-      TMM:
-        description: TMM
-      L/m:
-        description: L/m
-      unit_name:
-        description: unit_name
+      mg SolSgr / 10 mg CW:
+        description: mg SolSgr / 10 mg CW
+      counts:
+        description: counts
+      L/h:
+        description: L/h
+      milliliters:
+        description: milliliters
+      Percent:
+        description: Percent
+      mL:
+        description: mL
   display_enum:
     permissible_values:
-      display:
-        description: display
       f:
         description: f
       t:
         description: t
   alternate_names_enum:
     permissible_values:
-      kg:
-        description: kg
-      "\xB5g/L":
-        description: "\xB5g/L"
-      g/L/hr:
-        description: g/L/hr
-      "\xB5L":
-        description: "\xB5L"
-      Percent:
-        description: Percent
       mL:
         description: mL
-      ng:
-        description: ng
-      uM:
-        description: uM
-      grams:
-        description: grams
+      "\xB5g/L":
+        description: "\xB5g/L"
       L:
         description: L
-      "\xB5M":
-        description: "\xB5M"
+      grams:
+        description: grams
+      "\xB5L":
+        description: "\xB5L"
       nanomolar:
         description: nanomolar
-      g:
-        description: g
-      mmole/mmole:
-        description: mmole/mmole
+      ng:
+        description: ng
+      g/L/hr:
+        description: g/L/hr
       mmole/mmodel:
         description: mmole/mmodel
       mmol/L:
         description: mmol/L
-      alternate_names:
-        description: alternate_names
       mg:
         description: mg
+      g:
+        description: g
+      Percent:
+        description: Percent
+      mmole/mmole:
+        description: mmole/mmole
+      "\xB5M":
+        description: "\xB5M"
+      kg:
+        description: kg
+      uM:
+        description: uM
   type_i18n_enum:
     permissible_values:
-      main.models.Line.contact:
-        description: main.models.Line.contact
-      main.models.Assay.experimenter:
-        description: main.models.Assay.experimenter
-      main.models.Line.gCDW_L_OD600:
-        description: main.models.Line.gCDW_L_OD600
-      main.models.Line.carbon_source:
-        description: main.models.Line.carbon_source
-      main.models.Assay.Well_reaction_temperature:
-        description: main.models.Assay.Well_reaction_temperature
-      main.models.Line.description:
-        description: main.models.Line.description
-      main.models.Assay.Column_Type:
-        description: main.models.Assay.Column_Type
-      main.models.Line.Inj_Vol__ul_:
-        description: main.models.Line.Inj_Vol__ul_
-      main.models.Line.replicate:
-        description: main.models.Line.replicate
-      main.models.Assay.description:
-        description: main.models.Assay.description
-      main.models.Assay.Std_Peak_Area:
-        description: main.models.Assay.Std_Peak_Area
-      main.models.Line.Volume:
-        description: main.models.Line.Volume
-      main.models.Assay.Retention_Time:
-        description: main.models.Assay.Retention_Time
-      main.models.Line.carbon_src_workaround:
-        description: main.models.Line.carbon_src_workaround
-      main.models.Line.control:
-        description: main.models.Line.control
-      main.models.Line.Flask_Volume:
-        description: main.models.Line.Flask_Volume
-      main.models.Line.Sample_Position:
-        description: main.models.Line.Sample_Position
-      main.models.Line.name:
-        description: main.models.Line.name
-      main.models.Assay.Time:
-        description: main.models.Assay.Time
-      main.models.Line.Culture_Volume:
-        description: main.models.Line.Culture_Volume
-      main.models.Assay.original:
-        description: main.models.Assay.original
-      main.models.Study.description:
-        description: main.models.Study.description
-      main.models.Line.experimenter:
-        description: main.models.Line.experimenter
       main.models.Line.Media:
         description: main.models.Line.Media
-      main.models.Assay.Device_Name:
-        description: main.models.Assay.Device_Name
-      type_i18n:
-        description: type_i18n
-      main.models.Line.Method_QQQ:
-        description: main.models.Line.Method_QQQ
-      main.models.Assay.Std_Conc:
-        description: main.models.Assay.Std_Conc
-      main.models.Line.Starting_OD:
-        description: main.models.Line.Starting_OD
-      main.models.Assay.name:
-        description: main.models.Assay.name
-      main.models.Line.Induction:
-        description: main.models.Line.Induction
-      main.models.Line.Growth_temperature:
-        description: main.models.Line.Growth_temperature
-      main.models.Assay.Machine_internal_temperature:
-        description: main.models.Assay.Machine_internal_temperature
-      main.models.Study.contact:
-        description: main.models.Study.contact
-      main.models.Line.Shaking_speed:
-        description: main.models.Line.Shaking_speed
       main.models.Line.Sample_Name:
         description: main.models.Line.Sample_Name
-      main.models.Study.contact_extra:
-        description: main.models.Study.contact_extra
-      main.models.Assay.Detect_Type:
-        description: main.models.Assay.Detect_Type
+      main.models.Assay.Column_Type:
+        description: main.models.Assay.Column_Type
+      main.models.Assay.Std_Conc:
+        description: main.models.Assay.Std_Conc
+      main.models.Line.Inj_Vol__ul_:
+        description: main.models.Line.Inj_Vol__ul_
+      main.models.Line.description:
+        description: main.models.Line.description
+      main.models.Line.contact:
+        description: main.models.Line.contact
+      main.models.Line.carbon_src_workaround:
+        description: main.models.Line.carbon_src_workaround
+      main.models.Line.Volume:
+        description: main.models.Line.Volume
       main.models.Line.strains:
         description: main.models.Line.strains
+      main.models.Line.Culture_Volume:
+        description: main.models.Line.Culture_Volume
+      main.models.Line.Growth_temperature:
+        description: main.models.Line.Growth_temperature
+      main.models.Line.control:
+        description: main.models.Line.control
+      main.models.Assay.Machine_internal_temperature:
+        description: main.models.Assay.Machine_internal_temperature
+      main.models.Line.Induction:
+        description: main.models.Line.Induction
+      main.models.Line.Starting_OD:
+        description: main.models.Line.Starting_OD
+      main.models.Study.contact:
+        description: main.models.Study.contact
+      main.models.Line.replicate:
+        description: main.models.Line.replicate
+      main.models.Assay.Detect_Type:
+        description: main.models.Assay.Detect_Type
+      main.models.Line.experimenter:
+        description: main.models.Line.experimenter
+      main.models.Line.Sample_Position:
+        description: main.models.Line.Sample_Position
+      main.models.Line.Flask_Volume:
+        description: main.models.Line.Flask_Volume
+      main.models.Assay.Well_reaction_temperature:
+        description: main.models.Assay.Well_reaction_temperature
+      main.models.Line.name:
+        description: main.models.Line.name
+      main.models.Line.Shaking_speed:
+        description: main.models.Line.Shaking_speed
+      main.models.Assay.experimenter:
+        description: main.models.Assay.experimenter
+      main.models.Study.contact_extra:
+        description: main.models.Study.contact_extra
+      main.models.Assay.Retention_Time:
+        description: main.models.Assay.Retention_Time
+      main.models.Assay.Time:
+        description: main.models.Assay.Time
+      main.models.Study.description:
+        description: main.models.Study.description
+      main.models.Line.Method_QQQ:
+        description: main.models.Line.Method_QQQ
+      main.models.Assay.original:
+        description: main.models.Assay.original
+      main.models.Line.carbon_source:
+        description: main.models.Line.carbon_source
+      main.models.Assay.Std_Peak_Area:
+        description: main.models.Assay.Std_Peak_Area
+      main.models.Line.gCDW_L_OD600:
+        description: main.models.Line.gCDW_L_OD600
+      main.models.Assay.name:
+        description: main.models.Assay.name
       main.models.Study.name:
         description: main.models.Study.name
+      main.models.Assay.description:
+        description: main.models.Assay.description
+      main.models.Assay.Device_Name:
+        description: main.models.Assay.Device_Name
   type_field_enum:
     permissible_values:
-      flush:
-        description: flush
-      '37':
-        description: '37'
-      '0.1':
-        description: '0.1'
-      None:
-        description: None
       experimenter:
         description: experimenter
       contact:
         description: contact
-      strains:
-        description: strains
-      contact_extra:
-        description: contact_extra
-      description:
-        description: description
-      carbon_source:
-        description: carbon_source
-      name:
-        description: name
-      '200':
-        description: '200'
-      default_value:
-        description: default_value
-      --:
-        description: --
-      control:
-        description: control
-      type_field:
-        description: type_field
-  input_type_enum:
-    permissible_values:
-      textarea:
-        description: textarea
-      user:
-        description: user
-      prefix:
-        description: prefix
-      input_type:
-        description: input_type
-      carbon_source:
-        description: carbon_source
-      strain:
-        description: strain
-      checkbox:
-        description: checkbox
-      replicate:
-        description: replicate
-  default_value_enum:
-    permissible_values:
       '37':
         description: '37'
       '0.1':
         description: '0.1'
-      mm:
-        description: mm
-      mM:
-        description: mM
-      None:
-        description: None
-      mL:
-        description: mL
-      postfix:
-        description: postfix
-      "\xBAC":
-        description: "\xBAC"
-      hr:
-        description: hr
-      "\xB0C":
-        description: "\xB0C"
-      '200':
-        description: '200'
-      rpm:
-        description: rpm
-      --:
-        description: --
-      default_value:
-        description: default_value
       flush:
         description: flush
+      None:
+        description: None
+      description:
+        description: description
+      control:
+        description: control
+      contact_extra:
+        description: contact_extra
+      '200':
+        description: '200'
+      carbon_source:
+        description: carbon_source
+      name:
+        description: name
+      strains:
+        description: strains
+      --:
+        description: --
+  input_type_enum:
+    permissible_values:
+      checkbox:
+        description: checkbox
+      textarea:
+        description: textarea
+      strain:
+        description: strain
+      user:
+        description: user
+      replicate:
+        description: replicate
+      carbon_source:
+        description: carbon_source
+  default_value_enum:
+    permissible_values:
+      '37':
+        description: '37'
+      mM:
+        description: mM
+      mm:
+        description: mm
+      "\xBAC":
+        description: "\xBAC"
+      '0.1':
+        description: '0.1'
+      flush:
+        description: flush
+      None:
+        description: None
+      "\xB0C":
+        description: "\xB0C"
+      rpm:
+        description: rpm
       bsa-fast-13min-cold.m:
         description: bsa-fast-13min-cold.m
-      Vial 1:
-        description: Vial 1
+      hr:
+        description: hr
+      '200':
+        description: '200'
       '1':
         description: '1'
+      Vial 1:
+        description: Vial 1
+      --:
+        description: --
+      mL:
+        description: mL
   prefix_enum:
     permissible_values:
-      S:
-        description: S
-      prefix:
-        description: prefix
-      for_context:
-        description: for_context
       L:
         description: L
       A:
         description: A
+      S:
+        description: S
   postfix_enum:
     permissible_values:
-      slpm:
-        description: slpm
-      mL:
-        description: mL
-      '3':
-        description: '3'
-      '10':
-        description: '10'
-      "\xB0C":
-        description: "\xB0C"
-      '5':
-        description: '5'
-      min:
-        description: min
-      g/L:
-        description: g/L
-      '%':
-        description: '%'
-      group_id:
-        description: group_id
-      '2':
-        description: '2'
-      rpm:
-        description: rpm
-      postfix:
-        description: postfix
       "\xBAC":
         description: "\xBAC"
       '4':
         description: '4'
+      '%':
+        description: '%'
+      '2':
+        description: '2'
+      slpm:
+        description: slpm
       '8':
         description: '8'
+      min:
+        description: min
+      rpm:
+        description: rpm
+      "\xB0C":
+        description: "\xB0C"
+      g/L:
+        description: g/L
+      '3':
+        description: '3'
+      '5':
+        description: '5'
+      '10':
+        description: '10'
       '1':
         description: '1'
+      mL:
+        description: mL
   for_context_enum:
     permissible_values:
+      checkbox:
+        description: checkbox
       S:
         description: S
-      textarea:
-        description: textarea
-      user:
-        description: user
-      for_context:
-        description: for_context
-      string:
-        description: string
-      input_type:
-        description: input_type
       L:
         description: L
-      carbon_source:
-        description: carbon_source
+      textarea:
+        description: textarea
       strain:
         description: strain
       A:
         description: A
-      checkbox:
-        description: checkbox
+      user:
+        description: user
+      string:
+        description: string
       replicate:
         description: replicate
+      carbon_source:
+        description: carbon_source
   categorization_enum:
     permissible_values:
-      default_units_id:
-        description: default_units_id
+      '6':
+        description: '6'
       HPLC:
         description: HPLC
-      OD:
-        description: OD
-      categorization:
-        description: categorization
       TPOMICS:
         description: TPOMICS
+      NA:
+        description: NA
+      '5':
+        description: '5'
       '7':
         description: '7'
       '3':
         description: '3'
       '10':
         description: '10'
-      '5':
-        description: '5'
-      '6':
-        description: '6'
-      LCMS:
-        description: LCMS
-      NA:
-        description: NA
-      '1':
-        description: '1'
-  default_units_id_enum:
-    permissible_values:
-      default_units_id:
-        description: default_units_id
-      '80':
-        description: '80'
-      '29':
-        description: '29'
-      '7':
-        description: '7'
-      '3':
-        description: '3'
-      '28':
-        description: '28'
-      '5':
-        description: '5'
-      '18':
-        description: '18'
-      '12':
-        description: '12'
-      '2':
-        description: '2'
-      '6':
-        description: '6'
-      owned_by_id:
-        description: owned_by_id
-      '24':
-        description: '24'
-      '4':
-        description: '4'
-      '1':
-        description: '1'
-  owned_by_id_enum:
-    permissible_values:
-      '33':
-        description: '33'
-      '1930':
-        description: '1930'
-      '17':
-        description: '17'
-      '1934':
-        description: '1934'
-      '2':
-        description: '2'
-      variant_of_id:
-        description: variant_of_id
-      '1939':
-        description: '1939'
-      owned_by_id:
-        description: owned_by_id
-      '23':
-        description: '23'
-      '26':
-        description: '26'
-      '1':
-        description: '1'
-  variant_of_id_enum:
-    permissible_values:
-      '7948':
-        description: '7948'
-      HPLC:
-        description: HPLC
       OD:
         description: OD
-      RAMOS:
-        description: RAMOS
-      categorization:
-        description: categorization
-      TPOMICS:
-        description: TPOMICS
-      variant_of_id:
-        description: variant_of_id
+      '1':
+        description: '1'
       LCMS:
         description: LCMS
+  variant_of_id_enum:
+    permissible_values:
+      LCMS:
+        description: LCMS
+      HPLC:
+        description: HPLC
+      TPOMICS:
+        description: TPOMICS
       NA:
         description: NA
+      RAMOS:
+        description: RAMOS
+      OD:
+        description: OD
+      '7948':
+        description: '7948'
 
