@@ -1,0 +1,97 @@
+# metamodel_version: 1.7.0
+type GeneIdentifier
+  {
+    measurementtypePtrId: Integer
+    geneLength: String
+    dbInstance: DbInstanceEnum
+  }
+
+type MeasurementType
+  {
+    id: Integer
+    typeName: String
+    shortName: String
+    typeGroup: TypeGroupEnum
+    uuid: String
+    typeSourceId: String
+    altNames: [String]
+    provisional: ProvisionalEnum
+    dbInstance: DbInstanceEnum
+  }
+
+type MeasurementUnit
+  {
+    id: Integer
+    unitName: UnitNameEnum
+    display: DisplayEnum
+    alternateNames: AlternateNamesEnum
+    typeGroup: TypeGroupEnum
+    dbInstance: DbInstanceEnum
+  }
+
+type Metabolite
+  {
+    measurementtypePtrId: Integer
+    charge: Integer
+    carbonCount: Integer
+    molarMass: Float
+    molecularFormula: String
+    tags: [TagsEnum]
+    idMap: [String]
+    smiles: String
+    pubchemCid: Integer
+    dbInstance: DbInstanceEnum
+  }
+
+type MetadataType
+  {
+    id: Integer
+    typeName: String
+    typeI18n: String
+    typeField: TypeFieldEnum
+    inputType: InputTypeEnum
+    defaultValue: DefaultValueEnum
+    prefix: PrefixEnum
+    postfix: String
+    forContext: ForContextEnum
+    uuid: String
+    groupId: String
+    dbInstance: DbInstanceEnum
+  }
+
+type ProteinIdentifier
+  {
+    measurementtypePtrId: Integer
+    accessionId: [String]
+    length: Float
+    mass: [String]
+    accessionCode: String
+    dbInstance: DbInstanceEnum
+  }
+
+type ProteinStrain
+  {
+    id: Integer
+    proteinId: Integer
+    strainId: Integer
+    dbInstance: DbInstanceEnum
+  }
+
+type Protocol
+  {
+    objectRefId: Integer
+    categorization: CategorizationEnum
+    defaultUnitsId: Integer
+    ownedById: Integer
+    variantOfId: VariantOfIdEnum
+    dbInstance: DbInstanceEnum
+  }
+
+type Strain
+  {
+    objectRefId: Integer
+    registryId: String
+    registryUrl: HttpsIdentifier
+    dbInstance: DbInstanceEnum
+  }
+

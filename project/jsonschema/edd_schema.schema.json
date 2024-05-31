@@ -1,0 +1,528 @@
+{
+    "$defs": {
+        "AlternateNamesEnum": {
+            "description": "",
+            "enum": [
+                "\u00b5M",
+                "ng",
+                "mmol/L",
+                "uM",
+                "kg",
+                "grams",
+                "L",
+                "g",
+                "Percent",
+                "g/L/hr",
+                "\u00b5g/L",
+                "nanomolar",
+                "mmole/mmole",
+                "mL",
+                "mg",
+                "\u00b5L",
+                "mmole/mmodel"
+            ],
+            "title": "AlternateNamesEnum",
+            "type": "string"
+        },
+        "CategorizationEnum": {
+            "description": "",
+            "enum": [
+                "5",
+                "7",
+                "OD",
+                "3",
+                "10",
+                "LCMS",
+                "1",
+                "6",
+                "TPOMICS",
+                "NA",
+                "HPLC"
+            ],
+            "title": "CategorizationEnum",
+            "type": "string"
+        },
+        "DbInstanceEnum": {
+            "description": "",
+            "enum": [
+                "metadata_plus.abf-public.sql",
+                "metadata_plus.abf.sql",
+                "metadata_plus.jbei.sql",
+                "metadata_plus.jbei-public.sql"
+            ],
+            "title": "DbInstanceEnum",
+            "type": "string"
+        },
+        "DefaultValueEnum": {
+            "description": "",
+            "enum": [
+                "37",
+                "\u00b0C",
+                "\u00baC",
+                "rpm",
+                "1",
+                "bsa-fast-13min-cold.m",
+                "flush",
+                "hr",
+                "mL",
+                "mM",
+                "200",
+                "--",
+                "NONE",
+                "mm",
+                "Vial 1",
+                "0.1"
+            ],
+            "title": "DefaultValueEnum",
+            "type": "string"
+        },
+        "DisplayEnum": {
+            "description": "",
+            "enum": [
+                "t",
+                "f"
+            ],
+            "title": "DisplayEnum",
+            "type": "string"
+        },
+        "ForContextEnum": {
+            "description": "",
+            "enum": [
+                "replicate",
+                "string",
+                "A",
+                "L",
+                "strain",
+                "user",
+                "textarea",
+                "S",
+                "carbon_source",
+                "checkbox"
+            ],
+            "title": "ForContextEnum",
+            "type": "string"
+        },
+        "GeneIdentifier": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "db_instance": {
+                    "$ref": "#/$defs/DbInstanceEnum"
+                },
+                "gene_length": {
+                    "type": "string"
+                },
+                "measurementtype_ptr_id": {
+                    "type": "integer"
+                }
+            },
+            "title": "GeneIdentifier",
+            "type": "object"
+        },
+        "InputTypeEnum": {
+            "description": "",
+            "enum": [
+                "replicate",
+                "strain",
+                "user",
+                "textarea",
+                "carbon_source",
+                "checkbox"
+            ],
+            "title": "InputTypeEnum",
+            "type": "string"
+        },
+        "MeasurementType": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "alt_names": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "db_instance": {
+                    "$ref": "#/$defs/DbInstanceEnum"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "provisional": {
+                    "$ref": "#/$defs/ProvisionalEnum"
+                },
+                "short_name": {
+                    "type": "string"
+                },
+                "type_group": {
+                    "$ref": "#/$defs/TypeGroupEnum"
+                },
+                "type_name": {
+                    "type": "string"
+                },
+                "type_source_id": {
+                    "type": "string"
+                },
+                "uuid": {
+                    "type": "string"
+                }
+            },
+            "title": "MeasurementType",
+            "type": "object"
+        },
+        "MeasurementUnit": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "alternate_names": {
+                    "$ref": "#/$defs/AlternateNamesEnum"
+                },
+                "db_instance": {
+                    "$ref": "#/$defs/DbInstanceEnum"
+                },
+                "display": {
+                    "$ref": "#/$defs/DisplayEnum"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "type_group": {
+                    "$ref": "#/$defs/TypeGroupEnum"
+                },
+                "unit_name": {
+                    "$ref": "#/$defs/UnitNameEnum"
+                }
+            },
+            "title": "MeasurementUnit",
+            "type": "object"
+        },
+        "Metabolite": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "carbon_count": {
+                    "type": "integer"
+                },
+                "charge": {
+                    "type": "integer"
+                },
+                "db_instance": {
+                    "$ref": "#/$defs/DbInstanceEnum"
+                },
+                "id_map": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "measurementtype_ptr_id": {
+                    "type": "integer"
+                },
+                "molar_mass": {
+                    "type": "number"
+                },
+                "molecular_formula": {
+                    "type": "string"
+                },
+                "pubchem_cid": {
+                    "type": "integer"
+                },
+                "smiles": {
+                    "type": "string"
+                },
+                "tags": {
+                    "items": {
+                        "$ref": "#/$defs/TagsEnum"
+                    },
+                    "type": "array"
+                }
+            },
+            "title": "Metabolite",
+            "type": "object"
+        },
+        "MetadataType": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "db_instance": {
+                    "$ref": "#/$defs/DbInstanceEnum"
+                },
+                "default_value": {
+                    "$ref": "#/$defs/DefaultValueEnum"
+                },
+                "for_context": {
+                    "$ref": "#/$defs/ForContextEnum"
+                },
+                "group_id": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "input_type": {
+                    "$ref": "#/$defs/InputTypeEnum"
+                },
+                "postfix": {
+                    "type": "string"
+                },
+                "prefix": {
+                    "$ref": "#/$defs/PrefixEnum"
+                },
+                "type_field": {
+                    "$ref": "#/$defs/TypeFieldEnum"
+                },
+                "type_i18n": {
+                    "type": "string"
+                },
+                "type_name": {
+                    "type": "string"
+                },
+                "uuid": {
+                    "type": "string"
+                }
+            },
+            "title": "MetadataType",
+            "type": "object"
+        },
+        "PrefixEnum": {
+            "description": "",
+            "enum": [
+                "A",
+                "L",
+                "S"
+            ],
+            "title": "PrefixEnum",
+            "type": "string"
+        },
+        "ProteinIdentifier": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "accession_code": {
+                    "type": "string"
+                },
+                "accession_id": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "db_instance": {
+                    "$ref": "#/$defs/DbInstanceEnum"
+                },
+                "length": {
+                    "type": "number"
+                },
+                "mass": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "measurementtype_ptr_id": {
+                    "type": "integer"
+                }
+            },
+            "title": "ProteinIdentifier",
+            "type": "object"
+        },
+        "ProteinStrain": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "db_instance": {
+                    "$ref": "#/$defs/DbInstanceEnum"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "protein_id": {
+                    "type": "integer"
+                },
+                "strain_id": {
+                    "type": "integer"
+                }
+            },
+            "title": "ProteinStrain",
+            "type": "object"
+        },
+        "Protocol": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "categorization": {
+                    "$ref": "#/$defs/CategorizationEnum"
+                },
+                "db_instance": {
+                    "$ref": "#/$defs/DbInstanceEnum"
+                },
+                "default_units_id": {
+                    "type": "integer"
+                },
+                "object_ref_id": {
+                    "type": "integer"
+                },
+                "owned_by_id": {
+                    "type": "integer"
+                },
+                "variant_of_id": {
+                    "$ref": "#/$defs/VariantOfIdEnum"
+                }
+            },
+            "title": "Protocol",
+            "type": "object"
+        },
+        "ProvisionalEnum": {
+            "description": "",
+            "enum": [
+                "t",
+                "f"
+            ],
+            "title": "ProvisionalEnum",
+            "type": "string"
+        },
+        "Strain": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "db_instance": {
+                    "$ref": "#/$defs/DbInstanceEnum"
+                },
+                "object_ref_id": {
+                    "type": "integer"
+                },
+                "registry_id": {
+                    "type": "string"
+                },
+                "registry_url": {
+                    "type": "string"
+                }
+            },
+            "title": "Strain",
+            "type": "object"
+        },
+        "TagsEnum": {
+            "description": "",
+            "enum": [
+                "LCMS",
+                "Mevalonate",
+                "Acetyl-CoA",
+                "tag",
+                "needs-verification",
+                "Mevalonate Pathway",
+                "HPLC",
+                "needs-validation"
+            ],
+            "title": "TagsEnum",
+            "type": "string"
+        },
+        "TypeFieldEnum": {
+            "description": "",
+            "enum": [
+                "37",
+                "description",
+                "control",
+                "flush",
+                "0.1",
+                "contact_extra",
+                "strains",
+                "200",
+                "carbon_source",
+                "experimenter",
+                "NONE",
+                "--",
+                "contact"
+            ],
+            "title": "TypeFieldEnum",
+            "type": "string"
+        },
+        "TypeGroupEnum": {
+            "description": "",
+            "enum": [
+                "h",
+                "g",
+                "m",
+                "_",
+                "p"
+            ],
+            "title": "TypeGroupEnum",
+            "type": "string"
+        },
+        "UnitNameEnum": {
+            "description": "",
+            "enum": [
+                "L/h",
+                "Liters",
+                "uM",
+                "RPKM",
+                "ug/L",
+                "Percent",
+                "TMM",
+                "nM",
+                "MEFL",
+                "milligrams",
+                "mmol",
+                "L/m",
+                "spectral count",
+                "TPM",
+                "proteins/cell",
+                "percent",
+                "Yield (mmole/mmole)",
+                "moles / moles glucose",
+                "intensity",
+                "counts",
+                "FPKM",
+                "Productivity (g/L/hr)",
+                "mL",
+                "relative",
+                "milliliters",
+                "RPM",
+                "g/L",
+                "mol/L/hr",
+                "uL",
+                "Cmol/L",
+                "mol/L",
+                "Celsius",
+                "mg/L",
+                "grams",
+                "mol",
+                "CPM",
+                "Histogram 0.15:7.95:0.10",
+                "mM",
+                "hours",
+                "mg SolSgr / 10 mg CW",
+                "mmol/L/h",
+                "nanograms",
+                "Cmol",
+                "lpm",
+                "ppm",
+                "g",
+                "kilograms",
+                "n/a"
+            ],
+            "title": "UnitNameEnum",
+            "type": "string"
+        },
+        "VariantOfIdEnum": {
+            "description": "",
+            "enum": [
+                "OD",
+                "RAMOS",
+                "LCMS",
+                "7948",
+                "TPOMICS",
+                "NA",
+                "HPLC"
+            ],
+            "title": "VariantOfIdEnum",
+            "type": "string"
+        }
+    },
+    "$id": "https://w3id.org/edd",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "metamodel_version": "1.7.0",
+    "title": "edd",
+    "type": "object",
+    "version": null
+}

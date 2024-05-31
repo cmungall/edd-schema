@@ -1,0 +1,321 @@
+@prefix edd: <https://w3id.org/edd> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+edd:GeneIdentifier a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:in ( "metadata_plus.abf-public.sql" "metadata_plus.abf.sql" "metadata_plus.jbei.sql" "metadata_plus.jbei-public.sql" ) ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path edd:db_instance ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path edd:measurementtype_ptr_id ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path edd:gene_length ] ;
+    sh:targetClass edd:GeneIdentifier .
+
+edd:MeasurementType a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path edd:uuid ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path edd:short_name ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path edd:type_name ],
+        [ sh:datatype xsd:string ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path edd:alt_names ],
+        [ sh:in ( "h" "g" "m" "_" "p" ) ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path edd:type_group ],
+        [ sh:in ( "t" "f" ) ;
+            sh:maxCount 1 ;
+            sh:order 7 ;
+            sh:path edd:provisional ],
+        [ sh:in ( "metadata_plus.abf-public.sql" "metadata_plus.abf.sql" "metadata_plus.jbei.sql" "metadata_plus.jbei-public.sql" ) ;
+            sh:maxCount 1 ;
+            sh:order 8 ;
+            sh:path edd:db_instance ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 5 ;
+            sh:path edd:type_source_id ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path edd:id ] ;
+    sh:targetClass edd:MeasurementType .
+
+edd:MeasurementUnit a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:in ( "t" "f" ) ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path edd:display ],
+        [ sh:in ( "metadata_plus.abf-public.sql" "metadata_plus.abf.sql" "metadata_plus.jbei.sql" "metadata_plus.jbei-public.sql" ) ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path edd:db_instance ],
+        [ sh:in ( "µM" "ng" "mmol/L" "uM" "kg" "grams" "L" "g" "Percent" "g/L/hr" "µg/L" "nanomolar" "mmole/mmole" "mL" "mg" "µL" "mmole/mmodel" ) ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path edd:alternate_names ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path edd:id ],
+        [ sh:in ( "h" "g" "m" "_" "p" ) ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path edd:type_group ],
+        [ sh:in ( "L/h" "Liters" "uM" "RPKM" "ug/L" "Percent" "TMM" "nM" "MEFL" "milligrams" "mmol" "L/m" "spectral count" "TPM" "proteins/cell" "percent" "Yield (mmole/mmole)" "moles / moles glucose" "intensity" "counts" "FPKM" "Productivity (g/L/hr)" "mL" "relative" "milliliters" "RPM" "g/L" "mol/L/hr" "uL" "Cmol/L" "mol/L" "Celsius" "mg/L" "grams" "mol" "CPM" "Histogram 0.15:7.95:0.10" "mM" "hours" "mg SolSgr / 10 mg CW" "mmol/L/h" "nanograms" "Cmol" "lpm" "ppm" "g" "kilograms" "n/a" ) ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path edd:unit_name ] ;
+    sh:targetClass edd:MeasurementUnit .
+
+edd:Metabolite a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path edd:molecular_formula ],
+        [ sh:in ( "LCMS" "Mevalonate" "Acetyl-CoA" "tag" "needs-verification" "Mevalonate Pathway" "HPLC" "needs-validation" ) ;
+            sh:order 5 ;
+            sh:path edd:tags ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path edd:charge ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 8 ;
+            sh:path edd:pubchem_cid ],
+        [ sh:datatype xsd:float ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path edd:molar_mass ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path edd:measurementtype_ptr_id ],
+        [ sh:in ( "metadata_plus.abf-public.sql" "metadata_plus.abf.sql" "metadata_plus.jbei.sql" "metadata_plus.jbei-public.sql" ) ;
+            sh:maxCount 1 ;
+            sh:order 9 ;
+            sh:path edd:db_instance ],
+        [ sh:datatype xsd:string ;
+            sh:nodeKind sh:Literal ;
+            sh:order 6 ;
+            sh:path edd:id_map ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path edd:carbon_count ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path edd:smiles ] ;
+    sh:targetClass edd:Metabolite .
+
+edd:MetadataType a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:in ( "metadata_plus.abf-public.sql" "metadata_plus.abf.sql" "metadata_plus.jbei.sql" "metadata_plus.jbei-public.sql" ) ;
+            sh:maxCount 1 ;
+            sh:order 11 ;
+            sh:path edd:db_instance ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 9 ;
+            sh:path edd:uuid ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 10 ;
+            sh:path edd:group_id ],
+        [ sh:in ( "37" "description" "control" "flush" "0.1" "contact_extra" "strains" "200" "carbon_source" "experimenter" "NONE" "--" "contact" ) ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path edd:type_field ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path edd:type_i18n ],
+        [ sh:in ( "replicate" "string" "A" "L" "strain" "user" "textarea" "S" "carbon_source" "checkbox" ) ;
+            sh:maxCount 1 ;
+            sh:order 8 ;
+            sh:path edd:for_context ],
+        [ sh:in ( "replicate" "strain" "user" "textarea" "carbon_source" "checkbox" ) ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path edd:input_type ],
+        [ sh:in ( "A" "L" "S" ) ;
+            sh:maxCount 1 ;
+            sh:order 6 ;
+            sh:path edd:prefix ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 7 ;
+            sh:path edd:postfix ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path edd:id ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path edd:type_name ],
+        [ sh:in ( "37" "°C" "ºC" "rpm" "1" "bsa-fast-13min-cold.m" "flush" "hr" "mL" "mM" "200" "--" "NONE" "mm" "Vial 1" "0.1" ) ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path edd:default_value ] ;
+    sh:targetClass edd:MetadataType .
+
+edd:ProteinIdentifier a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path edd:mass ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path edd:measurementtype_ptr_id ],
+        [ sh:datatype xsd:string ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path edd:accession_id ],
+        [ sh:in ( "metadata_plus.abf-public.sql" "metadata_plus.abf.sql" "metadata_plus.jbei.sql" "metadata_plus.jbei-public.sql" ) ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path edd:db_instance ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 4 ;
+            sh:path edd:accession_code ],
+        [ sh:datatype xsd:float ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path edd:length ] ;
+    sh:targetClass edd:ProteinIdentifier .
+
+edd:ProteinStrain a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path edd:id ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path edd:strain_id ],
+        [ sh:in ( "metadata_plus.abf-public.sql" "metadata_plus.abf.sql" "metadata_plus.jbei.sql" "metadata_plus.jbei-public.sql" ) ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path edd:db_instance ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path edd:protein_id ] ;
+    sh:targetClass edd:ProteinStrain .
+
+edd:Protocol a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 3 ;
+            sh:path edd:owned_by_id ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path edd:object_ref_id ],
+        [ sh:in ( "OD" "RAMOS" "LCMS" "7948" "TPOMICS" "NA" "HPLC" ) ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path edd:variant_of_id ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path edd:default_units_id ],
+        [ sh:in ( "5" "7" "OD" "3" "10" "LCMS" "1" "6" "TPOMICS" "NA" "HPLC" ) ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path edd:categorization ],
+        [ sh:in ( "metadata_plus.abf-public.sql" "metadata_plus.abf.sql" "metadata_plus.jbei.sql" "metadata_plus.jbei-public.sql" ) ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path edd:db_instance ] ;
+    sh:targetClass edd:Protocol .
+
+edd:Strain a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:in ( "metadata_plus.abf-public.sql" "metadata_plus.abf.sql" "metadata_plus.jbei.sql" "metadata_plus.jbei-public.sql" ) ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path edd:db_instance ],
+        [ sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 2 ;
+            sh:path edd:registry_url ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 0 ;
+            sh:path edd:object_ref_id ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:order 1 ;
+            sh:path edd:registry_id ] ;
+    sh:targetClass edd:Strain .
+
