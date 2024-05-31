@@ -1,338 +1,448 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/AlternateNamesEnum/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/Boolean/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/CategorizationEnum/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/Curie/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/Date/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/DateOrDatetime/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/Datetime/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/DbInstanceEnum/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/Decimal/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/DefaultValueEnum/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/DisplayEnum/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/Double/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/Float/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/ForContextEnum/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/GeneIdentifier/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/HttpsIdentifier/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/InputTypeEnum/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/Integer/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/Jsonpath/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/Jsonpointer/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/MeasurementType/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/MeasurementUnit/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/Metabolite/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/MetadataType/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/Ncname/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/Nodeidentifier/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/Objectidentifier/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/PrefixEnum/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/ProteinIdentifier/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/ProteinStrain/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/Protocol/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/ProvisionalEnum/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/Sparqlpath/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/Strain/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/String/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/TagsEnum/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/Time/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/TypeFieldEnum/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/TypeGroupEnum/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/UnitNameEnum/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/Uri/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/Uriorcurie/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/VariantOfIdEnum/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/about/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/accession_code/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/accession_id/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/alt_names/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/alternate_names/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/carbon_count/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/categorization/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/charge/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/db_instance/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/default_units_id/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/default_value/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/display/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/edd/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/for_context/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/gene_length/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/group_id/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/id/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/id_map/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/input_type/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/length/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/mass/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/measurementtype_ptr_id/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-01</lastmod>
+         <loc>https://cmungall.github.io/edd-schema/molar_mass/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cmungall.github.io/edd-schema/molecular_formula/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cmungall.github.io/edd-schema/object_ref_id/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cmungall.github.io/edd-schema/owned_by_id/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cmungall.github.io/edd-schema/postfix/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cmungall.github.io/edd-schema/prefix/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cmungall.github.io/edd-schema/protein_id/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cmungall.github.io/edd-schema/provisional/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cmungall.github.io/edd-schema/pubchem_cid/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cmungall.github.io/edd-schema/registry_id/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cmungall.github.io/edd-schema/registry_url/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cmungall.github.io/edd-schema/short_name/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cmungall.github.io/edd-schema/smiles/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cmungall.github.io/edd-schema/strain_id/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cmungall.github.io/edd-schema/tags/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cmungall.github.io/edd-schema/type_field/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cmungall.github.io/edd-schema/type_group/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cmungall.github.io/edd-schema/type_i18n/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cmungall.github.io/edd-schema/type_name/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cmungall.github.io/edd-schema/type_source_id/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cmungall.github.io/edd-schema/unit_name/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cmungall.github.io/edd-schema/uuid/</loc>
+         <lastmod>2024-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://cmungall.github.io/edd-schema/variant_of_id/</loc>
+         <lastmod>2024-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
