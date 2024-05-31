@@ -1,8 +1,28 @@
-site_name: "EDD"
-theme: readthedocs
-docs_dir: target/docs
-site_dir: docs
+---
+site_name: "edd-schema"
+theme:
+  name: material
+  # palette:
+  #  scheme: slate
+  #  primary: cyan
+  features:
+    - content.tabs.link
+plugins:
+  - search
+  - mermaid2:
+      version: 9.3.0
+  - mknotebooks:
+      execute: false
 nav:
-  - Home: home.md
+  # - Home: home.md
   - Index: index.md
-  - Credits: credits.md
+  - About: about.md
+site_url: https://cmungall.github.io/edd-schema
+repo_url: https://github.com/cmungall/edd-schema
+
+# Uncomment this block to enable use of Google Analytics.
+# Replace the property value with your own ID.
+# extra:
+#   analytics:
+#     provider: google
+#     property: G-XXXXXXXXXX
