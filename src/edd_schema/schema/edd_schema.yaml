@@ -1,0 +1,685 @@
+name: edd
+description: NON-OFFICIAL rendering of EDD schema as LinkML (for demo purposes)
+id: https://w3id.org/edd
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  edd: https://w3id.org/edd
+default_prefix: edd
+types:
+  https identifier:
+    from_schema: https://w3id.org/edd
+    typeof: string
+enums:
+  db_instance_enum:
+    from_schema: https://w3id.org/edd
+    permissible_values:
+      metadata_plus.abf-public.sql:
+        description: metadata_plus.abf-public.sql
+      metadata_plus.abf.sql:
+        description: metadata_plus.abf.sql
+      metadata_plus.jbei.sql:
+        description: metadata_plus.jbei.sql
+      metadata_plus.jbei-public.sql:
+        description: metadata_plus.jbei-public.sql
+  type_group_enum:
+    from_schema: https://w3id.org/edd
+    permissible_values:
+      h:
+        description: h
+      g:
+        description: g
+      m:
+        description: m
+      _:
+        description: _
+      p:
+        description: p
+  provisional_enum:
+    from_schema: https://w3id.org/edd
+    permissible_values:
+      t:
+        description: t
+      f:
+        description: f
+  unit_name_enum:
+    from_schema: https://w3id.org/edd
+    permissible_values:
+      L/h:
+        description: L/h
+      Liters:
+        description: Liters
+      uM:
+        description: uM
+      RPKM:
+        description: RPKM
+      ug/L:
+        description: ug/L
+      Percent:
+        description: Percent
+      TMM:
+        description: TMM
+      nM:
+        description: nM
+      MEFL:
+        description: MEFL
+      milligrams:
+        description: milligrams
+      mmol:
+        description: mmol
+      L/m:
+        description: L/m
+      spectral count:
+        description: spectral count
+      TPM:
+        description: TPM
+      proteins/cell:
+        description: proteins/cell
+      percent:
+        description: percent
+      Yield (mmole/mmole):
+        description: Yield (mmole/mmole)
+      moles / moles glucose:
+        description: moles / moles glucose
+      intensity:
+        description: intensity
+      counts:
+        description: counts
+      FPKM:
+        description: FPKM
+      Productivity (g/L/hr):
+        description: Productivity (g/L/hr)
+      mL:
+        description: mL
+      relative:
+        description: relative
+      milliliters:
+        description: milliliters
+      RPM:
+        description: RPM
+      g/L:
+        description: g/L
+      mol/L/hr:
+        description: mol/L/hr
+      uL:
+        description: uL
+      Cmol/L:
+        description: Cmol/L
+      mol/L:
+        description: mol/L
+      Celsius:
+        description: Celsius
+      mg/L:
+        description: mg/L
+      grams:
+        description: grams
+      mol:
+        description: mol
+      CPM:
+        description: CPM
+      Histogram 0.15:7.95:0.10:
+        description: Histogram 0.15:7.95:0.10
+      mM:
+        description: mM
+      hours:
+        description: hours
+      mg SolSgr / 10 mg CW:
+        description: mg SolSgr / 10 mg CW
+      mmol/L/h:
+        description: mmol/L/h
+      nanograms:
+        description: nanograms
+      Cmol:
+        description: Cmol
+      lpm:
+        description: lpm
+      ppm:
+        description: ppm
+      g:
+        description: g
+      kilograms:
+        description: kilograms
+      n/a:
+        description: n/a
+  display_enum:
+    from_schema: https://w3id.org/edd
+    permissible_values:
+      t:
+        description: t
+      f:
+        description: f
+  alternate_names_enum:
+    from_schema: https://w3id.org/edd
+    permissible_values:
+      "\xB5M":
+        description: "\xB5M"
+      ng:
+        description: ng
+      mmol/L:
+        description: mmol/L
+      uM:
+        description: uM
+      kg:
+        description: kg
+      grams:
+        description: grams
+      L:
+        description: L
+      g:
+        description: g
+      Percent:
+        description: Percent
+      g/L/hr:
+        description: g/L/hr
+      "\xB5g/L":
+        description: "\xB5g/L"
+      nanomolar:
+        description: nanomolar
+      mmole/mmole:
+        description: mmole/mmole
+      mL:
+        description: mL
+      mg:
+        description: mg
+      "\xB5L":
+        description: "\xB5L"
+      mmole/mmodel:
+        description: mmole/mmodel
+  tags_enum:
+    from_schema: https://w3id.org/edd
+    permissible_values:
+      LCMS:
+        description: LCMS
+      Mevalonate:
+        description: Mevalonate
+      Acetyl-CoA:
+        description: Acetyl-CoA
+      tag:
+        description: tag
+      needs-verification:
+        description: needs-verification
+      Mevalonate Pathway:
+        description: Mevalonate Pathway
+      HPLC:
+        description: HPLC
+      needs-validation:
+        description: needs-validation
+  type_field_enum:
+    from_schema: https://w3id.org/edd
+    permissible_values:
+      '37':
+        description: '37'
+      description:
+        description: description
+      control:
+        description: control
+      flush:
+        description: flush
+      '0.1':
+        description: '0.1'
+      contact_extra:
+        description: contact_extra
+      strains:
+        description: strains
+      '200':
+        description: '200'
+      carbon_source:
+        description: carbon_source
+      experimenter:
+        description: experimenter
+      NONE:
+        description: None
+      --:
+        description: --
+      contact:
+        description: contact
+  input_type_enum:
+    from_schema: https://w3id.org/edd
+    permissible_values:
+      replicate:
+        description: replicate
+      strain:
+        description: strain
+      user:
+        description: user
+      textarea:
+        description: textarea
+      carbon_source:
+        description: carbon_source
+      checkbox:
+        description: checkbox
+  default_value_enum:
+    from_schema: https://w3id.org/edd
+    permissible_values:
+      '37':
+        description: '37'
+      "\xB0C":
+        description: "\xB0C"
+      "\xBAC":
+        description: "\xBAC"
+      rpm:
+        description: rpm
+      '1':
+        description: '1'
+      bsa-fast-13min-cold.m:
+        description: bsa-fast-13min-cold.m
+      flush:
+        description: flush
+      hr:
+        description: hr
+      mL:
+        description: mL
+      mM:
+        description: mM
+      '200':
+        description: '200'
+      --:
+        description: --
+      NONE:
+        description: None
+      mm:
+        description: mm
+      Vial 1:
+        description: Vial 1
+      '0.1':
+        description: '0.1'
+  prefix_enum:
+    from_schema: https://w3id.org/edd
+    permissible_values:
+      A:
+        description: A
+      L:
+        description: L
+      S:
+        description: S
+  for_context_enum:
+    from_schema: https://w3id.org/edd
+    permissible_values:
+      replicate:
+        description: replicate
+      string:
+        description: string
+      A:
+        description: A
+      L:
+        description: L
+      strain:
+        description: strain
+      user:
+        description: user
+      textarea:
+        description: textarea
+      S:
+        description: S
+      carbon_source:
+        description: carbon_source
+      checkbox:
+        description: checkbox
+  categorization_enum:
+    from_schema: https://w3id.org/edd
+    permissible_values:
+      '5':
+        description: '5'
+      '7':
+        description: '7'
+      OD:
+        description: OD
+      '3':
+        description: '3'
+      '10':
+        description: '10'
+      LCMS:
+        description: LCMS
+      '1':
+        description: '1'
+      '6':
+        description: '6'
+      TPOMICS:
+        description: TPOMICS
+      NA:
+        description: NA
+      HPLC:
+        description: HPLC
+  variant_of_id_enum:
+    from_schema: https://w3id.org/edd
+    permissible_values:
+      OD:
+        description: OD
+      RAMOS:
+        description: RAMOS
+      LCMS:
+        description: LCMS
+      '7948':
+        description: '7948'
+      TPOMICS:
+        description: TPOMICS
+      NA:
+        description: NA
+      HPLC:
+        description: HPLC
+slots:
+  measurementtype_ptr_id:
+    examples:
+    - value: '260597'
+    from_schema: https://w3id.org/edd
+    range: integer
+  gene_length:
+    from_schema: https://w3id.org/edd
+    range: string
+  db_instance:
+    examples:
+    - value: metadata_plus.jbei.sql
+    from_schema: https://w3id.org/edd
+    range: db_instance_enum
+  id:
+    examples:
+    - value: '262274'
+    from_schema: https://w3id.org/edd
+    range: integer
+  type_name:
+    examples:
+    - value: pKLJ12
+    from_schema: https://w3id.org/edd
+    # multivalued: true
+    range: string
+  short_name:
+    examples:
+    - value: Total Biomass Input
+    from_schema: https://w3id.org/edd
+    range: string
+  type_group:
+    examples:
+    - value: p
+    from_schema: https://w3id.org/edd
+    range: type_group_enum
+  uuid:
+    examples:
+    - value: '231814'
+    from_schema: https://w3id.org/edd
+    range: string
+  type_source_id:
+    examples:
+    - value: 5568ac84-29bb-4da2-b8c4-6b3f6685dd29
+    from_schema: https://w3id.org/edd
+    range: string
+  alt_names:
+    examples:
+    - value: DO
+    from_schema: https://w3id.org/edd
+    multivalued: true
+    range: string
+  provisional:
+    examples:
+    - value: f
+    from_schema: https://w3id.org/edd
+    range: provisional_enum
+  unit_name:
+    examples:
+    - value: uM
+    from_schema: https://w3id.org/edd
+    range: unit_name_enum
+  display:
+    examples:
+    - value: t
+    from_schema: https://w3id.org/edd
+    range: display_enum
+  alternate_names:
+    examples:
+    - value: "\xB5M"
+    from_schema: https://w3id.org/edd
+    range: alternate_names_enum
+  charge:
+    examples:
+    - value: '0'
+    from_schema: https://w3id.org/edd
+    range: integer
+  carbon_count:
+    examples:
+    - value: '6'
+    from_schema: https://w3id.org/edd
+    range: integer
+  molar_mass:
+    examples:
+    - value: '113.16000'
+    from_schema: https://w3id.org/edd
+    range: float
+  molecular_formula:
+    examples:
+    - value: C6H11NO
+    from_schema: https://w3id.org/edd
+    range: string
+  tags:
+    examples:
+    - value: needs-validation
+    from_schema: https://w3id.org/edd
+    multivalued: true
+    range: tags_enum
+  id_map:
+    examples:
+    - value: CHEBI:CHEBI:16608|KEGG Compound:C03845|CHEBI:CHEBI:2139|Human Metabolome
+        Database:HMDB06841|MetaNetX (MNX) Chemical:MNXM2494|Human Metabolome Database:HMDB06541|LipidMaps:LMST01010096|BioCyc:META:CPD-8621|CHEBI:CHEBI:12170|CHEBI:CHEBI:20645|SEED
+        Compound:cpd02398|Human Metabolome Database:HMDB59618
+    from_schema: https://w3id.org/edd
+    multivalued: true
+    range: string
+  smiles:
+    examples:
+    - value: C1CCC(=O)NCC1
+    from_schema: https://w3id.org/edd
+    range: string
+  pubchem_cid:
+    examples:
+    - value: '7768'
+    from_schema: https://w3id.org/edd
+    range: integer
+  type_i18n:
+    examples:
+    - value: main.models.Line.replicate
+    from_schema: https://w3id.org/edd
+    range: string
+  type_field:
+    examples:
+    - value: '0.1'
+    from_schema: https://w3id.org/edd
+    range: type_field_enum
+  input_type:
+    examples:
+    - value: replicate
+    from_schema: https://w3id.org/edd
+    range: input_type_enum
+  default_value:
+    examples:
+    - value: rpm
+    from_schema: https://w3id.org/edd
+    range: default_value_enum
+  prefix:
+    examples:
+    - value: L
+    from_schema: https://w3id.org/edd
+    range: prefix_enum
+  postfix:
+    examples:
+    - value: '10'
+    from_schema: https://w3id.org/edd
+    range: string
+  for_context:
+    examples:
+    - value: replicate
+    from_schema: https://w3id.org/edd
+    range: for_context_enum
+  group_id:
+    examples:
+    - value: 71f5cd94-4dd4-45ca-a926-9f0717631799
+    from_schema: https://w3id.org/edd
+    range: string
+  accession_id:
+    examples:
+    - value: '575'
+    from_schema: https://w3id.org/edd
+    multivalued: true
+    range: string
+  length:
+    examples:
+    - value: '62153.00000'
+    from_schema: https://w3id.org/edd
+    range: float
+  mass:
+    examples:
+    - value: JDK_p00002
+    from_schema: https://w3id.org/edd
+    multivalued: true
+    range: string
+  accession_code:
+    examples:
+    - value: P77495
+    from_schema: https://w3id.org/edd
+    range: string
+  protein_id:
+    examples:
+    - value: '262274'
+    from_schema: https://w3id.org/edd
+    range: integer
+  strain_id:
+    examples:
+    - value: '145508'
+    from_schema: https://w3id.org/edd
+    range: integer
+  object_ref_id:
+    examples:
+    - value: '134910'
+    from_schema: https://w3id.org/edd
+    range: integer
+  categorization:
+    examples:
+    - value: '6'
+    from_schema: https://w3id.org/edd
+    range: categorization_enum
+  default_units_id:
+    examples:
+    - value: '18'
+    from_schema: https://w3id.org/edd
+    range: integer
+  owned_by_id:
+    examples:
+    - value: '1939'
+    from_schema: https://w3id.org/edd
+    range: integer
+  variant_of_id:
+    examples:
+    - value: NA
+    from_schema: https://w3id.org/edd
+    range: variant_of_id_enum
+  registry_id:
+    examples:
+    - value: 50afc159-ad1d-414e-adf1-38c9307b13b9
+    from_schema: https://w3id.org/edd
+    range: string
+  registry_url:
+    examples:
+    - value: https://registry.jbei.org/entry/1
+    from_schema: https://w3id.org/edd
+    range: https identifier
+classes:
+  gene_identifier:
+    from_schema: https://w3id.org/edd
+    slots:
+    - measurementtype_ptr_id
+    - gene_length
+    - db_instance
+    unique_keys:
+      gene_length_key:
+        unique_key_name: gene_length_key
+        unique_key_slots:
+        - gene_length
+  MeasurementType:
+    from_schema: https://w3id.org/edd
+    slots:
+    - id
+    - type_name
+    - short_name
+    - type_group
+    - uuid
+    - type_source_id
+    - alt_names
+    - provisional
+    - db_instance
+  MeasurementUnit:
+    from_schema: https://w3id.org/edd
+    slots:
+    - id
+    - unit_name
+    - display
+    - alternate_names
+    - type_group
+    - db_instance
+  Metabolite:
+    from_schema: https://w3id.org/edd
+    slots:
+    - measurementtype_ptr_id
+    - charge
+    - carbon_count
+    - molar_mass
+    - molecular_formula
+    - tags
+    - id_map
+    - smiles
+    - pubchem_cid
+    - db_instance
+  MetadataType:
+    from_schema: https://w3id.org/edd
+    slots:
+    - id
+    - type_name
+    - type_i18n
+    - type_field
+    - input_type
+    - default_value
+    - prefix
+    - postfix
+    - for_context
+    - uuid
+    - group_id
+    - db_instance
+  ProteinIdentifier:
+    from_schema: https://w3id.org/edd
+    slots:
+    - measurementtype_ptr_id
+    - accession_id
+    - length
+    - mass
+    - accession_code
+    - db_instance
+  ProteinStrain:
+    from_schema: https://w3id.org/edd
+    slots:
+    - id
+    - protein_id
+    - strain_id
+    - db_instance
+    unique_keys:
+      protein_id_key:
+        unique_key_name: protein_id_key
+        unique_key_slots:
+        - protein_id
+      strain_id_key:
+        unique_key_name: strain_id_key
+        unique_key_slots:
+        - strain_id
+  Protocol:
+    from_schema: https://w3id.org/edd
+    slots:
+    - object_ref_id
+    - categorization
+    - default_units_id
+    - owned_by_id
+    - variant_of_id
+    - db_instance
+  Strain:
+    from_schema: https://w3id.org/edd
+    slots:
+    - object_ref_id
+    - registry_id
+    - registry_url
+    - db_instance
+

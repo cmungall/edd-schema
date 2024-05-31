@@ -1,0 +1,1815 @@
+@prefix edd: <https://w3id.org/edd> .
+@prefix linkml: <https://w3id.org/linkml/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+edd:GeneIdentifier a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "gene_identifier" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty edd:gene_length ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:measurementtype_ptr_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:DbInstanceEnum ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:gene_length ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Integer ;
+            owl:onProperty edd:measurementtype_ptr_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:gene_length ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:measurementtype_ptr_id ] ;
+    owl:hasKey ( edd:gene_length ) ;
+    skos:inScheme edd: .
+
+edd:MeasurementType a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "MeasurementType" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:short_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty edd:alt_names ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:DbInstanceEnum ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty edd:type_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:provisional ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:type_group ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty edd:uuid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Integer ;
+            owl:onProperty edd:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:uuid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:type_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:type_group ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:ProvisionalEnum ;
+            owl:onProperty edd:provisional ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:uuid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:type_source_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:alt_names ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:short_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:provisional ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:type_source_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty edd:type_source_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty edd:short_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:type_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:TypeGroupEnum ;
+            owl:onProperty edd:type_group ] ;
+    skos:inScheme edd: .
+
+edd:MeasurementUnit a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "MeasurementUnit" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:type_group ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:AlternateNamesEnum ;
+            owl:onProperty edd:alternate_names ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:DbInstanceEnum ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:display ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:DisplayEnum ;
+            owl:onProperty edd:display ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:alternate_names ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:alternate_names ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:type_group ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:display ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:TypeGroupEnum ;
+            owl:onProperty edd:type_group ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:unit_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Integer ;
+            owl:onProperty edd:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:unit_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:UnitNameEnum ;
+            owl:onProperty edd:unit_name ] ;
+    skos:inScheme edd: .
+
+edd:Metabolite a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Metabolite" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Integer ;
+            owl:onProperty edd:pubchem_cid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Float ;
+            owl:onProperty edd:molar_mass ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty edd:smiles ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:charge ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:pubchem_cid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:id_map ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:molecular_formula ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:smiles ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:molar_mass ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty edd:id_map ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:molar_mass ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:carbon_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:pubchem_cid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:DbInstanceEnum ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:smiles ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:measurementtype_ptr_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty edd:molecular_formula ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Integer ;
+            owl:onProperty edd:carbon_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:charge ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:TagsEnum ;
+            owl:onProperty edd:tags ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Integer ;
+            owl:onProperty edd:charge ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:measurementtype_ptr_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:molecular_formula ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:carbon_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Integer ;
+            owl:onProperty edd:measurementtype_ptr_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:tags ] ;
+    skos:inScheme edd: .
+
+edd:MetadataType a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "MetadataType" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:input_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:PrefixEnum ;
+            owl:onProperty edd:prefix ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:type_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:group_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:type_field ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty edd:type_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:type_i18n ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:TypeFieldEnum ;
+            owl:onProperty edd:type_field ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:type_i18n ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:default_value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:input_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Integer ;
+            owl:onProperty edd:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:DefaultValueEnum ;
+            owl:onProperty edd:default_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:InputTypeEnum ;
+            owl:onProperty edd:input_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:uuid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty edd:type_i18n ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty edd:postfix ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty edd:uuid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:type_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:DbInstanceEnum ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:ForContextEnum ;
+            owl:onProperty edd:for_context ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:type_field ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:default_value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:for_context ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:for_context ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:uuid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty edd:group_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:postfix ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:postfix ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:prefix ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:prefix ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:group_id ] ;
+    skos:inScheme edd: .
+
+edd:ProteinIdentifier a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ProteinIdentifier" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:length ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Integer ;
+            owl:onProperty edd:measurementtype_ptr_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:measurementtype_ptr_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:measurementtype_ptr_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:length ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Float ;
+            owl:onProperty edd:length ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:accession_code ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty edd:accession_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:accession_code ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:accession_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:mass ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty edd:accession_code ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:DbInstanceEnum ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty edd:mass ] ;
+    skos:inScheme edd: .
+
+edd:ProteinStrain a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ProteinStrain" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Integer ;
+            owl:onProperty edd:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:DbInstanceEnum ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Integer ;
+            owl:onProperty edd:strain_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:protein_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:strain_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:strain_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:protein_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Integer ;
+            owl:onProperty edd:protein_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:db_instance ] ;
+    owl:hasKey ( edd:protein_id ),
+        ( edd:strain_id ) ;
+    skos:inScheme edd: .
+
+edd:Protocol a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Protocol" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:variant_of_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Integer ;
+            owl:onProperty edd:owned_by_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:CategorizationEnum ;
+            owl:onProperty edd:categorization ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:DbInstanceEnum ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:default_units_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Integer ;
+            owl:onProperty edd:object_ref_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Integer ;
+            owl:onProperty edd:default_units_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:categorization ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:default_units_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:object_ref_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:owned_by_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:object_ref_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:categorization ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:owned_by_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:variant_of_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:VariantOfIdEnum ;
+            owl:onProperty edd:variant_of_id ] ;
+    skos:inScheme edd: .
+
+edd:Strain a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Strain" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:registry_url ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty edd:registry_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:object_ref_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:DbInstanceEnum ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:db_instance ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:registry_url ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:object_ref_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty edd:registry_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Integer ;
+            owl:onProperty edd:object_ref_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom edd:https_identifier ;
+            owl:onProperty edd:registry_url ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty edd:registry_id ] ;
+    skos:inScheme edd: .
+
+<https://w3id.org/eddAlternateNamesEnum#L> a owl:Class,
+        edd:AlternateNamesEnum ;
+    rdfs:label "L" ;
+    rdfs:subClassOf edd:AlternateNamesEnum .
+
+<https://w3id.org/eddAlternateNamesEnum#Percent> a owl:Class,
+        edd:AlternateNamesEnum ;
+    rdfs:label "Percent" ;
+    rdfs:subClassOf edd:AlternateNamesEnum .
+
+<https://w3id.org/eddAlternateNamesEnum#g> a owl:Class,
+        edd:AlternateNamesEnum ;
+    rdfs:label "g" ;
+    rdfs:subClassOf edd:AlternateNamesEnum .
+
+<https://w3id.org/eddAlternateNamesEnum#g/L/hr> a owl:Class,
+        edd:AlternateNamesEnum ;
+    rdfs:label "g/L/hr" ;
+    rdfs:subClassOf edd:AlternateNamesEnum .
+
+<https://w3id.org/eddAlternateNamesEnum#grams> a owl:Class,
+        edd:AlternateNamesEnum ;
+    rdfs:label "grams" ;
+    rdfs:subClassOf edd:AlternateNamesEnum .
+
+<https://w3id.org/eddAlternateNamesEnum#kg> a owl:Class,
+        edd:AlternateNamesEnum ;
+    rdfs:label "kg" ;
+    rdfs:subClassOf edd:AlternateNamesEnum .
+
+<https://w3id.org/eddAlternateNamesEnum#mL> a owl:Class,
+        edd:AlternateNamesEnum ;
+    rdfs:label "mL" ;
+    rdfs:subClassOf edd:AlternateNamesEnum .
+
+<https://w3id.org/eddAlternateNamesEnum#mg> a owl:Class,
+        edd:AlternateNamesEnum ;
+    rdfs:label "mg" ;
+    rdfs:subClassOf edd:AlternateNamesEnum .
+
+<https://w3id.org/eddAlternateNamesEnum#mmol/L> a owl:Class,
+        edd:AlternateNamesEnum ;
+    rdfs:label "mmol/L" ;
+    rdfs:subClassOf edd:AlternateNamesEnum .
+
+<https://w3id.org/eddAlternateNamesEnum#mmole/mmodel> a owl:Class,
+        edd:AlternateNamesEnum ;
+    rdfs:label "mmole/mmodel" ;
+    rdfs:subClassOf edd:AlternateNamesEnum .
+
+<https://w3id.org/eddAlternateNamesEnum#mmole/mmole> a owl:Class,
+        edd:AlternateNamesEnum ;
+    rdfs:label "mmole/mmole" ;
+    rdfs:subClassOf edd:AlternateNamesEnum .
+
+<https://w3id.org/eddAlternateNamesEnum#nanomolar> a owl:Class,
+        edd:AlternateNamesEnum ;
+    rdfs:label "nanomolar" ;
+    rdfs:subClassOf edd:AlternateNamesEnum .
+
+<https://w3id.org/eddAlternateNamesEnum#ng> a owl:Class,
+        edd:AlternateNamesEnum ;
+    rdfs:label "ng" ;
+    rdfs:subClassOf edd:AlternateNamesEnum .
+
+<https://w3id.org/eddAlternateNamesEnum#uM> a owl:Class,
+        edd:AlternateNamesEnum ;
+    rdfs:label "uM" ;
+    rdfs:subClassOf edd:AlternateNamesEnum .
+
+<https://w3id.org/eddAlternateNamesEnum#µL> a owl:Class,
+        edd:AlternateNamesEnum ;
+    rdfs:label "µL" ;
+    rdfs:subClassOf edd:AlternateNamesEnum .
+
+<https://w3id.org/eddAlternateNamesEnum#µM> a owl:Class,
+        edd:AlternateNamesEnum ;
+    rdfs:label "µM" ;
+    rdfs:subClassOf edd:AlternateNamesEnum .
+
+<https://w3id.org/eddAlternateNamesEnum#µg/L> a owl:Class,
+        edd:AlternateNamesEnum ;
+    rdfs:label "µg/L" ;
+    rdfs:subClassOf edd:AlternateNamesEnum .
+
+<https://w3id.org/eddCategorizationEnum#1> a owl:Class,
+        edd:CategorizationEnum ;
+    rdfs:label "1" ;
+    rdfs:subClassOf edd:CategorizationEnum .
+
+<https://w3id.org/eddCategorizationEnum#10> a owl:Class,
+        edd:CategorizationEnum ;
+    rdfs:label "10" ;
+    rdfs:subClassOf edd:CategorizationEnum .
+
+<https://w3id.org/eddCategorizationEnum#3> a owl:Class,
+        edd:CategorizationEnum ;
+    rdfs:label "3" ;
+    rdfs:subClassOf edd:CategorizationEnum .
+
+<https://w3id.org/eddCategorizationEnum#5> a owl:Class,
+        edd:CategorizationEnum ;
+    rdfs:label "5" ;
+    rdfs:subClassOf edd:CategorizationEnum .
+
+<https://w3id.org/eddCategorizationEnum#6> a owl:Class,
+        edd:CategorizationEnum ;
+    rdfs:label "6" ;
+    rdfs:subClassOf edd:CategorizationEnum .
+
+<https://w3id.org/eddCategorizationEnum#7> a owl:Class,
+        edd:CategorizationEnum ;
+    rdfs:label "7" ;
+    rdfs:subClassOf edd:CategorizationEnum .
+
+<https://w3id.org/eddCategorizationEnum#HPLC> a owl:Class,
+        edd:CategorizationEnum ;
+    rdfs:label "HPLC" ;
+    rdfs:subClassOf edd:CategorizationEnum .
+
+<https://w3id.org/eddCategorizationEnum#LCMS> a owl:Class,
+        edd:CategorizationEnum ;
+    rdfs:label "LCMS" ;
+    rdfs:subClassOf edd:CategorizationEnum .
+
+<https://w3id.org/eddCategorizationEnum#NA> a owl:Class,
+        edd:CategorizationEnum ;
+    rdfs:label "NA" ;
+    rdfs:subClassOf edd:CategorizationEnum .
+
+<https://w3id.org/eddCategorizationEnum#OD> a owl:Class,
+        edd:CategorizationEnum ;
+    rdfs:label "OD" ;
+    rdfs:subClassOf edd:CategorizationEnum .
+
+<https://w3id.org/eddCategorizationEnum#TPOMICS> a owl:Class,
+        edd:CategorizationEnum ;
+    rdfs:label "TPOMICS" ;
+    rdfs:subClassOf edd:CategorizationEnum .
+
+<https://w3id.org/eddDbInstanceEnum#metadata_plus.abf-public.sql> a owl:Class,
+        edd:DbInstanceEnum ;
+    rdfs:label "metadata_plus.abf-public.sql" ;
+    rdfs:subClassOf edd:DbInstanceEnum .
+
+<https://w3id.org/eddDbInstanceEnum#metadata_plus.abf.sql> a owl:Class,
+        edd:DbInstanceEnum ;
+    rdfs:label "metadata_plus.abf.sql" ;
+    rdfs:subClassOf edd:DbInstanceEnum .
+
+<https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei-public.sql> a owl:Class,
+        edd:DbInstanceEnum ;
+    rdfs:label "metadata_plus.jbei-public.sql" ;
+    rdfs:subClassOf edd:DbInstanceEnum .
+
+<https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei.sql> a owl:Class,
+        edd:DbInstanceEnum ;
+    rdfs:label "metadata_plus.jbei.sql" ;
+    rdfs:subClassOf edd:DbInstanceEnum .
+
+<https://w3id.org/eddDefaultValueEnum#--> a owl:Class,
+        edd:DefaultValueEnum ;
+    rdfs:label "--" ;
+    rdfs:subClassOf edd:DefaultValueEnum .
+
+<https://w3id.org/eddDefaultValueEnum#0.1> a owl:Class,
+        edd:DefaultValueEnum ;
+    rdfs:label "0.1" ;
+    rdfs:subClassOf edd:DefaultValueEnum .
+
+<https://w3id.org/eddDefaultValueEnum#1> a owl:Class,
+        edd:DefaultValueEnum ;
+    rdfs:label "1" ;
+    rdfs:subClassOf edd:DefaultValueEnum .
+
+<https://w3id.org/eddDefaultValueEnum#200> a owl:Class,
+        edd:DefaultValueEnum ;
+    rdfs:label "200" ;
+    rdfs:subClassOf edd:DefaultValueEnum .
+
+<https://w3id.org/eddDefaultValueEnum#37> a owl:Class,
+        edd:DefaultValueEnum ;
+    rdfs:label "37" ;
+    rdfs:subClassOf edd:DefaultValueEnum .
+
+<https://w3id.org/eddDefaultValueEnum#NONE> a owl:Class,
+        edd:DefaultValueEnum ;
+    rdfs:label "NONE" ;
+    rdfs:subClassOf edd:DefaultValueEnum .
+
+<https://w3id.org/eddDefaultValueEnum#Vial+1> a owl:Class,
+        edd:DefaultValueEnum ;
+    rdfs:label "Vial 1" ;
+    rdfs:subClassOf edd:DefaultValueEnum .
+
+<https://w3id.org/eddDefaultValueEnum#bsa-fast-13min-cold.m> a owl:Class,
+        edd:DefaultValueEnum ;
+    rdfs:label "bsa-fast-13min-cold.m" ;
+    rdfs:subClassOf edd:DefaultValueEnum .
+
+<https://w3id.org/eddDefaultValueEnum#flush> a owl:Class,
+        edd:DefaultValueEnum ;
+    rdfs:label "flush" ;
+    rdfs:subClassOf edd:DefaultValueEnum .
+
+<https://w3id.org/eddDefaultValueEnum#hr> a owl:Class,
+        edd:DefaultValueEnum ;
+    rdfs:label "hr" ;
+    rdfs:subClassOf edd:DefaultValueEnum .
+
+<https://w3id.org/eddDefaultValueEnum#mL> a owl:Class,
+        edd:DefaultValueEnum ;
+    rdfs:label "mL" ;
+    rdfs:subClassOf edd:DefaultValueEnum .
+
+<https://w3id.org/eddDefaultValueEnum#mM> a owl:Class,
+        edd:DefaultValueEnum ;
+    rdfs:label "mM" ;
+    rdfs:subClassOf edd:DefaultValueEnum .
+
+<https://w3id.org/eddDefaultValueEnum#mm> a owl:Class,
+        edd:DefaultValueEnum ;
+    rdfs:label "mm" ;
+    rdfs:subClassOf edd:DefaultValueEnum .
+
+<https://w3id.org/eddDefaultValueEnum#rpm> a owl:Class,
+        edd:DefaultValueEnum ;
+    rdfs:label "rpm" ;
+    rdfs:subClassOf edd:DefaultValueEnum .
+
+<https://w3id.org/eddDefaultValueEnum#°C> a owl:Class,
+        edd:DefaultValueEnum ;
+    rdfs:label "°C" ;
+    rdfs:subClassOf edd:DefaultValueEnum .
+
+<https://w3id.org/eddDefaultValueEnum#ºC> a owl:Class,
+        edd:DefaultValueEnum ;
+    rdfs:label "ºC" ;
+    rdfs:subClassOf edd:DefaultValueEnum .
+
+<https://w3id.org/eddDisplayEnum#f> a owl:Class,
+        edd:DisplayEnum ;
+    rdfs:label "f" ;
+    rdfs:subClassOf edd:DisplayEnum .
+
+<https://w3id.org/eddDisplayEnum#t> a owl:Class,
+        edd:DisplayEnum ;
+    rdfs:label "t" ;
+    rdfs:subClassOf edd:DisplayEnum .
+
+<https://w3id.org/eddForContextEnum#A> a owl:Class,
+        edd:ForContextEnum ;
+    rdfs:label "A" ;
+    rdfs:subClassOf edd:ForContextEnum .
+
+<https://w3id.org/eddForContextEnum#L> a owl:Class,
+        edd:ForContextEnum ;
+    rdfs:label "L" ;
+    rdfs:subClassOf edd:ForContextEnum .
+
+<https://w3id.org/eddForContextEnum#S> a owl:Class,
+        edd:ForContextEnum ;
+    rdfs:label "S" ;
+    rdfs:subClassOf edd:ForContextEnum .
+
+<https://w3id.org/eddForContextEnum#carbon_source> a owl:Class,
+        edd:ForContextEnum ;
+    rdfs:label "carbon_source" ;
+    rdfs:subClassOf edd:ForContextEnum .
+
+<https://w3id.org/eddForContextEnum#checkbox> a owl:Class,
+        edd:ForContextEnum ;
+    rdfs:label "checkbox" ;
+    rdfs:subClassOf edd:ForContextEnum .
+
+<https://w3id.org/eddForContextEnum#replicate> a owl:Class,
+        edd:ForContextEnum ;
+    rdfs:label "replicate" ;
+    rdfs:subClassOf edd:ForContextEnum .
+
+<https://w3id.org/eddForContextEnum#strain> a owl:Class,
+        edd:ForContextEnum ;
+    rdfs:label "strain" ;
+    rdfs:subClassOf edd:ForContextEnum .
+
+<https://w3id.org/eddForContextEnum#string> a owl:Class,
+        edd:ForContextEnum ;
+    rdfs:label "string" ;
+    rdfs:subClassOf edd:ForContextEnum .
+
+<https://w3id.org/eddForContextEnum#textarea> a owl:Class,
+        edd:ForContextEnum ;
+    rdfs:label "textarea" ;
+    rdfs:subClassOf edd:ForContextEnum .
+
+<https://w3id.org/eddForContextEnum#user> a owl:Class,
+        edd:ForContextEnum ;
+    rdfs:label "user" ;
+    rdfs:subClassOf edd:ForContextEnum .
+
+<https://w3id.org/eddInputTypeEnum#carbon_source> a owl:Class,
+        edd:InputTypeEnum ;
+    rdfs:label "carbon_source" ;
+    rdfs:subClassOf edd:InputTypeEnum .
+
+<https://w3id.org/eddInputTypeEnum#checkbox> a owl:Class,
+        edd:InputTypeEnum ;
+    rdfs:label "checkbox" ;
+    rdfs:subClassOf edd:InputTypeEnum .
+
+<https://w3id.org/eddInputTypeEnum#replicate> a owl:Class,
+        edd:InputTypeEnum ;
+    rdfs:label "replicate" ;
+    rdfs:subClassOf edd:InputTypeEnum .
+
+<https://w3id.org/eddInputTypeEnum#strain> a owl:Class,
+        edd:InputTypeEnum ;
+    rdfs:label "strain" ;
+    rdfs:subClassOf edd:InputTypeEnum .
+
+<https://w3id.org/eddInputTypeEnum#textarea> a owl:Class,
+        edd:InputTypeEnum ;
+    rdfs:label "textarea" ;
+    rdfs:subClassOf edd:InputTypeEnum .
+
+<https://w3id.org/eddInputTypeEnum#user> a owl:Class,
+        edd:InputTypeEnum ;
+    rdfs:label "user" ;
+    rdfs:subClassOf edd:InputTypeEnum .
+
+<https://w3id.org/eddPrefixEnum#A> a owl:Class,
+        edd:PrefixEnum ;
+    rdfs:label "A" ;
+    rdfs:subClassOf edd:PrefixEnum .
+
+<https://w3id.org/eddPrefixEnum#L> a owl:Class,
+        edd:PrefixEnum ;
+    rdfs:label "L" ;
+    rdfs:subClassOf edd:PrefixEnum .
+
+<https://w3id.org/eddPrefixEnum#S> a owl:Class,
+        edd:PrefixEnum ;
+    rdfs:label "S" ;
+    rdfs:subClassOf edd:PrefixEnum .
+
+<https://w3id.org/eddProvisionalEnum#f> a owl:Class,
+        edd:ProvisionalEnum ;
+    rdfs:label "f" ;
+    rdfs:subClassOf edd:ProvisionalEnum .
+
+<https://w3id.org/eddProvisionalEnum#t> a owl:Class,
+        edd:ProvisionalEnum ;
+    rdfs:label "t" ;
+    rdfs:subClassOf edd:ProvisionalEnum .
+
+<https://w3id.org/eddTagsEnum#Acetyl-CoA> a owl:Class,
+        edd:TagsEnum ;
+    rdfs:label "Acetyl-CoA" ;
+    rdfs:subClassOf edd:TagsEnum .
+
+<https://w3id.org/eddTagsEnum#HPLC> a owl:Class,
+        edd:TagsEnum ;
+    rdfs:label "HPLC" ;
+    rdfs:subClassOf edd:TagsEnum .
+
+<https://w3id.org/eddTagsEnum#LCMS> a owl:Class,
+        edd:TagsEnum ;
+    rdfs:label "LCMS" ;
+    rdfs:subClassOf edd:TagsEnum .
+
+<https://w3id.org/eddTagsEnum#Mevalonate> a owl:Class,
+        edd:TagsEnum ;
+    rdfs:label "Mevalonate" ;
+    rdfs:subClassOf edd:TagsEnum .
+
+<https://w3id.org/eddTagsEnum#Mevalonate+Pathway> a owl:Class,
+        edd:TagsEnum ;
+    rdfs:label "Mevalonate Pathway" ;
+    rdfs:subClassOf edd:TagsEnum .
+
+<https://w3id.org/eddTagsEnum#needs-validation> a owl:Class,
+        edd:TagsEnum ;
+    rdfs:label "needs-validation" ;
+    rdfs:subClassOf edd:TagsEnum .
+
+<https://w3id.org/eddTagsEnum#needs-verification> a owl:Class,
+        edd:TagsEnum ;
+    rdfs:label "needs-verification" ;
+    rdfs:subClassOf edd:TagsEnum .
+
+<https://w3id.org/eddTagsEnum#tag> a owl:Class,
+        edd:TagsEnum ;
+    rdfs:label "tag" ;
+    rdfs:subClassOf edd:TagsEnum .
+
+<https://w3id.org/eddTypeFieldEnum#--> a owl:Class,
+        edd:TypeFieldEnum ;
+    rdfs:label "--" ;
+    rdfs:subClassOf edd:TypeFieldEnum .
+
+<https://w3id.org/eddTypeFieldEnum#0.1> a owl:Class,
+        edd:TypeFieldEnum ;
+    rdfs:label "0.1" ;
+    rdfs:subClassOf edd:TypeFieldEnum .
+
+<https://w3id.org/eddTypeFieldEnum#200> a owl:Class,
+        edd:TypeFieldEnum ;
+    rdfs:label "200" ;
+    rdfs:subClassOf edd:TypeFieldEnum .
+
+<https://w3id.org/eddTypeFieldEnum#37> a owl:Class,
+        edd:TypeFieldEnum ;
+    rdfs:label "37" ;
+    rdfs:subClassOf edd:TypeFieldEnum .
+
+<https://w3id.org/eddTypeFieldEnum#NONE> a owl:Class,
+        edd:TypeFieldEnum ;
+    rdfs:label "NONE" ;
+    rdfs:subClassOf edd:TypeFieldEnum .
+
+<https://w3id.org/eddTypeFieldEnum#carbon_source> a owl:Class,
+        edd:TypeFieldEnum ;
+    rdfs:label "carbon_source" ;
+    rdfs:subClassOf edd:TypeFieldEnum .
+
+<https://w3id.org/eddTypeFieldEnum#contact> a owl:Class,
+        edd:TypeFieldEnum ;
+    rdfs:label "contact" ;
+    rdfs:subClassOf edd:TypeFieldEnum .
+
+<https://w3id.org/eddTypeFieldEnum#contact_extra> a owl:Class,
+        edd:TypeFieldEnum ;
+    rdfs:label "contact_extra" ;
+    rdfs:subClassOf edd:TypeFieldEnum .
+
+<https://w3id.org/eddTypeFieldEnum#control> a owl:Class,
+        edd:TypeFieldEnum ;
+    rdfs:label "control" ;
+    rdfs:subClassOf edd:TypeFieldEnum .
+
+<https://w3id.org/eddTypeFieldEnum#description> a owl:Class,
+        edd:TypeFieldEnum ;
+    rdfs:label "description" ;
+    rdfs:subClassOf edd:TypeFieldEnum .
+
+<https://w3id.org/eddTypeFieldEnum#experimenter> a owl:Class,
+        edd:TypeFieldEnum ;
+    rdfs:label "experimenter" ;
+    rdfs:subClassOf edd:TypeFieldEnum .
+
+<https://w3id.org/eddTypeFieldEnum#flush> a owl:Class,
+        edd:TypeFieldEnum ;
+    rdfs:label "flush" ;
+    rdfs:subClassOf edd:TypeFieldEnum .
+
+<https://w3id.org/eddTypeFieldEnum#strains> a owl:Class,
+        edd:TypeFieldEnum ;
+    rdfs:label "strains" ;
+    rdfs:subClassOf edd:TypeFieldEnum .
+
+<https://w3id.org/eddTypeGroupEnum#_> a owl:Class,
+        edd:TypeGroupEnum ;
+    rdfs:label "_" ;
+    rdfs:subClassOf edd:TypeGroupEnum .
+
+<https://w3id.org/eddTypeGroupEnum#g> a owl:Class,
+        edd:TypeGroupEnum ;
+    rdfs:label "g" ;
+    rdfs:subClassOf edd:TypeGroupEnum .
+
+<https://w3id.org/eddTypeGroupEnum#h> a owl:Class,
+        edd:TypeGroupEnum ;
+    rdfs:label "h" ;
+    rdfs:subClassOf edd:TypeGroupEnum .
+
+<https://w3id.org/eddTypeGroupEnum#m> a owl:Class,
+        edd:TypeGroupEnum ;
+    rdfs:label "m" ;
+    rdfs:subClassOf edd:TypeGroupEnum .
+
+<https://w3id.org/eddTypeGroupEnum#p> a owl:Class,
+        edd:TypeGroupEnum ;
+    rdfs:label "p" ;
+    rdfs:subClassOf edd:TypeGroupEnum .
+
+<https://w3id.org/eddUnitNameEnum#CPM> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "CPM" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#Celsius> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "Celsius" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#Cmol> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "Cmol" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#Cmol/L> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "Cmol/L" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#FPKM> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "FPKM" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#Histogram+0.15:7.95:0.10> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "Histogram 0.15:7.95:0.10" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#L/h> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "L/h" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#L/m> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "L/m" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#Liters> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "Liters" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#MEFL> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "MEFL" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#Percent> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "Percent" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#Productivity+(g/L/hr)> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "Productivity (g/L/hr)" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#RPKM> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "RPKM" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#RPM> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "RPM" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#TMM> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "TMM" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#TPM> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "TPM" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#Yield+(mmole/mmole)> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "Yield (mmole/mmole)" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#counts> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "counts" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#g> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "g" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#g/L> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "g/L" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#grams> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "grams" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#hours> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "hours" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#intensity> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "intensity" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#kilograms> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "kilograms" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#lpm> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "lpm" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#mL> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "mL" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#mM> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "mM" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#mg+SolSgr+/+10+mg+CW> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "mg SolSgr / 10 mg CW" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#mg/L> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "mg/L" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#milligrams> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "milligrams" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#milliliters> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "milliliters" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#mmol> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "mmol" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#mmol/L/h> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "mmol/L/h" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#mol> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "mol" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#mol/L> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "mol/L" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#mol/L/hr> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "mol/L/hr" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#moles+/+moles+glucose> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "moles / moles glucose" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#n/a> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "n/a" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#nM> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "nM" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#nanograms> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "nanograms" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#percent> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "percent" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#ppm> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "ppm" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#proteins/cell> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "proteins/cell" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#relative> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "relative" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#spectral+count> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "spectral count" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#uL> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "uL" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#uM> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "uM" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddUnitNameEnum#ug/L> a owl:Class,
+        edd:UnitNameEnum ;
+    rdfs:label "ug/L" ;
+    rdfs:subClassOf edd:UnitNameEnum .
+
+<https://w3id.org/eddVariantOfIdEnum#7948> a owl:Class,
+        edd:VariantOfIdEnum ;
+    rdfs:label "7948" ;
+    rdfs:subClassOf edd:VariantOfIdEnum .
+
+<https://w3id.org/eddVariantOfIdEnum#HPLC> a owl:Class,
+        edd:VariantOfIdEnum ;
+    rdfs:label "HPLC" ;
+    rdfs:subClassOf edd:VariantOfIdEnum .
+
+<https://w3id.org/eddVariantOfIdEnum#LCMS> a owl:Class,
+        edd:VariantOfIdEnum ;
+    rdfs:label "LCMS" ;
+    rdfs:subClassOf edd:VariantOfIdEnum .
+
+<https://w3id.org/eddVariantOfIdEnum#NA> a owl:Class,
+        edd:VariantOfIdEnum ;
+    rdfs:label "NA" ;
+    rdfs:subClassOf edd:VariantOfIdEnum .
+
+<https://w3id.org/eddVariantOfIdEnum#OD> a owl:Class,
+        edd:VariantOfIdEnum ;
+    rdfs:label "OD" ;
+    rdfs:subClassOf edd:VariantOfIdEnum .
+
+<https://w3id.org/eddVariantOfIdEnum#RAMOS> a owl:Class,
+        edd:VariantOfIdEnum ;
+    rdfs:label "RAMOS" ;
+    rdfs:subClassOf edd:VariantOfIdEnum .
+
+<https://w3id.org/eddVariantOfIdEnum#TPOMICS> a owl:Class,
+        edd:VariantOfIdEnum ;
+    rdfs:label "TPOMICS" ;
+    rdfs:subClassOf edd:VariantOfIdEnum .
+
+edd:accession_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "accession_id" ;
+    rdfs:range linkml:String ;
+    skos:inScheme edd: .
+
+edd:alt_names a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "alt_names" ;
+    rdfs:range linkml:String ;
+    skos:inScheme edd: .
+
+edd:https_identifier a owl:Class,
+        linkml:TypeDefinition ;
+    rdfs:subClassOf linkml:String .
+
+edd:id_map a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "id_map" ;
+    rdfs:range linkml:String ;
+    skos:inScheme edd: .
+
+edd:mass a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "mass" ;
+    rdfs:range linkml:String ;
+    skos:inScheme edd: .
+
+edd:tags a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "tags" ;
+    rdfs:range edd:TagsEnum ;
+    skos:inScheme edd: .
+
+edd:accession_code a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "accession_code" ;
+    rdfs:range linkml:String ;
+    skos:inScheme edd: .
+
+edd:alternate_names a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "alternate_names" ;
+    rdfs:range edd:AlternateNamesEnum ;
+    skos:inScheme edd: .
+
+edd:carbon_count a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "carbon_count" ;
+    rdfs:range linkml:Integer ;
+    skos:inScheme edd: .
+
+edd:categorization a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "categorization" ;
+    rdfs:range edd:CategorizationEnum ;
+    skos:inScheme edd: .
+
+edd:charge a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "charge" ;
+    rdfs:range linkml:Integer ;
+    skos:inScheme edd: .
+
+edd:default_units_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "default_units_id" ;
+    rdfs:range linkml:Integer ;
+    skos:inScheme edd: .
+
+edd:default_value a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "default_value" ;
+    rdfs:range edd:DefaultValueEnum ;
+    skos:inScheme edd: .
+
+edd:display a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "display" ;
+    rdfs:range edd:DisplayEnum ;
+    skos:inScheme edd: .
+
+edd:for_context a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "for_context" ;
+    rdfs:range edd:ForContextEnum ;
+    skos:inScheme edd: .
+
+edd:group_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "group_id" ;
+    rdfs:range linkml:String ;
+    skos:inScheme edd: .
+
+edd:input_type a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "input_type" ;
+    rdfs:range edd:InputTypeEnum ;
+    skos:inScheme edd: .
+
+edd:length a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "length" ;
+    rdfs:range linkml:Float ;
+    skos:inScheme edd: .
+
+edd:molar_mass a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "molar_mass" ;
+    rdfs:range linkml:Float ;
+    skos:inScheme edd: .
+
+edd:molecular_formula a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "molecular_formula" ;
+    rdfs:range linkml:String ;
+    skos:inScheme edd: .
+
+edd:owned_by_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "owned_by_id" ;
+    rdfs:range linkml:Integer ;
+    skos:inScheme edd: .
+
+edd:postfix a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "postfix" ;
+    rdfs:range linkml:String ;
+    skos:inScheme edd: .
+
+edd:prefix a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "prefix" ;
+    rdfs:range edd:PrefixEnum ;
+    skos:inScheme edd: .
+
+edd:provisional a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "provisional" ;
+    rdfs:range edd:ProvisionalEnum ;
+    skos:inScheme edd: .
+
+edd:pubchem_cid a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pubchem_cid" ;
+    rdfs:range linkml:Integer ;
+    skos:inScheme edd: .
+
+edd:registry_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "registry_id" ;
+    rdfs:range linkml:String ;
+    skos:inScheme edd: .
+
+edd:registry_url a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "registry_url" ;
+    rdfs:range edd:https_identifier ;
+    skos:inScheme edd: .
+
+edd:short_name a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "short_name" ;
+    rdfs:range linkml:String ;
+    skos:inScheme edd: .
+
+edd:smiles a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "smiles" ;
+    rdfs:range linkml:String ;
+    skos:inScheme edd: .
+
+edd:type_field a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "type_field" ;
+    rdfs:range edd:TypeFieldEnum ;
+    skos:inScheme edd: .
+
+edd:type_i18n a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "type_i18n" ;
+    rdfs:range linkml:String ;
+    skos:inScheme edd: .
+
+edd:type_source_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "type_source_id" ;
+    rdfs:range linkml:String ;
+    skos:inScheme edd: .
+
+edd:unit_name a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "unit_name" ;
+    rdfs:range edd:UnitNameEnum ;
+    skos:inScheme edd: .
+
+edd:variant_of_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "variant_of_id" ;
+    rdfs:range edd:VariantOfIdEnum ;
+    skos:inScheme edd: .
+
+edd:gene_length a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "gene_length" ;
+    rdfs:range linkml:String ;
+    skos:inScheme edd: .
+
+edd:protein_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "protein_id" ;
+    rdfs:range linkml:Integer ;
+    skos:inScheme edd: .
+
+edd:strain_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "strain_id" ;
+    rdfs:range linkml:Integer ;
+    skos:inScheme edd: .
+
+edd:DisplayEnum a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( <https://w3id.org/eddDisplayEnum#t> <https://w3id.org/eddDisplayEnum#f> ) ;
+    linkml:permissible_values <https://w3id.org/eddDisplayEnum#f>,
+        <https://w3id.org/eddDisplayEnum#t> .
+
+edd:ProvisionalEnum a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( <https://w3id.org/eddProvisionalEnum#t> <https://w3id.org/eddProvisionalEnum#f> ) ;
+    linkml:permissible_values <https://w3id.org/eddProvisionalEnum#f>,
+        <https://w3id.org/eddProvisionalEnum#t> .
+
+edd:object_ref_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "object_ref_id" ;
+    rdfs:range linkml:Integer ;
+    skos:inScheme edd: .
+
+edd:type_group a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "type_group" ;
+    rdfs:range edd:TypeGroupEnum ;
+    skos:inScheme edd: .
+
+edd:type_name a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "type_name" ;
+    rdfs:range linkml:String ;
+    skos:inScheme edd: .
+
+edd:uuid a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "uuid" ;
+    rdfs:range linkml:String ;
+    skos:inScheme edd: .
+
+edd:PrefixEnum a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( <https://w3id.org/eddPrefixEnum#A> <https://w3id.org/eddPrefixEnum#L> <https://w3id.org/eddPrefixEnum#S> ) ;
+    linkml:permissible_values <https://w3id.org/eddPrefixEnum#A>,
+        <https://w3id.org/eddPrefixEnum#L>,
+        <https://w3id.org/eddPrefixEnum#S> .
+
+edd:measurementtype_ptr_id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "measurementtype_ptr_id" ;
+    rdfs:range linkml:Integer ;
+    skos:inScheme edd: .
+
+edd:id a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "id" ;
+    rdfs:range linkml:Integer ;
+    skos:inScheme edd: .
+
+edd:TypeGroupEnum a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( <https://w3id.org/eddTypeGroupEnum#h> <https://w3id.org/eddTypeGroupEnum#g> <https://w3id.org/eddTypeGroupEnum#m> <https://w3id.org/eddTypeGroupEnum#_> <https://w3id.org/eddTypeGroupEnum#p> ) ;
+    linkml:permissible_values <https://w3id.org/eddTypeGroupEnum#_>,
+        <https://w3id.org/eddTypeGroupEnum#g>,
+        <https://w3id.org/eddTypeGroupEnum#h>,
+        <https://w3id.org/eddTypeGroupEnum#m>,
+        <https://w3id.org/eddTypeGroupEnum#p> .
+
+edd:InputTypeEnum a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( <https://w3id.org/eddInputTypeEnum#replicate> <https://w3id.org/eddInputTypeEnum#strain> <https://w3id.org/eddInputTypeEnum#user> <https://w3id.org/eddInputTypeEnum#textarea> <https://w3id.org/eddInputTypeEnum#carbon_source> <https://w3id.org/eddInputTypeEnum#checkbox> ) ;
+    linkml:permissible_values <https://w3id.org/eddInputTypeEnum#carbon_source>,
+        <https://w3id.org/eddInputTypeEnum#checkbox>,
+        <https://w3id.org/eddInputTypeEnum#replicate>,
+        <https://w3id.org/eddInputTypeEnum#strain>,
+        <https://w3id.org/eddInputTypeEnum#textarea>,
+        <https://w3id.org/eddInputTypeEnum#user> .
+
+edd:VariantOfIdEnum a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( <https://w3id.org/eddVariantOfIdEnum#OD> <https://w3id.org/eddVariantOfIdEnum#RAMOS> <https://w3id.org/eddVariantOfIdEnum#LCMS> <https://w3id.org/eddVariantOfIdEnum#7948> <https://w3id.org/eddVariantOfIdEnum#TPOMICS> <https://w3id.org/eddVariantOfIdEnum#NA> <https://w3id.org/eddVariantOfIdEnum#HPLC> ) ;
+    linkml:permissible_values <https://w3id.org/eddVariantOfIdEnum#7948>,
+        <https://w3id.org/eddVariantOfIdEnum#HPLC>,
+        <https://w3id.org/eddVariantOfIdEnum#LCMS>,
+        <https://w3id.org/eddVariantOfIdEnum#NA>,
+        <https://w3id.org/eddVariantOfIdEnum#OD>,
+        <https://w3id.org/eddVariantOfIdEnum#RAMOS>,
+        <https://w3id.org/eddVariantOfIdEnum#TPOMICS> .
+
+edd:DbInstanceEnum a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( <https://w3id.org/eddDbInstanceEnum#metadata_plus.abf-public.sql> <https://w3id.org/eddDbInstanceEnum#metadata_plus.abf.sql> <https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei.sql> <https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei-public.sql> ) ;
+    linkml:permissible_values <https://w3id.org/eddDbInstanceEnum#metadata_plus.abf-public.sql>,
+        <https://w3id.org/eddDbInstanceEnum#metadata_plus.abf.sql>,
+        <https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei-public.sql>,
+        <https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei.sql> .
+
+edd:TagsEnum a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( <https://w3id.org/eddTagsEnum#LCMS> <https://w3id.org/eddTagsEnum#Mevalonate> <https://w3id.org/eddTagsEnum#Acetyl-CoA> <https://w3id.org/eddTagsEnum#tag> <https://w3id.org/eddTagsEnum#needs-verification> <https://w3id.org/eddTagsEnum#Mevalonate+Pathway> <https://w3id.org/eddTagsEnum#HPLC> <https://w3id.org/eddTagsEnum#needs-validation> ) ;
+    linkml:permissible_values <https://w3id.org/eddTagsEnum#Acetyl-CoA>,
+        <https://w3id.org/eddTagsEnum#HPLC>,
+        <https://w3id.org/eddTagsEnum#LCMS>,
+        <https://w3id.org/eddTagsEnum#Mevalonate>,
+        <https://w3id.org/eddTagsEnum#Mevalonate+Pathway>,
+        <https://w3id.org/eddTagsEnum#needs-validation>,
+        <https://w3id.org/eddTagsEnum#needs-verification>,
+        <https://w3id.org/eddTagsEnum#tag> .
+
+edd:ForContextEnum a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( <https://w3id.org/eddForContextEnum#replicate> <https://w3id.org/eddForContextEnum#string> <https://w3id.org/eddForContextEnum#A> <https://w3id.org/eddForContextEnum#L> <https://w3id.org/eddForContextEnum#strain> <https://w3id.org/eddForContextEnum#user> <https://w3id.org/eddForContextEnum#textarea> <https://w3id.org/eddForContextEnum#S> <https://w3id.org/eddForContextEnum#carbon_source> <https://w3id.org/eddForContextEnum#checkbox> ) ;
+    linkml:permissible_values <https://w3id.org/eddForContextEnum#A>,
+        <https://w3id.org/eddForContextEnum#L>,
+        <https://w3id.org/eddForContextEnum#S>,
+        <https://w3id.org/eddForContextEnum#carbon_source>,
+        <https://w3id.org/eddForContextEnum#checkbox>,
+        <https://w3id.org/eddForContextEnum#replicate>,
+        <https://w3id.org/eddForContextEnum#strain>,
+        <https://w3id.org/eddForContextEnum#string>,
+        <https://w3id.org/eddForContextEnum#textarea>,
+        <https://w3id.org/eddForContextEnum#user> .
+
+edd:CategorizationEnum a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( <https://w3id.org/eddCategorizationEnum#5> <https://w3id.org/eddCategorizationEnum#7> <https://w3id.org/eddCategorizationEnum#OD> <https://w3id.org/eddCategorizationEnum#3> <https://w3id.org/eddCategorizationEnum#10> <https://w3id.org/eddCategorizationEnum#LCMS> <https://w3id.org/eddCategorizationEnum#1> <https://w3id.org/eddCategorizationEnum#6> <https://w3id.org/eddCategorizationEnum#TPOMICS> <https://w3id.org/eddCategorizationEnum#NA> <https://w3id.org/eddCategorizationEnum#HPLC> ) ;
+    linkml:permissible_values <https://w3id.org/eddCategorizationEnum#1>,
+        <https://w3id.org/eddCategorizationEnum#10>,
+        <https://w3id.org/eddCategorizationEnum#3>,
+        <https://w3id.org/eddCategorizationEnum#5>,
+        <https://w3id.org/eddCategorizationEnum#6>,
+        <https://w3id.org/eddCategorizationEnum#7>,
+        <https://w3id.org/eddCategorizationEnum#HPLC>,
+        <https://w3id.org/eddCategorizationEnum#LCMS>,
+        <https://w3id.org/eddCategorizationEnum#NA>,
+        <https://w3id.org/eddCategorizationEnum#OD>,
+        <https://w3id.org/eddCategorizationEnum#TPOMICS> .
+
+edd:db_instance a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "db_instance" ;
+    rdfs:range edd:DbInstanceEnum ;
+    skos:inScheme edd: .
+
+edd:TypeFieldEnum a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( <https://w3id.org/eddTypeFieldEnum#37> <https://w3id.org/eddTypeFieldEnum#description> <https://w3id.org/eddTypeFieldEnum#control> <https://w3id.org/eddTypeFieldEnum#flush> <https://w3id.org/eddTypeFieldEnum#0.1> <https://w3id.org/eddTypeFieldEnum#contact_extra> <https://w3id.org/eddTypeFieldEnum#strains> <https://w3id.org/eddTypeFieldEnum#200> <https://w3id.org/eddTypeFieldEnum#carbon_source> <https://w3id.org/eddTypeFieldEnum#experimenter> <https://w3id.org/eddTypeFieldEnum#NONE> <https://w3id.org/eddTypeFieldEnum#--> <https://w3id.org/eddTypeFieldEnum#contact> ) ;
+    linkml:permissible_values <https://w3id.org/eddTypeFieldEnum#-->,
+        <https://w3id.org/eddTypeFieldEnum#0.1>,
+        <https://w3id.org/eddTypeFieldEnum#200>,
+        <https://w3id.org/eddTypeFieldEnum#37>,
+        <https://w3id.org/eddTypeFieldEnum#NONE>,
+        <https://w3id.org/eddTypeFieldEnum#carbon_source>,
+        <https://w3id.org/eddTypeFieldEnum#contact>,
+        <https://w3id.org/eddTypeFieldEnum#contact_extra>,
+        <https://w3id.org/eddTypeFieldEnum#control>,
+        <https://w3id.org/eddTypeFieldEnum#description>,
+        <https://w3id.org/eddTypeFieldEnum#experimenter>,
+        <https://w3id.org/eddTypeFieldEnum#flush>,
+        <https://w3id.org/eddTypeFieldEnum#strains> .
+
+edd:DefaultValueEnum a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( <https://w3id.org/eddDefaultValueEnum#37> <https://w3id.org/eddDefaultValueEnum#°C> <https://w3id.org/eddDefaultValueEnum#ºC> <https://w3id.org/eddDefaultValueEnum#rpm> <https://w3id.org/eddDefaultValueEnum#1> <https://w3id.org/eddDefaultValueEnum#bsa-fast-13min-cold.m> <https://w3id.org/eddDefaultValueEnum#flush> <https://w3id.org/eddDefaultValueEnum#hr> <https://w3id.org/eddDefaultValueEnum#mL> <https://w3id.org/eddDefaultValueEnum#mM> <https://w3id.org/eddDefaultValueEnum#200> <https://w3id.org/eddDefaultValueEnum#--> <https://w3id.org/eddDefaultValueEnum#NONE> <https://w3id.org/eddDefaultValueEnum#mm> <https://w3id.org/eddDefaultValueEnum#Vial+1> <https://w3id.org/eddDefaultValueEnum#0.1> ) ;
+    linkml:permissible_values <https://w3id.org/eddDefaultValueEnum#-->,
+        <https://w3id.org/eddDefaultValueEnum#0.1>,
+        <https://w3id.org/eddDefaultValueEnum#1>,
+        <https://w3id.org/eddDefaultValueEnum#200>,
+        <https://w3id.org/eddDefaultValueEnum#37>,
+        <https://w3id.org/eddDefaultValueEnum#NONE>,
+        <https://w3id.org/eddDefaultValueEnum#Vial+1>,
+        <https://w3id.org/eddDefaultValueEnum#bsa-fast-13min-cold.m>,
+        <https://w3id.org/eddDefaultValueEnum#flush>,
+        <https://w3id.org/eddDefaultValueEnum#hr>,
+        <https://w3id.org/eddDefaultValueEnum#mL>,
+        <https://w3id.org/eddDefaultValueEnum#mM>,
+        <https://w3id.org/eddDefaultValueEnum#mm>,
+        <https://w3id.org/eddDefaultValueEnum#rpm>,
+        <https://w3id.org/eddDefaultValueEnum#°C>,
+        <https://w3id.org/eddDefaultValueEnum#ºC> .
+
+edd:AlternateNamesEnum a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( <https://w3id.org/eddAlternateNamesEnum#µM> <https://w3id.org/eddAlternateNamesEnum#ng> <https://w3id.org/eddAlternateNamesEnum#mmol/L> <https://w3id.org/eddAlternateNamesEnum#uM> <https://w3id.org/eddAlternateNamesEnum#kg> <https://w3id.org/eddAlternateNamesEnum#grams> <https://w3id.org/eddAlternateNamesEnum#L> <https://w3id.org/eddAlternateNamesEnum#g> <https://w3id.org/eddAlternateNamesEnum#Percent> <https://w3id.org/eddAlternateNamesEnum#g/L/hr> <https://w3id.org/eddAlternateNamesEnum#µg/L> <https://w3id.org/eddAlternateNamesEnum#nanomolar> <https://w3id.org/eddAlternateNamesEnum#mmole/mmole> <https://w3id.org/eddAlternateNamesEnum#mL> <https://w3id.org/eddAlternateNamesEnum#mg> <https://w3id.org/eddAlternateNamesEnum#µL> <https://w3id.org/eddAlternateNamesEnum#mmole/mmodel> ) ;
+    linkml:permissible_values <https://w3id.org/eddAlternateNamesEnum#L>,
+        <https://w3id.org/eddAlternateNamesEnum#Percent>,
+        <https://w3id.org/eddAlternateNamesEnum#g>,
+        <https://w3id.org/eddAlternateNamesEnum#g/L/hr>,
+        <https://w3id.org/eddAlternateNamesEnum#grams>,
+        <https://w3id.org/eddAlternateNamesEnum#kg>,
+        <https://w3id.org/eddAlternateNamesEnum#mL>,
+        <https://w3id.org/eddAlternateNamesEnum#mg>,
+        <https://w3id.org/eddAlternateNamesEnum#mmol/L>,
+        <https://w3id.org/eddAlternateNamesEnum#mmole/mmodel>,
+        <https://w3id.org/eddAlternateNamesEnum#mmole/mmole>,
+        <https://w3id.org/eddAlternateNamesEnum#nanomolar>,
+        <https://w3id.org/eddAlternateNamesEnum#ng>,
+        <https://w3id.org/eddAlternateNamesEnum#uM>,
+        <https://w3id.org/eddAlternateNamesEnum#µL>,
+        <https://w3id.org/eddAlternateNamesEnum#µM>,
+        <https://w3id.org/eddAlternateNamesEnum#µg/L> .
+
+edd: a owl:Ontology ;
+    rdfs:label "edd" ;
+    skos:definition "NON-OFFICIAL rendering of EDD schema as LinkML (for demo purposes)" .
+
+edd:UnitNameEnum a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( <https://w3id.org/eddUnitNameEnum#L/h> <https://w3id.org/eddUnitNameEnum#Liters> <https://w3id.org/eddUnitNameEnum#uM> <https://w3id.org/eddUnitNameEnum#RPKM> <https://w3id.org/eddUnitNameEnum#ug/L> <https://w3id.org/eddUnitNameEnum#Percent> <https://w3id.org/eddUnitNameEnum#TMM> <https://w3id.org/eddUnitNameEnum#nM> <https://w3id.org/eddUnitNameEnum#MEFL> <https://w3id.org/eddUnitNameEnum#milligrams> <https://w3id.org/eddUnitNameEnum#mmol> <https://w3id.org/eddUnitNameEnum#L/m> <https://w3id.org/eddUnitNameEnum#spectral+count> <https://w3id.org/eddUnitNameEnum#TPM> <https://w3id.org/eddUnitNameEnum#proteins/cell> <https://w3id.org/eddUnitNameEnum#percent> <https://w3id.org/eddUnitNameEnum#Yield+(mmole/mmole)> <https://w3id.org/eddUnitNameEnum#moles+/+moles+glucose> <https://w3id.org/eddUnitNameEnum#intensity> <https://w3id.org/eddUnitNameEnum#counts> <https://w3id.org/eddUnitNameEnum#FPKM> <https://w3id.org/eddUnitNameEnum#Productivity+(g/L/hr)> <https://w3id.org/eddUnitNameEnum#mL> <https://w3id.org/eddUnitNameEnum#relative> <https://w3id.org/eddUnitNameEnum#milliliters> <https://w3id.org/eddUnitNameEnum#RPM> <https://w3id.org/eddUnitNameEnum#g/L> <https://w3id.org/eddUnitNameEnum#mol/L/hr> <https://w3id.org/eddUnitNameEnum#uL> <https://w3id.org/eddUnitNameEnum#Cmol/L> <https://w3id.org/eddUnitNameEnum#mol/L> <https://w3id.org/eddUnitNameEnum#Celsius> <https://w3id.org/eddUnitNameEnum#mg/L> <https://w3id.org/eddUnitNameEnum#grams> <https://w3id.org/eddUnitNameEnum#mol> <https://w3id.org/eddUnitNameEnum#CPM> <https://w3id.org/eddUnitNameEnum#Histogram+0.15:7.95:0.10> <https://w3id.org/eddUnitNameEnum#mM> <https://w3id.org/eddUnitNameEnum#hours> <https://w3id.org/eddUnitNameEnum#mg+SolSgr+/+10+mg+CW> <https://w3id.org/eddUnitNameEnum#mmol/L/h> <https://w3id.org/eddUnitNameEnum#nanograms> <https://w3id.org/eddUnitNameEnum#Cmol> <https://w3id.org/eddUnitNameEnum#lpm> <https://w3id.org/eddUnitNameEnum#ppm> <https://w3id.org/eddUnitNameEnum#g> <https://w3id.org/eddUnitNameEnum#kilograms> <https://w3id.org/eddUnitNameEnum#n/a> ) ;
+    linkml:permissible_values <https://w3id.org/eddUnitNameEnum#CPM>,
+        <https://w3id.org/eddUnitNameEnum#Celsius>,
+        <https://w3id.org/eddUnitNameEnum#Cmol>,
+        <https://w3id.org/eddUnitNameEnum#Cmol/L>,
+        <https://w3id.org/eddUnitNameEnum#FPKM>,
+        <https://w3id.org/eddUnitNameEnum#Histogram+0.15:7.95:0.10>,
+        <https://w3id.org/eddUnitNameEnum#L/h>,
+        <https://w3id.org/eddUnitNameEnum#L/m>,
+        <https://w3id.org/eddUnitNameEnum#Liters>,
+        <https://w3id.org/eddUnitNameEnum#MEFL>,
+        <https://w3id.org/eddUnitNameEnum#Percent>,
+        <https://w3id.org/eddUnitNameEnum#Productivity+(g/L/hr)>,
+        <https://w3id.org/eddUnitNameEnum#RPKM>,
+        <https://w3id.org/eddUnitNameEnum#RPM>,
+        <https://w3id.org/eddUnitNameEnum#TMM>,
+        <https://w3id.org/eddUnitNameEnum#TPM>,
+        <https://w3id.org/eddUnitNameEnum#Yield+(mmole/mmole)>,
+        <https://w3id.org/eddUnitNameEnum#counts>,
+        <https://w3id.org/eddUnitNameEnum#g>,
+        <https://w3id.org/eddUnitNameEnum#g/L>,
+        <https://w3id.org/eddUnitNameEnum#grams>,
+        <https://w3id.org/eddUnitNameEnum#hours>,
+        <https://w3id.org/eddUnitNameEnum#intensity>,
+        <https://w3id.org/eddUnitNameEnum#kilograms>,
+        <https://w3id.org/eddUnitNameEnum#lpm>,
+        <https://w3id.org/eddUnitNameEnum#mL>,
+        <https://w3id.org/eddUnitNameEnum#mM>,
+        <https://w3id.org/eddUnitNameEnum#mg+SolSgr+/+10+mg+CW>,
+        <https://w3id.org/eddUnitNameEnum#mg/L>,
+        <https://w3id.org/eddUnitNameEnum#milligrams>,
+        <https://w3id.org/eddUnitNameEnum#milliliters>,
+        <https://w3id.org/eddUnitNameEnum#mmol>,
+        <https://w3id.org/eddUnitNameEnum#mmol/L/h>,
+        <https://w3id.org/eddUnitNameEnum#mol>,
+        <https://w3id.org/eddUnitNameEnum#mol/L>,
+        <https://w3id.org/eddUnitNameEnum#mol/L/hr>,
+        <https://w3id.org/eddUnitNameEnum#moles+/+moles+glucose>,
+        <https://w3id.org/eddUnitNameEnum#n/a>,
+        <https://w3id.org/eddUnitNameEnum#nM>,
+        <https://w3id.org/eddUnitNameEnum#nanograms>,
+        <https://w3id.org/eddUnitNameEnum#percent>,
+        <https://w3id.org/eddUnitNameEnum#ppm>,
+        <https://w3id.org/eddUnitNameEnum#proteins/cell>,
+        <https://w3id.org/eddUnitNameEnum#relative>,
+        <https://w3id.org/eddUnitNameEnum#spectral+count>,
+        <https://w3id.org/eddUnitNameEnum#uL>,
+        <https://w3id.org/eddUnitNameEnum#uM>,
+        <https://w3id.org/eddUnitNameEnum#ug/L> .
+

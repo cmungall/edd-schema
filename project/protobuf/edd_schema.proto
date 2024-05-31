@@ -1,0 +1,90 @@
+ syntax="proto3";
+ package
+// metamodel_version: 1.7.0
+message GeneIdentifier
+ {
+  integer measurementtypePtrId = 0
+  string geneLength = 0
+  dbInstanceEnum dbInstance = 0
+ }
+message MeasurementType
+ {
+  integer id = 0
+  string typeName = 0
+  string shortName = 0
+  typeGroupEnum typeGroup = 0
+  string uuid = 0
+  string typeSourceId = 0
+ repeated  string altNames = 0
+  provisionalEnum provisional = 0
+  dbInstanceEnum dbInstance = 0
+ }
+message MeasurementUnit
+ {
+  integer id = 0
+  unitNameEnum unitName = 0
+  displayEnum display = 0
+  alternateNamesEnum alternateNames = 0
+  typeGroupEnum typeGroup = 0
+  dbInstanceEnum dbInstance = 0
+ }
+message Metabolite
+ {
+  integer measurementtypePtrId = 0
+  integer charge = 0
+  integer carbonCount = 0
+  float molarMass = 0
+  string molecularFormula = 0
+ repeated  tagsEnum tags = 0
+ repeated  string idMap = 0
+  string smiles = 0
+  integer pubchemCid = 0
+  dbInstanceEnum dbInstance = 0
+ }
+message MetadataType
+ {
+  integer id = 0
+  string typeName = 0
+  string typeI18n = 0
+  typeFieldEnum typeField = 0
+  inputTypeEnum inputType = 0
+  defaultValueEnum defaultValue = 0
+  prefixEnum prefix = 0
+  string postfix = 0
+  forContextEnum forContext = 0
+  string uuid = 0
+  string groupId = 0
+  dbInstanceEnum dbInstance = 0
+ }
+message ProteinIdentifier
+ {
+  integer measurementtypePtrId = 0
+ repeated  string accessionId = 0
+  float length = 0
+ repeated  string mass = 0
+  string accessionCode = 0
+  dbInstanceEnum dbInstance = 0
+ }
+message ProteinStrain
+ {
+  integer id = 0
+  integer proteinId = 0
+  integer strainId = 0
+  dbInstanceEnum dbInstance = 0
+ }
+message Protocol
+ {
+  integer objectRefId = 0
+  categorizationEnum categorization = 0
+  integer defaultUnitsId = 0
+  integer ownedById = 0
+  variantOfIdEnum variantOfId = 0
+  dbInstanceEnum dbInstance = 0
+ }
+message Strain
+ {
+  integer objectRefId = 0
+  string registryId = 0
+  httpsIdentifier registryUrl = 0
+  dbInstanceEnum dbInstance = 0
+ }

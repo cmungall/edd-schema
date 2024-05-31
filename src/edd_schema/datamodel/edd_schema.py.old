@@ -1,0 +1,2164 @@
+# Auto generated from edd_schema.yaml by pythongen.py version: 0.0.1
+# Generation date: 2024-05-31T15:18:53
+# Schema: edd
+#
+# id: https://w3id.org/edd
+# description: edd
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+
+import dataclasses
+import re
+from jsonasobj2 import JsonObj, as_dict
+from typing import Optional, List, Union, Dict, ClassVar, Any
+from dataclasses import dataclass
+from datetime import date, datetime
+from linkml_runtime.linkml_model.meta import EnumDefinition, PermissibleValue, PvFormulaOptions
+
+from linkml_runtime.utils.slot import Slot
+from linkml_runtime.utils.metamodelcore import empty_list, empty_dict, bnode
+from linkml_runtime.utils.yamlutils import YAMLRoot, extended_str, extended_float, extended_int
+from linkml_runtime.utils.dataclass_extensions_376 import dataclasses_init_fn_with_kwargs
+from linkml_runtime.utils.formatutils import camelcase, underscore, sfx
+from linkml_runtime.utils.enumerations import EnumDefinitionImpl
+from rdflib import Namespace, URIRef
+from linkml_runtime.utils.curienamespace import CurieNamespace
+from linkml_runtime.linkml_model.types import Integer, String
+
+metamodel_version = "1.7.0"
+version = None
+
+# Overwrite dataclasses _init_fn to add **kwargs in __init__
+dataclasses._init_fn = dataclasses_init_fn_with_kwargs
+
+# Namespaces
+EDD = CurieNamespace('edd', 'https://w3id.org/edd')
+LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
+XSD = CurieNamespace('xsd', 'http://www.w3.org/2001/XMLSchema#')
+DEFAULT_ = EDD
+
+
+# Types
+class HttpsIdentifier(String):
+    type_class_uri = XSD["string"]
+    type_class_curie = "xsd:string"
+    type_name = "https identifier"
+    type_model_uri = EDD.HttpsIdentifier
+
+
+# Class references
+
+
+
+@dataclass
+class MeasurementType(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = EDD["MeasurementType"]
+    class_class_curie: ClassVar[str] = "edd:MeasurementType"
+    class_name: ClassVar[str] = "measurement_type"
+    class_model_uri: ClassVar[URIRef] = EDD.MeasurementType
+
+    id: Optional[int] = None
+    type_name: Optional[Union[str, List[str]]] = empty_list()
+    short_name: Optional[str] = None
+    type_group: Optional[Union[str, "TypeGroupEnum"]] = None
+    uuid: Optional[str] = None
+    type_source_id: Optional[str] = None
+    alt_names: Optional[Union[str, List[str]]] = empty_list()
+    provisional: Optional[Union[str, "ProvisionalEnum"]] = None
+    db_instance: Optional[Union[str, "DbInstanceEnum"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is not None and not isinstance(self.id, int):
+            self.id = int(self.id)
+
+        if not isinstance(self.type_name, list):
+            self.type_name = [self.type_name] if self.type_name is not None else []
+        self.type_name = [v if isinstance(v, str) else str(v) for v in self.type_name]
+
+        if self.short_name is not None and not isinstance(self.short_name, str):
+            self.short_name = str(self.short_name)
+
+        if self.type_group is not None and not isinstance(self.type_group, TypeGroupEnum):
+            self.type_group = TypeGroupEnum(self.type_group)
+
+        if self.uuid is not None and not isinstance(self.uuid, str):
+            self.uuid = str(self.uuid)
+
+        if self.type_source_id is not None and not isinstance(self.type_source_id, str):
+            self.type_source_id = str(self.type_source_id)
+
+        if not isinstance(self.alt_names, list):
+            self.alt_names = [self.alt_names] if self.alt_names is not None else []
+        self.alt_names = [v if isinstance(v, str) else str(v) for v in self.alt_names]
+
+        if self.provisional is not None and not isinstance(self.provisional, ProvisionalEnum):
+            self.provisional = ProvisionalEnum(self.provisional)
+
+        if self.db_instance is not None and not isinstance(self.db_instance, DbInstanceEnum):
+            self.db_instance = DbInstanceEnum(self.db_instance)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class MeasurementUnit(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = EDD["MeasurementUnit"]
+    class_class_curie: ClassVar[str] = "edd:MeasurementUnit"
+    class_name: ClassVar[str] = "measurement_unit"
+    class_model_uri: ClassVar[URIRef] = EDD.MeasurementUnit
+
+    id: Optional[int] = None
+    unit_name: Optional[Union[str, "UnitNameEnum"]] = None
+    display: Optional[Union[str, "DisplayEnum"]] = None
+    alternate_names: Optional[Union[str, "AlternateNamesEnum"]] = None
+    type_group: Optional[Union[str, "TypeGroupEnum"]] = None
+    db_instance: Optional[Union[str, "DbInstanceEnum"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is not None and not isinstance(self.id, int):
+            self.id = int(self.id)
+
+        if self.unit_name is not None and not isinstance(self.unit_name, UnitNameEnum):
+            self.unit_name = UnitNameEnum(self.unit_name)
+
+        if self.display is not None and not isinstance(self.display, DisplayEnum):
+            self.display = DisplayEnum(self.display)
+
+        if self.alternate_names is not None and not isinstance(self.alternate_names, AlternateNamesEnum):
+            self.alternate_names = AlternateNamesEnum(self.alternate_names)
+
+        if self.type_group is not None and not isinstance(self.type_group, TypeGroupEnum):
+            self.type_group = TypeGroupEnum(self.type_group)
+
+        if self.db_instance is not None and not isinstance(self.db_instance, DbInstanceEnum):
+            self.db_instance = DbInstanceEnum(self.db_instance)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class MetadataType(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = EDD["MetadataType"]
+    class_class_curie: ClassVar[str] = "edd:MetadataType"
+    class_name: ClassVar[str] = "metadata_type"
+    class_model_uri: ClassVar[URIRef] = EDD.MetadataType
+
+    id: Optional[int] = None
+    type_name: Optional[Union[str, List[str]]] = empty_list()
+    type_i18n: Optional[Union[str, "TypeI18nEnum"]] = None
+    type_field: Optional[Union[str, "TypeFieldEnum"]] = None
+    input_type: Optional[Union[str, "InputTypeEnum"]] = None
+    default_value: Optional[Union[str, "DefaultValueEnum"]] = None
+    prefix: Optional[Union[str, "PrefixEnum"]] = None
+    postfix: Optional[Union[str, "PostfixEnum"]] = None
+    for_context: Optional[Union[str, "ForContextEnum"]] = None
+    uuid: Optional[str] = None
+    group_id: Optional[Union[str, "GroupIdEnum"]] = None
+    db_instance: Optional[Union[str, "DbInstanceEnum"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is not None and not isinstance(self.id, int):
+            self.id = int(self.id)
+
+        if not isinstance(self.type_name, list):
+            self.type_name = [self.type_name] if self.type_name is not None else []
+        self.type_name = [v if isinstance(v, str) else str(v) for v in self.type_name]
+
+        if self.type_i18n is not None and not isinstance(self.type_i18n, TypeI18nEnum):
+            self.type_i18n = TypeI18nEnum(self.type_i18n)
+
+        if self.type_field is not None and not isinstance(self.type_field, TypeFieldEnum):
+            self.type_field = TypeFieldEnum(self.type_field)
+
+        if self.input_type is not None and not isinstance(self.input_type, InputTypeEnum):
+            self.input_type = InputTypeEnum(self.input_type)
+
+        if self.default_value is not None and not isinstance(self.default_value, DefaultValueEnum):
+            self.default_value = DefaultValueEnum(self.default_value)
+
+        if self.prefix is not None and not isinstance(self.prefix, PrefixEnum):
+            self.prefix = PrefixEnum(self.prefix)
+
+        if self.postfix is not None and not isinstance(self.postfix, PostfixEnum):
+            self.postfix = PostfixEnum(self.postfix)
+
+        if self.for_context is not None and not isinstance(self.for_context, ForContextEnum):
+            self.for_context = ForContextEnum(self.for_context)
+
+        if self.uuid is not None and not isinstance(self.uuid, str):
+            self.uuid = str(self.uuid)
+
+        if self.group_id is not None and not isinstance(self.group_id, GroupIdEnum):
+            self.group_id = GroupIdEnum(self.group_id)
+
+        if self.db_instance is not None and not isinstance(self.db_instance, DbInstanceEnum):
+            self.db_instance = DbInstanceEnum(self.db_instance)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Protocol(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = EDD["Protocol"]
+    class_class_curie: ClassVar[str] = "edd:Protocol"
+    class_name: ClassVar[str] = "protocol"
+    class_model_uri: ClassVar[URIRef] = EDD.Protocol
+
+    object_ref_id: Optional[int] = None
+    categorization: Optional[Union[str, "CategorizationEnum"]] = None
+    default_units_id: Optional[int] = None
+    owned_by_id: Optional[int] = None
+    variant_of_id: Optional[Union[str, "VariantOfIdEnum"]] = None
+    db_instance: Optional[Union[str, "DbInstanceEnum"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.object_ref_id is not None and not isinstance(self.object_ref_id, int):
+            self.object_ref_id = int(self.object_ref_id)
+
+        if self.categorization is not None and not isinstance(self.categorization, CategorizationEnum):
+            self.categorization = CategorizationEnum(self.categorization)
+
+        if self.default_units_id is not None and not isinstance(self.default_units_id, int):
+            self.default_units_id = int(self.default_units_id)
+
+        if self.owned_by_id is not None and not isinstance(self.owned_by_id, int):
+            self.owned_by_id = int(self.owned_by_id)
+
+        if self.variant_of_id is not None and not isinstance(self.variant_of_id, VariantOfIdEnum):
+            self.variant_of_id = VariantOfIdEnum(self.variant_of_id)
+
+        if self.db_instance is not None and not isinstance(self.db_instance, DbInstanceEnum):
+            self.db_instance = DbInstanceEnum(self.db_instance)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Strain(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = EDD["Strain"]
+    class_class_curie: ClassVar[str] = "edd:Strain"
+    class_name: ClassVar[str] = "strain"
+    class_model_uri: ClassVar[URIRef] = EDD.Strain
+
+    object_ref_id: Optional[int] = None
+    registry_id: Optional[str] = None
+    registry_url: Optional[Union[str, HttpsIdentifier]] = None
+    db_instance: Optional[Union[str, "DbInstanceEnum"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.object_ref_id is not None and not isinstance(self.object_ref_id, int):
+            self.object_ref_id = int(self.object_ref_id)
+
+        if self.registry_id is not None and not isinstance(self.registry_id, str):
+            self.registry_id = str(self.registry_id)
+
+        if self.registry_url is not None and not isinstance(self.registry_url, HttpsIdentifier):
+            self.registry_url = HttpsIdentifier(self.registry_url)
+
+        if self.db_instance is not None and not isinstance(self.db_instance, DbInstanceEnum):
+            self.db_instance = DbInstanceEnum(self.db_instance)
+
+        super().__post_init__(**kwargs)
+
+
+# Enumerations
+class TypeGroupEnum(EnumDefinitionImpl):
+
+    p = PermissibleValue(
+        text="p",
+        description="p")
+    g = PermissibleValue(
+        text="g",
+        description="g")
+    m = PermissibleValue(
+        text="m",
+        description="m")
+    _ = PermissibleValue(
+        text="_",
+        description="_")
+    h = PermissibleValue(
+        text="h",
+        description="h")
+
+    _defn = EnumDefinition(
+        name="TypeGroupEnum",
+    )
+
+class ProvisionalEnum(EnumDefinitionImpl):
+
+    f = PermissibleValue(
+        text="f",
+        description="f")
+    t = PermissibleValue(
+        text="t",
+        description="t")
+
+    _defn = EnumDefinition(
+        name="ProvisionalEnum",
+    )
+
+class DbInstanceEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="DbInstanceEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "metadata_plus.jbei.sql",
+            PermissibleValue(
+                text="metadata_plus.jbei.sql",
+                description="metadata_plus.jbei.sql"))
+        setattr(cls, "metadata_plus.abf-public.sql",
+            PermissibleValue(
+                text="metadata_plus.abf-public.sql",
+                description="metadata_plus.abf-public.sql"))
+        setattr(cls, "metadata_plus.abf.sql",
+            PermissibleValue(
+                text="metadata_plus.abf.sql",
+                description="metadata_plus.abf.sql"))
+        setattr(cls, "metadata_plus.jbei-public.sql",
+            PermissibleValue(
+                text="metadata_plus.jbei-public.sql",
+                description="metadata_plus.jbei-public.sql"))
+
+class UnitNameEnum(EnumDefinitionImpl):
+
+    milligrams = PermissibleValue(
+        text="milligrams",
+        description="milligrams")
+    Percent = PermissibleValue(
+        text="Percent",
+        description="Percent")
+    CPM = PermissibleValue(
+        text="CPM",
+        description="CPM")
+    ppm = PermissibleValue(
+        text="ppm",
+        description="ppm")
+    uL = PermissibleValue(
+        text="uL",
+        description="uL")
+    Liters = PermissibleValue(
+        text="Liters",
+        description="Liters")
+    grams = PermissibleValue(
+        text="grams",
+        description="grams")
+    counts = PermissibleValue(
+        text="counts",
+        description="counts")
+    mmol = PermissibleValue(
+        text="mmol",
+        description="mmol")
+    percent = PermissibleValue(
+        text="percent",
+        description="percent")
+    RPM = PermissibleValue(
+        text="RPM",
+        description="RPM")
+    milliliters = PermissibleValue(
+        text="milliliters",
+        description="milliliters")
+    TMM = PermissibleValue(
+        text="TMM",
+        description="TMM")
+    relative = PermissibleValue(
+        text="relative",
+        description="relative")
+    g = PermissibleValue(
+        text="g",
+        description="g")
+    TPM = PermissibleValue(
+        text="TPM",
+        description="TPM")
+    FPKM = PermissibleValue(
+        text="FPKM",
+        description="FPKM")
+    lpm = PermissibleValue(
+        text="lpm",
+        description="lpm")
+    kilograms = PermissibleValue(
+        text="kilograms",
+        description="kilograms")
+    MEFL = PermissibleValue(
+        text="MEFL",
+        description="MEFL")
+    Celsius = PermissibleValue(
+        text="Celsius",
+        description="Celsius")
+    mol = PermissibleValue(
+        text="mol",
+        description="mol")
+    mL = PermissibleValue(
+        text="mL",
+        description="mL")
+    Cmol = PermissibleValue(
+        text="Cmol",
+        description="Cmol")
+    mM = PermissibleValue(
+        text="mM",
+        description="mM")
+    RPKM = PermissibleValue(
+        text="RPKM",
+        description="RPKM")
+    uM = PermissibleValue(
+        text="uM",
+        description="uM")
+    hours = PermissibleValue(
+        text="hours",
+        description="hours")
+    intensity = PermissibleValue(
+        text="intensity",
+        description="intensity")
+    nM = PermissibleValue(
+        text="nM",
+        description="nM")
+    nanograms = PermissibleValue(
+        text="nanograms",
+        description="nanograms")
+
+    _defn = EnumDefinition(
+        name="UnitNameEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "spectral count",
+            PermissibleValue(
+                text="spectral count",
+                description="spectral count"))
+        setattr(cls, "L/h",
+            PermissibleValue(
+                text="L/h",
+                description="L/h"))
+        setattr(cls, "mol/L",
+            PermissibleValue(
+                text="mol/L",
+                description="mol/L"))
+        setattr(cls, "L/m",
+            PermissibleValue(
+                text="L/m",
+                description="L/m"))
+        setattr(cls, "g/L",
+            PermissibleValue(
+                text="g/L",
+                description="g/L"))
+        setattr(cls, "Histogram 0.15:7.95:0.10",
+            PermissibleValue(
+                text="Histogram 0.15:7.95:0.10",
+                description="Histogram 0.15:7.95:0.10"))
+        setattr(cls, "n/a",
+            PermissibleValue(
+                text="n/a",
+                description="n/a"))
+        setattr(cls, "ug/L",
+            PermissibleValue(
+                text="ug/L",
+                description="ug/L"))
+        setattr(cls, "Cmol/L",
+            PermissibleValue(
+                text="Cmol/L",
+                description="Cmol/L"))
+        setattr(cls, "mol/L/hr",
+            PermissibleValue(
+                text="mol/L/hr",
+                description="mol/L/hr"))
+        setattr(cls, "moles / moles glucose",
+            PermissibleValue(
+                text="moles / moles glucose",
+                description="moles / moles glucose"))
+        setattr(cls, "Productivity (g/L/hr)",
+            PermissibleValue(
+                text="Productivity (g/L/hr)",
+                description="Productivity (g/L/hr)"))
+        setattr(cls, "Yield (mmole/mmole)",
+            PermissibleValue(
+                text="Yield (mmole/mmole)",
+                description="Yield (mmole/mmole)"))
+        setattr(cls, "proteins/cell",
+            PermissibleValue(
+                text="proteins/cell",
+                description="proteins/cell"))
+        setattr(cls, "mmol/L/h",
+            PermissibleValue(
+                text="mmol/L/h",
+                description="mmol/L/h"))
+        setattr(cls, "mg SolSgr / 10 mg CW",
+            PermissibleValue(
+                text="mg SolSgr / 10 mg CW",
+                description="mg SolSgr / 10 mg CW"))
+        setattr(cls, "mg/L",
+            PermissibleValue(
+                text="mg/L",
+                description="mg/L"))
+
+class DisplayEnum(EnumDefinitionImpl):
+
+    f = PermissibleValue(
+        text="f",
+        description="f")
+    t = PermissibleValue(
+        text="t",
+        description="t")
+
+    _defn = EnumDefinition(
+        name="DisplayEnum",
+    )
+
+class AlternateNamesEnum(EnumDefinitionImpl):
+
+    mg = PermissibleValue(
+        text="mg",
+        description="mg")
+    ng = PermissibleValue(
+        text="ng",
+        description="ng")
+    grams = PermissibleValue(
+        text="grams",
+        description="grams")
+    Percent = PermissibleValue(
+        text="Percent",
+        description="Percent")
+    g = PermissibleValue(
+        text="g",
+        description="g")
+    mL = PermissibleValue(
+        text="mL",
+        description="mL")
+    µL = PermissibleValue(
+        text="µL",
+        description="µL")
+    nanomolar = PermissibleValue(
+        text="nanomolar",
+        description="nanomolar")
+    uM = PermissibleValue(
+        text="uM",
+        description="uM")
+    kg = PermissibleValue(
+        text="kg",
+        description="kg")
+    L = PermissibleValue(
+        text="L",
+        description="L")
+    µM = PermissibleValue(
+        text="µM",
+        description="µM")
+
+    _defn = EnumDefinition(
+        name="AlternateNamesEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "g/L/hr",
+            PermissibleValue(
+                text="g/L/hr",
+                description="g/L/hr"))
+        setattr(cls, "mmole/mmodel",
+            PermissibleValue(
+                text="mmole/mmodel",
+                description="mmole/mmodel"))
+        setattr(cls, "mmole/mmole",
+            PermissibleValue(
+                text="mmole/mmole",
+                description="mmole/mmole"))
+        setattr(cls, "µg/L",
+            PermissibleValue(
+                text="µg/L",
+                description="µg/L"))
+        setattr(cls, "mmol/L",
+            PermissibleValue(
+                text="mmol/L",
+                description="mmol/L"))
+
+class TypeNameEnum(EnumDefinitionImpl):
+
+    Replicate = PermissibleValue(
+        text="Replicate",
+        description="Replicate")
+    Barcode = PermissibleValue(
+        text="Barcode",
+        description="Barcode")
+    Promoter = PermissibleValue(
+        text="Promoter",
+        description="Promoter")
+    Induction = PermissibleValue(
+        text="Induction",
+        description="Induction")
+    Inductor = PermissibleValue(
+        text="Inductor",
+        description="Inductor")
+    Time = PermissibleValue(
+        text="Time",
+        description="Time")
+    Volume = PermissibleValue(
+        text="Volume",
+        description="Volume")
+    Control = PermissibleValue(
+        text="Control",
+        description="Control")
+    Stressor = PermissibleValue(
+        text="Stressor",
+        description="Stressor")
+    Media = PermissibleValue(
+        text="Media",
+        description="Media")
+    Irrigation = PermissibleValue(
+        text="Irrigation",
+        description="Irrigation")
+
+    _defn = EnumDefinition(
+        name="TypeNameEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Saccharification biomass loading %",
+            PermissibleValue(
+                text="Saccharification biomass loading %",
+                description="Saccharification biomass loading %"))
+        setattr(cls, "Starting OD",
+            PermissibleValue(
+                text="Starting OD",
+                description="Starting OD"))
+        setattr(cls, "Study Name",
+            PermissibleValue(
+                text="Study Name",
+                description="Study Name"))
+        setattr(cls, "Assay Experimenter",
+            PermissibleValue(
+                text="Assay Experimenter",
+                description="Assay Experimenter"))
+        setattr(cls, "Induction OD",
+            PermissibleValue(
+                text="Induction OD",
+                description="Induction OD"))
+        setattr(cls, "DES Hbond donor",
+            PermissibleValue(
+                text="DES Hbond donor",
+                description="DES Hbond donor"))
+        setattr(cls, "Study Contact",
+            PermissibleValue(
+                text="Study Contact",
+                description="Study Contact"))
+        setattr(cls, "Study Description",
+            PermissibleValue(
+                text="Study Description",
+                description="Study Description"))
+        setattr(cls, "Plate Location",
+            PermissibleValue(
+                text="Plate Location",
+                description="Plate Location"))
+        setattr(cls, "Saccharification pH",
+            PermissibleValue(
+                text="Saccharification pH",
+                description="Saccharification pH"))
+        setattr(cls, "Integration Locus",
+            PermissibleValue(
+                text="Integration Locus",
+                description="Integration Locus"))
+        setattr(cls, "Pretreatment Time",
+            PermissibleValue(
+                text="Pretreatment Time",
+                description="Pretreatment Time"))
+        setattr(cls, "Saccharification buffer type",
+            PermissibleValue(
+                text="Saccharification buffer type",
+                description="Saccharification buffer type"))
+        setattr(cls, "gCDW/L/OD600",
+            PermissibleValue(
+                text="gCDW/L/OD600",
+                description="gCDW/L/OD600"))
+        setattr(cls, "Line Name",
+            PermissibleValue(
+                text="Line Name",
+                description="Line Name"))
+        setattr(cls, "Inj Vol (ul)",
+            PermissibleValue(
+                text="Inj Vol (ul)",
+                description="Inj Vol (ul)"))
+        setattr(cls, "Growth Site",
+            PermissibleValue(
+                text="Growth Site",
+                description="Growth Site"))
+        setattr(cls, "Saccharification time",
+            PermissibleValue(
+                text="Saccharification time",
+                description="Saccharification time"))
+        setattr(cls, "Device Name",
+            PermissibleValue(
+                text="Device Name",
+                description="Device Name"))
+        setattr(cls, "Machine internal temperature",
+            PermissibleValue(
+                text="Machine internal temperature",
+                description="Machine internal temperature"))
+        setattr(cls, "Saccharification Buffer conc.",
+            PermissibleValue(
+                text="Saccharification Buffer conc.",
+                description="Saccharification Buffer conc."))
+        setattr(cls, "Assay Description",
+            PermissibleValue(
+                text="Assay Description",
+                description="Assay Description"))
+        setattr(cls, "Fermentation working volume",
+            PermissibleValue(
+                text="Fermentation working volume",
+                description="Fermentation working volume"))
+        setattr(cls, "Line Description",
+            PermissibleValue(
+                text="Line Description",
+                description="Line Description"))
+        setattr(cls, "Reactor Agitation",
+            PermissibleValue(
+                text="Reactor Agitation",
+                description="Reactor Agitation"))
+        setattr(cls, "Overlay Ratio",
+            PermissibleValue(
+                text="Overlay Ratio",
+                description="Overlay Ratio"))
+        setattr(cls, "IL Zwitterion",
+            PermissibleValue(
+                text="IL Zwitterion",
+                description="IL Zwitterion"))
+        setattr(cls, "Pretreatment IL %",
+            PermissibleValue(
+                text="Pretreatment IL %",
+                description="Pretreatment IL %"))
+        setattr(cls, "Enzyme mixture volume",
+            PermissibleValue(
+                text="Enzyme mixture volume",
+                description="Enzyme mixture volume"))
+        setattr(cls, "Method-QQQ",
+            PermissibleValue(
+                text="Method-QQQ",
+                description="Method-QQQ"))
+        setattr(cls, "Enzyme loading",
+            PermissibleValue(
+                text="Enzyme loading",
+                description="Enzyme loading"))
+        setattr(cls, "Recovery separation method",
+            PermissibleValue(
+                text="Recovery separation method",
+                description="Recovery separation method"))
+        setattr(cls, "pH adjustment",
+            PermissibleValue(
+                text="pH adjustment",
+                description="pH adjustment"))
+        setattr(cls, "Retention Time",
+            PermissibleValue(
+                text="Retention Time",
+                description="Retention Time"))
+        setattr(cls, "Date Grown",
+            PermissibleValue(
+                text="Date Grown",
+                description="Date Grown"))
+        setattr(cls, "Growth Site GPS",
+            PermissibleValue(
+                text="Growth Site GPS",
+                description="Growth Site GPS"))
+        setattr(cls, "Growth Site Plot ID",
+            PermissibleValue(
+                text="Growth Site Plot ID",
+                description="Growth Site Plot ID"))
+        setattr(cls, "Storage conditions",
+            PermissibleValue(
+                text="Storage conditions",
+                description="Storage conditions"))
+        setattr(cls, "JBEI Unique Identifier",
+            PermissibleValue(
+                text="JBEI Unique Identifier",
+                description="JBEI Unique Identifier"))
+        setattr(cls, "Starting pH",
+            PermissibleValue(
+                text="Starting pH",
+                description="Starting pH"))
+        setattr(cls, "Fermentation pH set point",
+            PermissibleValue(
+                text="Fermentation pH set point",
+                description="Fermentation pH set point"))
+        setattr(cls, "Std Peak Area",
+            PermissibleValue(
+                text="Std Peak Area",
+                description="Std Peak Area"))
+        setattr(cls, "IL Recovery method",
+            PermissibleValue(
+                text="IL Recovery method",
+                description="IL Recovery method"))
+        setattr(cls, "Saccharification temp",
+            PermissibleValue(
+                text="Saccharification temp",
+                description="Saccharification temp"))
+        setattr(cls, "Assay Name",
+            PermissibleValue(
+                text="Assay Name",
+                description="Assay Name"))
+        setattr(cls, "Line Experimenter",
+            PermissibleValue(
+                text="Line Experimenter",
+                description="Line Experimenter"))
+        setattr(cls, "Growth temperature",
+            PermissibleValue(
+                text="Growth temperature",
+                description="Growth temperature"))
+        setattr(cls, "IL Name",
+            PermissibleValue(
+                text="IL Name",
+                description="IL Name"))
+        setattr(cls, "Biomass type",
+            PermissibleValue(
+                text="Biomass type",
+                description="Biomass type"))
+        setattr(cls, "IL Anion",
+            PermissibleValue(
+                text="IL Anion",
+                description="IL Anion"))
+        setattr(cls, "Sample Name",
+            PermissibleValue(
+                text="Sample Name",
+                description="Sample Name"))
+        setattr(cls, "Pretreatment DES %",
+            PermissibleValue(
+                text="Pretreatment DES %",
+                description="Pretreatment DES %"))
+        setattr(cls, "Growth Site Type",
+            PermissibleValue(
+                text="Growth Site Type",
+                description="Growth Site Type"))
+        setattr(cls, "Total volume",
+            PermissibleValue(
+                text="Total volume",
+                description="Total volume"))
+        setattr(cls, "Saccharification IL conc.",
+            PermissibleValue(
+                text="Saccharification IL conc.",
+                description="Saccharification IL conc."))
+        setattr(cls, "JBEI Variety Identifier",
+            PermissibleValue(
+                text="JBEI Variety Identifier",
+                description="JBEI Variety Identifier"))
+        setattr(cls, "Number of washes",
+            PermissibleValue(
+                text="Number of washes",
+                description="Number of washes"))
+        setattr(cls, "Carbon Sources (Workaround)",
+            PermissibleValue(
+                text="Carbon Sources (Workaround)",
+                description="Carbon Sources (Workaround)"))
+        setattr(cls, "Sample Position",
+            PermissibleValue(
+                text="Sample Position",
+                description="Sample Position"))
+        setattr(cls, "Flask Type",
+            PermissibleValue(
+                text="Flask Type",
+                description="Flask Type"))
+        setattr(cls, "Carbon Source(s)",
+            PermissibleValue(
+                text="Carbon Source(s)",
+                description="Carbon Source(s)"))
+        setattr(cls, "Fermentation Starting OD",
+            PermissibleValue(
+                text="Fermentation Starting OD",
+                description="Fermentation Starting OD"))
+        setattr(cls, "Pretreatment Scale",
+            PermissibleValue(
+                text="Pretreatment Scale",
+                description="Pretreatment Scale"))
+        setattr(cls, "Column Type",
+            PermissibleValue(
+                text="Column Type",
+                description="Column Type"))
+        setattr(cls, "Culture Volume",
+            PermissibleValue(
+                text="Culture Volume",
+                description="Culture Volume"))
+        setattr(cls, "Overlay Compound",
+            PermissibleValue(
+                text="Overlay Compound",
+                description="Overlay Compound"))
+        setattr(cls, "UC Variety Identifier",
+            PermissibleValue(
+                text="UC Variety Identifier",
+                description="UC Variety Identifier"))
+        setattr(cls, "Biomass Loading",
+            PermissibleValue(
+                text="Biomass Loading",
+                description="Biomass Loading"))
+        setattr(cls, "Enzyme mixture ratio",
+            PermissibleValue(
+                text="Enzyme mixture ratio",
+                description="Enzyme mixture ratio"))
+        setattr(cls, "DES Name",
+            PermissibleValue(
+                text="DES Name",
+                description="DES Name"))
+        setattr(cls, "Plant Genotype",
+            PermissibleValue(
+                text="Plant Genotype",
+                description="Plant Genotype"))
+        setattr(cls, "Pretreatment Temperature",
+            PermissibleValue(
+                text="Pretreatment Temperature",
+                description="Pretreatment Temperature"))
+        setattr(cls, "Tissue type",
+            PermissibleValue(
+                text="Tissue type",
+                description="Tissue type"))
+        setattr(cls, "Line Contact",
+            PermissibleValue(
+                text="Line Contact",
+                description="Line Contact"))
+        setattr(cls, "Saccharification biomass loading",
+            PermissibleValue(
+                text="Saccharification biomass loading",
+                description="Saccharification biomass loading"))
+        setattr(cls, "Saccharification scale",
+            PermissibleValue(
+                text="Saccharification scale",
+                description="Saccharification scale"))
+        setattr(cls, "Well Location",
+            PermissibleValue(
+                text="Well Location",
+                description="Well Location"))
+        setattr(cls, "Harvest Type",
+            PermissibleValue(
+                text="Harvest Type",
+                description="Harvest Type"))
+        setattr(cls, "Std Conc",
+            PermissibleValue(
+                text="Std Conc",
+                description="Std Conc"))
+        setattr(cls, "Fermentation Temperature",
+            PermissibleValue(
+                text="Fermentation Temperature",
+                description="Fermentation Temperature"))
+        setattr(cls, "Separation method",
+            PermissibleValue(
+                text="Separation method",
+                description="Separation method"))
+        setattr(cls, "Enzyme mixture concentration",
+            PermissibleValue(
+                text="Enzyme mixture concentration",
+                description="Enzyme mixture concentration"))
+        setattr(cls, "Fermentation Strain",
+            PermissibleValue(
+                text="Fermentation Strain",
+                description="Fermentation Strain"))
+        setattr(cls, "Well reaction temperature",
+            PermissibleValue(
+                text="Well reaction temperature",
+                description="Well reaction temperature"))
+        setattr(cls, "Flask Volume",
+            PermissibleValue(
+                text="Flask Volume",
+                description="Flask Volume"))
+        setattr(cls, "Plate ID",
+            PermissibleValue(
+                text="Plate ID",
+                description="Plate ID"))
+        setattr(cls, "Biomass preparation",
+            PermissibleValue(
+                text="Biomass preparation",
+                description="Biomass preparation"))
+        setattr(cls, "Shaking Speed",
+            PermissibleValue(
+                text="Shaking Speed",
+                description="Shaking Speed"))
+        setattr(cls, "Detect Type",
+            PermissibleValue(
+                text="Detect Type",
+                description="Detect Type"))
+        setattr(cls, "Date of harvest",
+            PermissibleValue(
+                text="Date of harvest",
+                description="Date of harvest"))
+        setattr(cls, "LC-MS method",
+            PermissibleValue(
+                text="LC-MS method",
+                description="LC-MS method"))
+        setattr(cls, "Shaking speed",
+            PermissibleValue(
+                text="Shaking speed",
+                description="Shaking speed"))
+        setattr(cls, "Centrifugation RPM",
+            PermissibleValue(
+                text="Centrifugation RPM",
+                description="Centrifugation RPM"))
+        setattr(cls, "Seed registry ID",
+            PermissibleValue(
+                text="Seed registry ID",
+                description="Seed registry ID"))
+        setattr(cls, "Particle Size",
+            PermissibleValue(
+                text="Particle Size",
+                description="Particle Size"))
+        setattr(cls, "Study Contact (external)",
+            PermissibleValue(
+                text="Study Contact (external)",
+                description="Study Contact (external)"))
+        setattr(cls, "tolerance for biomass weight",
+            PermissibleValue(
+                text="tolerance for biomass weight",
+                description="tolerance for biomass weight"))
+        setattr(cls, "IL Cation",
+            PermissibleValue(
+                text="IL Cation",
+                description="IL Cation"))
+        setattr(cls, "pH SP",
+            PermissibleValue(
+                text="pH SP",
+                description="pH SP"))
+        setattr(cls, "Growth Temperature",
+            PermissibleValue(
+                text="Growth Temperature",
+                description="Growth Temperature"))
+        setattr(cls, "Air flow SP",
+            PermissibleValue(
+                text="Air flow SP",
+                description="Air flow SP"))
+        setattr(cls, "Post harvest treatment",
+            PermissibleValue(
+                text="Post harvest treatment",
+                description="Post harvest treatment"))
+        setattr(cls, "Solids recovery",
+            PermissibleValue(
+                text="Solids recovery",
+                description="Solids recovery"))
+        setattr(cls, "Extracted liquid volume",
+            PermissibleValue(
+                text="Extracted liquid volume",
+                description="Extracted liquid volume"))
+        setattr(cls, "Fermentation Platform",
+            PermissibleValue(
+                text="Fermentation Platform",
+                description="Fermentation Platform"))
+        setattr(cls, "Fermentation Media",
+            PermissibleValue(
+                text="Fermentation Media",
+                description="Fermentation Media"))
+        setattr(cls, "Fermentation Time",
+            PermissibleValue(
+                text="Fermentation Time",
+                description="Fermentation Time"))
+        setattr(cls, "Induction Time",
+            PermissibleValue(
+                text="Induction Time",
+                description="Induction Time"))
+        setattr(cls, "Anti-solvent type",
+            PermissibleValue(
+                text="Anti-solvent type",
+                description="Anti-solvent type"))
+        setattr(cls, "Saccharification Enzyme type",
+            PermissibleValue(
+                text="Saccharification Enzyme type",
+                description="Saccharification Enzyme type"))
+        setattr(cls, "Growth average humidity",
+            PermissibleValue(
+                text="Growth average humidity",
+                description="Growth average humidity"))
+        setattr(cls, "Strain(s)",
+            PermissibleValue(
+                text="Strain(s)",
+                description="Strain(s)"))
+        setattr(cls, "Original Name",
+            PermissibleValue(
+                text="Original Name",
+                description="Original Name"))
+        setattr(cls, "pO2 SP",
+            PermissibleValue(
+                text="pO2 SP",
+                description="pO2 SP"))
+        setattr(cls, "DES Hbond acceptor",
+            PermissibleValue(
+                text="DES Hbond acceptor",
+                description="DES Hbond acceptor"))
+        setattr(cls, "Growth Site Location",
+            PermissibleValue(
+                text="Growth Site Location",
+                description="Growth Site Location"))
+        setattr(cls, "Saccharification mixing",
+            PermissibleValue(
+                text="Saccharification mixing",
+                description="Saccharification mixing"))
+
+class TypeI18nEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="TypeI18nEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "main.models.Assay.Device_Name",
+            PermissibleValue(
+                text="main.models.Assay.Device_Name",
+                description="main.models.Assay.Device_Name"))
+        setattr(cls, "main.models.Assay.Detect_Type",
+            PermissibleValue(
+                text="main.models.Assay.Detect_Type",
+                description="main.models.Assay.Detect_Type"))
+        setattr(cls, "main.models.Assay.name",
+            PermissibleValue(
+                text="main.models.Assay.name",
+                description="main.models.Assay.name"))
+        setattr(cls, "main.models.Line.replicate",
+            PermissibleValue(
+                text="main.models.Line.replicate",
+                description="main.models.Line.replicate"))
+        setattr(cls, "main.models.Line.control",
+            PermissibleValue(
+                text="main.models.Line.control",
+                description="main.models.Line.control"))
+        setattr(cls, "main.models.Assay.Column_Type",
+            PermissibleValue(
+                text="main.models.Assay.Column_Type",
+                description="main.models.Assay.Column_Type"))
+        setattr(cls, "main.models.Line.Media",
+            PermissibleValue(
+                text="main.models.Line.Media",
+                description="main.models.Line.Media"))
+        setattr(cls, "main.models.Line.experimenter",
+            PermissibleValue(
+                text="main.models.Line.experimenter",
+                description="main.models.Line.experimenter"))
+        setattr(cls, "main.models.Study.contact",
+            PermissibleValue(
+                text="main.models.Study.contact",
+                description="main.models.Study.contact"))
+        setattr(cls, "main.models.Line.strains",
+            PermissibleValue(
+                text="main.models.Line.strains",
+                description="main.models.Line.strains"))
+        setattr(cls, "main.models.Line.Sample_Name",
+            PermissibleValue(
+                text="main.models.Line.Sample_Name",
+                description="main.models.Line.Sample_Name"))
+        setattr(cls, "main.models.Line.Starting_OD",
+            PermissibleValue(
+                text="main.models.Line.Starting_OD",
+                description="main.models.Line.Starting_OD"))
+        setattr(cls, "main.models.Line.gCDW_L_OD600",
+            PermissibleValue(
+                text="main.models.Line.gCDW_L_OD600",
+                description="main.models.Line.gCDW_L_OD600"))
+        setattr(cls, "main.models.Line.Induction",
+            PermissibleValue(
+                text="main.models.Line.Induction",
+                description="main.models.Line.Induction"))
+        setattr(cls, "main.models.Line.Inj_Vol__ul_",
+            PermissibleValue(
+                text="main.models.Line.Inj_Vol__ul_",
+                description="main.models.Line.Inj_Vol__ul_"))
+        setattr(cls, "main.models.Study.contact_extra",
+            PermissibleValue(
+                text="main.models.Study.contact_extra",
+                description="main.models.Study.contact_extra"))
+        setattr(cls, "main.models.Assay.original",
+            PermissibleValue(
+                text="main.models.Assay.original",
+                description="main.models.Assay.original"))
+        setattr(cls, "main.models.Line.Flask_Volume",
+            PermissibleValue(
+                text="main.models.Line.Flask_Volume",
+                description="main.models.Line.Flask_Volume"))
+        setattr(cls, "main.models.Line.Volume",
+            PermissibleValue(
+                text="main.models.Line.Volume",
+                description="main.models.Line.Volume"))
+        setattr(cls, "main.models.Assay.Machine_internal_temperature",
+            PermissibleValue(
+                text="main.models.Assay.Machine_internal_temperature",
+                description="main.models.Assay.Machine_internal_temperature"))
+        setattr(cls, "main.models.Assay.Std_Peak_Area",
+            PermissibleValue(
+                text="main.models.Assay.Std_Peak_Area",
+                description="main.models.Assay.Std_Peak_Area"))
+        setattr(cls, "main.models.Assay.experimenter",
+            PermissibleValue(
+                text="main.models.Assay.experimenter",
+                description="main.models.Assay.experimenter"))
+        setattr(cls, "main.models.Line.description",
+            PermissibleValue(
+                text="main.models.Line.description",
+                description="main.models.Line.description"))
+        setattr(cls, "main.models.Line.name",
+            PermissibleValue(
+                text="main.models.Line.name",
+                description="main.models.Line.name"))
+        setattr(cls, "main.models.Line.Culture_Volume",
+            PermissibleValue(
+                text="main.models.Line.Culture_Volume",
+                description="main.models.Line.Culture_Volume"))
+        setattr(cls, "main.models.Line.Sample_Position",
+            PermissibleValue(
+                text="main.models.Line.Sample_Position",
+                description="main.models.Line.Sample_Position"))
+        setattr(cls, "main.models.Study.name",
+            PermissibleValue(
+                text="main.models.Study.name",
+                description="main.models.Study.name"))
+        setattr(cls, "main.models.Assay.Well_reaction_temperature",
+            PermissibleValue(
+                text="main.models.Assay.Well_reaction_temperature",
+                description="main.models.Assay.Well_reaction_temperature"))
+        setattr(cls, "main.models.Line.Shaking_speed",
+            PermissibleValue(
+                text="main.models.Line.Shaking_speed",
+                description="main.models.Line.Shaking_speed"))
+        setattr(cls, "main.models.Study.description",
+            PermissibleValue(
+                text="main.models.Study.description",
+                description="main.models.Study.description"))
+        setattr(cls, "main.models.Line.Growth_temperature",
+            PermissibleValue(
+                text="main.models.Line.Growth_temperature",
+                description="main.models.Line.Growth_temperature"))
+        setattr(cls, "main.models.Assay.Time",
+            PermissibleValue(
+                text="main.models.Assay.Time",
+                description="main.models.Assay.Time"))
+        setattr(cls, "main.models.Line.carbon_source",
+            PermissibleValue(
+                text="main.models.Line.carbon_source",
+                description="main.models.Line.carbon_source"))
+        setattr(cls, "main.models.Assay.Std_Conc",
+            PermissibleValue(
+                text="main.models.Assay.Std_Conc",
+                description="main.models.Assay.Std_Conc"))
+        setattr(cls, "main.models.Line.contact",
+            PermissibleValue(
+                text="main.models.Line.contact",
+                description="main.models.Line.contact"))
+        setattr(cls, "main.models.Assay.Retention_Time",
+            PermissibleValue(
+                text="main.models.Assay.Retention_Time",
+                description="main.models.Assay.Retention_Time"))
+        setattr(cls, "main.models.Assay.description",
+            PermissibleValue(
+                text="main.models.Assay.description",
+                description="main.models.Assay.description"))
+        setattr(cls, "main.models.Line.carbon_src_workaround",
+            PermissibleValue(
+                text="main.models.Line.carbon_src_workaround",
+                description="main.models.Line.carbon_src_workaround"))
+        setattr(cls, "main.models.Line.Method_QQQ",
+            PermissibleValue(
+                text="main.models.Line.Method_QQQ",
+                description="main.models.Line.Method_QQQ"))
+
+class TypeFieldEnum(EnumDefinitionImpl):
+
+    strains = PermissibleValue(
+        text="strains",
+        description="strains")
+    description = PermissibleValue(
+        text="description",
+        description="description")
+    contact_extra = PermissibleValue(
+        text="contact_extra",
+        description="contact_extra")
+    control = PermissibleValue(
+        text="control",
+        description="control")
+    contact = PermissibleValue(
+        text="contact",
+        description="contact")
+    name = PermissibleValue(
+        text="name",
+        description="name")
+    carbon_source = PermissibleValue(
+        text="carbon_source",
+        description="carbon_source")
+    flush = PermissibleValue(
+        text="flush",
+        description="flush")
+    experimenter = PermissibleValue(
+        text="experimenter",
+        description="experimenter")
+
+    _defn = EnumDefinition(
+        name="TypeFieldEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "37",
+            PermissibleValue(
+                text="37",
+                description="37"))
+        setattr(cls, "None",
+            PermissibleValue(
+                text="None",
+                description="None"))
+        setattr(cls, "200",
+            PermissibleValue(
+                text="200",
+                description="200"))
+        setattr(cls, "--",
+            PermissibleValue(
+                text="--",
+                description="--"))
+        setattr(cls, "0.1",
+            PermissibleValue(
+                text="0.1",
+                description="0.1"))
+
+class InputTypeEnum(EnumDefinitionImpl):
+
+    strain = PermissibleValue(
+        text="strain",
+        description="strain")
+    replicate = PermissibleValue(
+        text="replicate",
+        description="replicate")
+    carbon_source = PermissibleValue(
+        text="carbon_source",
+        description="carbon_source")
+    textarea = PermissibleValue(
+        text="textarea",
+        description="textarea")
+    user = PermissibleValue(
+        text="user",
+        description="user")
+    checkbox = PermissibleValue(
+        text="checkbox",
+        description="checkbox")
+
+    _defn = EnumDefinition(
+        name="InputTypeEnum",
+    )
+
+class DefaultValueEnum(EnumDefinitionImpl):
+
+    ºC = PermissibleValue(
+        text="ºC",
+        description="ºC")
+    mL = PermissibleValue(
+        text="mL",
+        description="mL")
+    rpm = PermissibleValue(
+        text="rpm",
+        description="rpm")
+    flush = PermissibleValue(
+        text="flush",
+        description="flush")
+    hr = PermissibleValue(
+        text="hr",
+        description="hr")
+    mM = PermissibleValue(
+        text="mM",
+        description="mM")
+    mm = PermissibleValue(
+        text="mm",
+        description="mm")
+
+    _defn = EnumDefinition(
+        name="DefaultValueEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "37",
+            PermissibleValue(
+                text="37",
+                description="37"))
+        setattr(cls, "None",
+            PermissibleValue(
+                text="None",
+                description="None"))
+        setattr(cls, "bsa-fast-13min-cold.m",
+            PermissibleValue(
+                text="bsa-fast-13min-cold.m",
+                description="bsa-fast-13min-cold.m"))
+        setattr(cls, "--",
+            PermissibleValue(
+                text="--",
+                description="--"))
+        setattr(cls, "Vial 1",
+            PermissibleValue(
+                text="Vial 1",
+                description="Vial 1"))
+        setattr(cls, "200",
+            PermissibleValue(
+                text="200",
+                description="200"))
+        setattr(cls, "°C",
+            PermissibleValue(
+                text="°C",
+                description="°C"))
+        setattr(cls, "1",
+            PermissibleValue(
+                text="1",
+                description="1"))
+        setattr(cls, "0.1",
+            PermissibleValue(
+                text="0.1",
+                description="0.1"))
+
+class PrefixEnum(EnumDefinitionImpl):
+
+    L = PermissibleValue(
+        text="L",
+        description="L")
+    S = PermissibleValue(
+        text="S",
+        description="S")
+    A = PermissibleValue(
+        text="A",
+        description="A")
+
+    _defn = EnumDefinition(
+        name="PrefixEnum",
+    )
+
+class PostfixEnum(EnumDefinitionImpl):
+
+    ºC = PermissibleValue(
+        text="ºC",
+        description="ºC")
+    mL = PermissibleValue(
+        text="mL",
+        description="mL")
+    slpm = PermissibleValue(
+        text="slpm",
+        description="slpm")
+    rpm = PermissibleValue(
+        text="rpm",
+        description="rpm")
+    min = PermissibleValue(
+        text="min",
+        description="min")
+
+    _defn = EnumDefinition(
+        name="PostfixEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "3",
+            PermissibleValue(
+                text="3",
+                description="3"))
+        setattr(cls, "°C",
+            PermissibleValue(
+                text="°C",
+                description="°C"))
+        setattr(cls, "5",
+            PermissibleValue(
+                text="5",
+                description="5"))
+        setattr(cls, "%",
+            PermissibleValue(
+                text="%",
+                description="%"))
+        setattr(cls, "4",
+            PermissibleValue(
+                text="4",
+                description="4"))
+        setattr(cls, "2",
+            PermissibleValue(
+                text="2",
+                description="2"))
+        setattr(cls, "10",
+            PermissibleValue(
+                text="10",
+                description="10"))
+        setattr(cls, "1",
+            PermissibleValue(
+                text="1",
+                description="1"))
+        setattr(cls, "g/L",
+            PermissibleValue(
+                text="g/L",
+                description="g/L"))
+        setattr(cls, "8",
+            PermissibleValue(
+                text="8",
+                description="8"))
+
+class ForContextEnum(EnumDefinitionImpl):
+
+    S = PermissibleValue(
+        text="S",
+        description="S")
+    A = PermissibleValue(
+        text="A",
+        description="A")
+    strain = PermissibleValue(
+        text="strain",
+        description="strain")
+    replicate = PermissibleValue(
+        text="replicate",
+        description="replicate")
+    carbon_source = PermissibleValue(
+        text="carbon_source",
+        description="carbon_source")
+    string = PermissibleValue(
+        text="string",
+        description="string")
+    textarea = PermissibleValue(
+        text="textarea",
+        description="textarea")
+    user = PermissibleValue(
+        text="user",
+        description="user")
+    checkbox = PermissibleValue(
+        text="checkbox",
+        description="checkbox")
+    L = PermissibleValue(
+        text="L",
+        description="L")
+
+    _defn = EnumDefinition(
+        name="ForContextEnum",
+    )
+
+class GroupIdEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="GroupIdEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "92a645cc-76cc-4923-b331-f6dad47ba538",
+            PermissibleValue(
+                text="92a645cc-76cc-4923-b331-f6dad47ba538",
+                description="92a645cc-76cc-4923-b331-f6dad47ba538"))
+        setattr(cls, "f69b4931-6e4d-49f7-8166-d40d8c02fbac",
+            PermissibleValue(
+                text="f69b4931-6e4d-49f7-8166-d40d8c02fbac",
+                description="f69b4931-6e4d-49f7-8166-d40d8c02fbac"))
+        setattr(cls, "377e9b9a-52a6-4281-8706-387187989556",
+            PermissibleValue(
+                text="377e9b9a-52a6-4281-8706-387187989556",
+                description="377e9b9a-52a6-4281-8706-387187989556"))
+        setattr(cls, "a839eba0-0238-49ac-8908-4bfce8f49074",
+            PermissibleValue(
+                text="a839eba0-0238-49ac-8908-4bfce8f49074",
+                description="a839eba0-0238-49ac-8908-4bfce8f49074"))
+        setattr(cls, "0e400e2a-1f73-4c26-8cae-203d913a42f4",
+            PermissibleValue(
+                text="0e400e2a-1f73-4c26-8cae-203d913a42f4",
+                description="0e400e2a-1f73-4c26-8cae-203d913a42f4"))
+        setattr(cls, "05d0c47f-edf6-4096-ace2-347b158e948d",
+            PermissibleValue(
+                text="05d0c47f-edf6-4096-ace2-347b158e948d",
+                description="05d0c47f-edf6-4096-ace2-347b158e948d"))
+        setattr(cls, "8aa625b3-f2c7-4598-9bce-6b4412b4fdd7",
+            PermissibleValue(
+                text="8aa625b3-f2c7-4598-9bce-6b4412b4fdd7",
+                description="8aa625b3-f2c7-4598-9bce-6b4412b4fdd7"))
+        setattr(cls, "c7386ba5-9973-4a2e-896d-66d9e1d6d33d",
+            PermissibleValue(
+                text="c7386ba5-9973-4a2e-896d-66d9e1d6d33d",
+                description="c7386ba5-9973-4a2e-896d-66d9e1d6d33d"))
+        setattr(cls, "0fac674a-bfe0-4451-9d37-d3ccad69e337",
+            PermissibleValue(
+                text="0fac674a-bfe0-4451-9d37-d3ccad69e337",
+                description="0fac674a-bfe0-4451-9d37-d3ccad69e337"))
+        setattr(cls, "8aa26735-e184-4dcd-8dd1-830ec240f9e1",
+            PermissibleValue(
+                text="8aa26735-e184-4dcd-8dd1-830ec240f9e1",
+                description="8aa26735-e184-4dcd-8dd1-830ec240f9e1"))
+        setattr(cls, "e7e33bf0-7823-4162-8f43-1fe099233b43",
+            PermissibleValue(
+                text="e7e33bf0-7823-4162-8f43-1fe099233b43",
+                description="e7e33bf0-7823-4162-8f43-1fe099233b43"))
+        setattr(cls, "8539e4cb-387d-488e-99de-07898ed69048",
+            PermissibleValue(
+                text="8539e4cb-387d-488e-99de-07898ed69048",
+                description="8539e4cb-387d-488e-99de-07898ed69048"))
+        setattr(cls, "5ef6500e-0f8b-4eef-a6bd-075bcb655caa",
+            PermissibleValue(
+                text="5ef6500e-0f8b-4eef-a6bd-075bcb655caa",
+                description="5ef6500e-0f8b-4eef-a6bd-075bcb655caa"))
+        setattr(cls, "700a091d-6c81-4302-bde8-fdc5de3d03cd",
+            PermissibleValue(
+                text="700a091d-6c81-4302-bde8-fdc5de3d03cd",
+                description="700a091d-6c81-4302-bde8-fdc5de3d03cd"))
+        setattr(cls, "79216b35-f2c8-4bdd-b2bc-637ccea1113d",
+            PermissibleValue(
+                text="79216b35-f2c8-4bdd-b2bc-637ccea1113d",
+                description="79216b35-f2c8-4bdd-b2bc-637ccea1113d"))
+        setattr(cls, "f5426e85-a22c-4a38-b255-8b9365fffe61",
+            PermissibleValue(
+                text="f5426e85-a22c-4a38-b255-8b9365fffe61",
+                description="f5426e85-a22c-4a38-b255-8b9365fffe61"))
+        setattr(cls, "388e8dc2-3e9e-499b-a033-a419f9984d05",
+            PermissibleValue(
+                text="388e8dc2-3e9e-499b-a033-a419f9984d05",
+                description="388e8dc2-3e9e-499b-a033-a419f9984d05"))
+        setattr(cls, "e6e54a0b-8913-4a42-a4d8-81eb8aff13ae",
+            PermissibleValue(
+                text="e6e54a0b-8913-4a42-a4d8-81eb8aff13ae",
+                description="e6e54a0b-8913-4a42-a4d8-81eb8aff13ae"))
+        setattr(cls, "2ac2a4af-2f44-41e5-8a4d-abd9520a6380",
+            PermissibleValue(
+                text="2ac2a4af-2f44-41e5-8a4d-abd9520a6380",
+                description="2ac2a4af-2f44-41e5-8a4d-abd9520a6380"))
+        setattr(cls, "60e0b00d-45ff-48ba-a0e8-1ca6123ffb7a",
+            PermissibleValue(
+                text="60e0b00d-45ff-48ba-a0e8-1ca6123ffb7a",
+                description="60e0b00d-45ff-48ba-a0e8-1ca6123ffb7a"))
+        setattr(cls, "6bdbd409-a1e5-4a20-83e5-b1885d08e66f",
+            PermissibleValue(
+                text="6bdbd409-a1e5-4a20-83e5-b1885d08e66f",
+                description="6bdbd409-a1e5-4a20-83e5-b1885d08e66f"))
+        setattr(cls, "fe848306-ba4e-401c-92e4-6317fbe3a869",
+            PermissibleValue(
+                text="fe848306-ba4e-401c-92e4-6317fbe3a869",
+                description="fe848306-ba4e-401c-92e4-6317fbe3a869"))
+        setattr(cls, "8e59a9df-4263-4827-a316-108a8b63c1d9",
+            PermissibleValue(
+                text="8e59a9df-4263-4827-a316-108a8b63c1d9",
+                description="8e59a9df-4263-4827-a316-108a8b63c1d9"))
+        setattr(cls, "3cfac3e5-9890-4808-bd30-3ef7919d2b8f",
+            PermissibleValue(
+                text="3cfac3e5-9890-4808-bd30-3ef7919d2b8f",
+                description="3cfac3e5-9890-4808-bd30-3ef7919d2b8f"))
+        setattr(cls, "9026b0b3-87e7-4adc-bd06-5c8253307455",
+            PermissibleValue(
+                text="9026b0b3-87e7-4adc-bd06-5c8253307455",
+                description="9026b0b3-87e7-4adc-bd06-5c8253307455"))
+        setattr(cls, "b0d8cb5a-74d8-4055-87c2-c745a3660e37",
+            PermissibleValue(
+                text="b0d8cb5a-74d8-4055-87c2-c745a3660e37",
+                description="b0d8cb5a-74d8-4055-87c2-c745a3660e37"))
+        setattr(cls, "e7b551fe-a6bb-42d2-bb5e-8ff7b0f36c71",
+            PermissibleValue(
+                text="e7b551fe-a6bb-42d2-bb5e-8ff7b0f36c71",
+                description="e7b551fe-a6bb-42d2-bb5e-8ff7b0f36c71"))
+        setattr(cls, "1bb3231b-5542-4acf-91f9-51875bb19320",
+            PermissibleValue(
+                text="1bb3231b-5542-4acf-91f9-51875bb19320",
+                description="1bb3231b-5542-4acf-91f9-51875bb19320"))
+        setattr(cls, "63065d38-ead3-442a-ba94-9a3a08345ba4",
+            PermissibleValue(
+                text="63065d38-ead3-442a-ba94-9a3a08345ba4",
+                description="63065d38-ead3-442a-ba94-9a3a08345ba4"))
+        setattr(cls, "9c5a6542-df68-424b-8fd5-d507cc97de9b",
+            PermissibleValue(
+                text="9c5a6542-df68-424b-8fd5-d507cc97de9b",
+                description="9c5a6542-df68-424b-8fd5-d507cc97de9b"))
+        setattr(cls, "b2566cab-f6b9-4e74-9855-52605a6cd8b2",
+            PermissibleValue(
+                text="b2566cab-f6b9-4e74-9855-52605a6cd8b2",
+                description="b2566cab-f6b9-4e74-9855-52605a6cd8b2"))
+        setattr(cls, "11b986cf-cefd-4d9d-a2c1-46f2d95f13dd",
+            PermissibleValue(
+                text="11b986cf-cefd-4d9d-a2c1-46f2d95f13dd",
+                description="11b986cf-cefd-4d9d-a2c1-46f2d95f13dd"))
+        setattr(cls, "a7cc2518-ff78-4c79-ac62-5e26bc6c1f0c",
+            PermissibleValue(
+                text="a7cc2518-ff78-4c79-ac62-5e26bc6c1f0c",
+                description="a7cc2518-ff78-4c79-ac62-5e26bc6c1f0c"))
+        setattr(cls, "58a86973-c77b-46c6-a959-2c4a189cecf4",
+            PermissibleValue(
+                text="58a86973-c77b-46c6-a959-2c4a189cecf4",
+                description="58a86973-c77b-46c6-a959-2c4a189cecf4"))
+        setattr(cls, "65ed1a39-a74e-4087-9f9d-1e52ad357321",
+            PermissibleValue(
+                text="65ed1a39-a74e-4087-9f9d-1e52ad357321",
+                description="65ed1a39-a74e-4087-9f9d-1e52ad357321"))
+        setattr(cls, "e19b7f23-d66a-4e38-bfb7-45589e47f486",
+            PermissibleValue(
+                text="e19b7f23-d66a-4e38-bfb7-45589e47f486",
+                description="e19b7f23-d66a-4e38-bfb7-45589e47f486"))
+        setattr(cls, "fe685261-ca5d-45a3-8121-3a3279025ab2",
+            PermissibleValue(
+                text="fe685261-ca5d-45a3-8121-3a3279025ab2",
+                description="fe685261-ca5d-45a3-8121-3a3279025ab2"))
+        setattr(cls, "4ddaf92a-1623-4c30-aa61-4f7407acfacc",
+            PermissibleValue(
+                text="4ddaf92a-1623-4c30-aa61-4f7407acfacc",
+                description="4ddaf92a-1623-4c30-aa61-4f7407acfacc"))
+        setattr(cls, "68355d7e-6f18-4611-96cd-f9088db4ae61",
+            PermissibleValue(
+                text="68355d7e-6f18-4611-96cd-f9088db4ae61",
+                description="68355d7e-6f18-4611-96cd-f9088db4ae61"))
+        setattr(cls, "974c3367-f0c5-461d-bd85-37c1a269d49e",
+            PermissibleValue(
+                text="974c3367-f0c5-461d-bd85-37c1a269d49e",
+                description="974c3367-f0c5-461d-bd85-37c1a269d49e"))
+        setattr(cls, "3f52d1e7-1c05-4126-a843-a4b3581da6ae",
+            PermissibleValue(
+                text="3f52d1e7-1c05-4126-a843-a4b3581da6ae",
+                description="3f52d1e7-1c05-4126-a843-a4b3581da6ae"))
+        setattr(cls, "ee9c7089-b715-4356-b30f-f4b2fdbec897",
+            PermissibleValue(
+                text="ee9c7089-b715-4356-b30f-f4b2fdbec897",
+                description="ee9c7089-b715-4356-b30f-f4b2fdbec897"))
+        setattr(cls, "463546e4-a67e-4471-a278-9464e78dbc9d",
+            PermissibleValue(
+                text="463546e4-a67e-4471-a278-9464e78dbc9d",
+                description="463546e4-a67e-4471-a278-9464e78dbc9d"))
+        setattr(cls, "687c1076-c7f0-4a05-8208-54fac833e753",
+            PermissibleValue(
+                text="687c1076-c7f0-4a05-8208-54fac833e753",
+                description="687c1076-c7f0-4a05-8208-54fac833e753"))
+        setattr(cls, "29f601a9-fbcc-4863-a2be-847b30474ca6",
+            PermissibleValue(
+                text="29f601a9-fbcc-4863-a2be-847b30474ca6",
+                description="29f601a9-fbcc-4863-a2be-847b30474ca6"))
+        setattr(cls, "7352a47f-c229-4b56-a2a0-ac99bdc8c523",
+            PermissibleValue(
+                text="7352a47f-c229-4b56-a2a0-ac99bdc8c523",
+                description="7352a47f-c229-4b56-a2a0-ac99bdc8c523"))
+        setattr(cls, "9e8ffc35-cc7c-487a-81a3-c23e27e97b64",
+            PermissibleValue(
+                text="9e8ffc35-cc7c-487a-81a3-c23e27e97b64",
+                description="9e8ffc35-cc7c-487a-81a3-c23e27e97b64"))
+        setattr(cls, "6139354b-0aed-4eed-98f9-8eddf060e5a9",
+            PermissibleValue(
+                text="6139354b-0aed-4eed-98f9-8eddf060e5a9",
+                description="6139354b-0aed-4eed-98f9-8eddf060e5a9"))
+        setattr(cls, "0dc02ee7-60da-4f30-ba0e-60f2583c59c1",
+            PermissibleValue(
+                text="0dc02ee7-60da-4f30-ba0e-60f2583c59c1",
+                description="0dc02ee7-60da-4f30-ba0e-60f2583c59c1"))
+        setattr(cls, "6254c4be-6ed3-4f3e-8b13-c0fe2d44fe7c",
+            PermissibleValue(
+                text="6254c4be-6ed3-4f3e-8b13-c0fe2d44fe7c",
+                description="6254c4be-6ed3-4f3e-8b13-c0fe2d44fe7c"))
+        setattr(cls, "8aae4487-1653-4772-9415-37c8127e0d75",
+            PermissibleValue(
+                text="8aae4487-1653-4772-9415-37c8127e0d75",
+                description="8aae4487-1653-4772-9415-37c8127e0d75"))
+        setattr(cls, "6df6df06-173e-400f-b46e-8e99040383a2",
+            PermissibleValue(
+                text="6df6df06-173e-400f-b46e-8e99040383a2",
+                description="6df6df06-173e-400f-b46e-8e99040383a2"))
+        setattr(cls, "e3b604cb-380e-4ba7-84b1-7730d915f5df",
+            PermissibleValue(
+                text="e3b604cb-380e-4ba7-84b1-7730d915f5df",
+                description="e3b604cb-380e-4ba7-84b1-7730d915f5df"))
+        setattr(cls, "c33cc1eb-badb-450c-9749-9f0379b34ea7",
+            PermissibleValue(
+                text="c33cc1eb-badb-450c-9749-9f0379b34ea7",
+                description="c33cc1eb-badb-450c-9749-9f0379b34ea7"))
+        setattr(cls, "15105bee-e9f1-4290-92b2-d7fdcb3ad68d",
+            PermissibleValue(
+                text="15105bee-e9f1-4290-92b2-d7fdcb3ad68d",
+                description="15105bee-e9f1-4290-92b2-d7fdcb3ad68d"))
+        setattr(cls, "510b5d6b-c7de-461b-b9b6-b2323a6e249b",
+            PermissibleValue(
+                text="510b5d6b-c7de-461b-b9b6-b2323a6e249b",
+                description="510b5d6b-c7de-461b-b9b6-b2323a6e249b"))
+        setattr(cls, "698f95c3-73df-4c1c-81d7-975b11db8596",
+            PermissibleValue(
+                text="698f95c3-73df-4c1c-81d7-975b11db8596",
+                description="698f95c3-73df-4c1c-81d7-975b11db8596"))
+        setattr(cls, "cbcbc543-1d7c-46c0-8ed6-cd68c0de8db4",
+            PermissibleValue(
+                text="cbcbc543-1d7c-46c0-8ed6-cd68c0de8db4",
+                description="cbcbc543-1d7c-46c0-8ed6-cd68c0de8db4"))
+        setattr(cls, "e5c3548e-5be2-4008-80ae-dd38ff0ed8b8",
+            PermissibleValue(
+                text="e5c3548e-5be2-4008-80ae-dd38ff0ed8b8",
+                description="e5c3548e-5be2-4008-80ae-dd38ff0ed8b8"))
+        setattr(cls, "13672c8a-2a36-43ed-928f-7d63a1a4bd51",
+            PermissibleValue(
+                text="13672c8a-2a36-43ed-928f-7d63a1a4bd51",
+                description="13672c8a-2a36-43ed-928f-7d63a1a4bd51"))
+        setattr(cls, "82f83ffc-074f-402c-b84b-b99c837190c5",
+            PermissibleValue(
+                text="82f83ffc-074f-402c-b84b-b99c837190c5",
+                description="82f83ffc-074f-402c-b84b-b99c837190c5"))
+        setattr(cls, "c0b48ad0-da94-4b48-8719-bac48ee52bfd",
+            PermissibleValue(
+                text="c0b48ad0-da94-4b48-8719-bac48ee52bfd",
+                description="c0b48ad0-da94-4b48-8719-bac48ee52bfd"))
+        setattr(cls, "1",
+            PermissibleValue(
+                text="1",
+                description="1"))
+        setattr(cls, "25096577-368b-4a16-9035-92c939bf377b",
+            PermissibleValue(
+                text="25096577-368b-4a16-9035-92c939bf377b",
+                description="25096577-368b-4a16-9035-92c939bf377b"))
+        setattr(cls, "bb1d0b60-61ac-44d3-bdf5-e3902ee2763b",
+            PermissibleValue(
+                text="bb1d0b60-61ac-44d3-bdf5-e3902ee2763b",
+                description="bb1d0b60-61ac-44d3-bdf5-e3902ee2763b"))
+        setattr(cls, "486f6f77-aafa-420e-a582-575753b24feb",
+            PermissibleValue(
+                text="486f6f77-aafa-420e-a582-575753b24feb",
+                description="486f6f77-aafa-420e-a582-575753b24feb"))
+        setattr(cls, "047f231b-87a0-4610-a163-3a69efd863e7",
+            PermissibleValue(
+                text="047f231b-87a0-4610-a163-3a69efd863e7",
+                description="047f231b-87a0-4610-a163-3a69efd863e7"))
+        setattr(cls, "7322c232-5046-470e-a63f-2119eb6c962c",
+            PermissibleValue(
+                text="7322c232-5046-470e-a63f-2119eb6c962c",
+                description="7322c232-5046-470e-a63f-2119eb6c962c"))
+        setattr(cls, "112d1e97-b3d1-4456-b0df-32477aac26c7",
+            PermissibleValue(
+                text="112d1e97-b3d1-4456-b0df-32477aac26c7",
+                description="112d1e97-b3d1-4456-b0df-32477aac26c7"))
+        setattr(cls, "dbef7810-c5c1-472d-8204-72e3939a24a7",
+            PermissibleValue(
+                text="dbef7810-c5c1-472d-8204-72e3939a24a7",
+                description="dbef7810-c5c1-472d-8204-72e3939a24a7"))
+        setattr(cls, "0c6307a3-7ce2-45f0-8250-ffa31611c455",
+            PermissibleValue(
+                text="0c6307a3-7ce2-45f0-8250-ffa31611c455",
+                description="0c6307a3-7ce2-45f0-8250-ffa31611c455"))
+        setattr(cls, "b924e476-267e-4a4d-8056-83a52c6f08de",
+            PermissibleValue(
+                text="b924e476-267e-4a4d-8056-83a52c6f08de",
+                description="b924e476-267e-4a4d-8056-83a52c6f08de"))
+        setattr(cls, "33125862-66b2-4d22-8966-282eb7142a45",
+            PermissibleValue(
+                text="33125862-66b2-4d22-8966-282eb7142a45",
+                description="33125862-66b2-4d22-8966-282eb7142a45"))
+        setattr(cls, "1b6c71b1-bb71-44d0-9664-fbade255c03a",
+            PermissibleValue(
+                text="1b6c71b1-bb71-44d0-9664-fbade255c03a",
+                description="1b6c71b1-bb71-44d0-9664-fbade255c03a"))
+        setattr(cls, "a8fbe429-577d-4d68-9d26-8119fcd5eb7a",
+            PermissibleValue(
+                text="a8fbe429-577d-4d68-9d26-8119fcd5eb7a",
+                description="a8fbe429-577d-4d68-9d26-8119fcd5eb7a"))
+        setattr(cls, "71f5cd94-4dd4-45ca-a926-9f0717631799",
+            PermissibleValue(
+                text="71f5cd94-4dd4-45ca-a926-9f0717631799",
+                description="71f5cd94-4dd4-45ca-a926-9f0717631799"))
+        setattr(cls, "09d8056b-b0f3-4975-aa41-0e64575d179b",
+            PermissibleValue(
+                text="09d8056b-b0f3-4975-aa41-0e64575d179b",
+                description="09d8056b-b0f3-4975-aa41-0e64575d179b"))
+        setattr(cls, "3ded7cf0-3acf-43d6-b128-39857394beff",
+            PermissibleValue(
+                text="3ded7cf0-3acf-43d6-b128-39857394beff",
+                description="3ded7cf0-3acf-43d6-b128-39857394beff"))
+        setattr(cls, "ef242e5b-07b4-4d4f-96da-8dc8ed77a4b4",
+            PermissibleValue(
+                text="ef242e5b-07b4-4d4f-96da-8dc8ed77a4b4",
+                description="ef242e5b-07b4-4d4f-96da-8dc8ed77a4b4"))
+        setattr(cls, "0c451f17-717a-4dc0-8b63-a67d57afc843",
+            PermissibleValue(
+                text="0c451f17-717a-4dc0-8b63-a67d57afc843",
+                description="0c451f17-717a-4dc0-8b63-a67d57afc843"))
+        setattr(cls, "206c5d52-1ed1-444d-aa1b-5da9783a53da",
+            PermissibleValue(
+                text="206c5d52-1ed1-444d-aa1b-5da9783a53da",
+                description="206c5d52-1ed1-444d-aa1b-5da9783a53da"))
+        setattr(cls, "d7e2c7e1-4e26-4324-9083-8ec12e9a2ea5",
+            PermissibleValue(
+                text="d7e2c7e1-4e26-4324-9083-8ec12e9a2ea5",
+                description="d7e2c7e1-4e26-4324-9083-8ec12e9a2ea5"))
+        setattr(cls, "57bd48f7-d805-4ac9-9773-32051b05bcaf",
+            PermissibleValue(
+                text="57bd48f7-d805-4ac9-9773-32051b05bcaf",
+                description="57bd48f7-d805-4ac9-9773-32051b05bcaf"))
+        setattr(cls, "e825fc19-b4f4-4c15-ad68-b415b9338a50",
+            PermissibleValue(
+                text="e825fc19-b4f4-4c15-ad68-b415b9338a50",
+                description="e825fc19-b4f4-4c15-ad68-b415b9338a50"))
+        setattr(cls, "292f1ca7-30de-4ba1-89cd-87d2f6291416",
+            PermissibleValue(
+                text="292f1ca7-30de-4ba1-89cd-87d2f6291416",
+                description="292f1ca7-30de-4ba1-89cd-87d2f6291416"))
+        setattr(cls, "f3159ae8-2747-4a43-bf0f-ab89f349869b",
+            PermissibleValue(
+                text="f3159ae8-2747-4a43-bf0f-ab89f349869b",
+                description="f3159ae8-2747-4a43-bf0f-ab89f349869b"))
+        setattr(cls, "e420b812-65fe-4164-a82d-0888b1ef038d",
+            PermissibleValue(
+                text="e420b812-65fe-4164-a82d-0888b1ef038d",
+                description="e420b812-65fe-4164-a82d-0888b1ef038d"))
+        setattr(cls, "d5b27af5-4342-48e5-844f-a90821314024",
+            PermissibleValue(
+                text="d5b27af5-4342-48e5-844f-a90821314024",
+                description="d5b27af5-4342-48e5-844f-a90821314024"))
+        setattr(cls, "88b0acae-4255-463e-8918-ad489bdc8d9c",
+            PermissibleValue(
+                text="88b0acae-4255-463e-8918-ad489bdc8d9c",
+                description="88b0acae-4255-463e-8918-ad489bdc8d9c"))
+        setattr(cls, "878611fd-cb28-49aa-99c3-6c98769e5712",
+            PermissibleValue(
+                text="878611fd-cb28-49aa-99c3-6c98769e5712",
+                description="878611fd-cb28-49aa-99c3-6c98769e5712"))
+        setattr(cls, "b59b4ee9-8ba4-4f64-b551-59a8a70e393b",
+            PermissibleValue(
+                text="b59b4ee9-8ba4-4f64-b551-59a8a70e393b",
+                description="b59b4ee9-8ba4-4f64-b551-59a8a70e393b"))
+        setattr(cls, "b0da6eab-6d46-45b2-b8bd-5087f83292b8",
+            PermissibleValue(
+                text="b0da6eab-6d46-45b2-b8bd-5087f83292b8",
+                description="b0da6eab-6d46-45b2-b8bd-5087f83292b8"))
+        setattr(cls, "4eefd51c-a87c-4cb6-9939-d98da3d7a0bc",
+            PermissibleValue(
+                text="4eefd51c-a87c-4cb6-9939-d98da3d7a0bc",
+                description="4eefd51c-a87c-4cb6-9939-d98da3d7a0bc"))
+        setattr(cls, "7e52a374-ee74-48d1-8cb0-2fe9d5e83ed8",
+            PermissibleValue(
+                text="7e52a374-ee74-48d1-8cb0-2fe9d5e83ed8",
+                description="7e52a374-ee74-48d1-8cb0-2fe9d5e83ed8"))
+        setattr(cls, "5dc0d9f5-83dc-4c5e-ad22-78e1c9b334ea",
+            PermissibleValue(
+                text="5dc0d9f5-83dc-4c5e-ad22-78e1c9b334ea",
+                description="5dc0d9f5-83dc-4c5e-ad22-78e1c9b334ea"))
+        setattr(cls, "f4c6d854-752c-4913-82e0-6c4357beaa2e",
+            PermissibleValue(
+                text="f4c6d854-752c-4913-82e0-6c4357beaa2e",
+                description="f4c6d854-752c-4913-82e0-6c4357beaa2e"))
+        setattr(cls, "c5f2f182-fafb-4849-8b3a-0de38853d86b",
+            PermissibleValue(
+                text="c5f2f182-fafb-4849-8b3a-0de38853d86b",
+                description="c5f2f182-fafb-4849-8b3a-0de38853d86b"))
+        setattr(cls, "b388bcaa-d14b-4d7f-945e-a6fcb60142f2",
+            PermissibleValue(
+                text="b388bcaa-d14b-4d7f-945e-a6fcb60142f2",
+                description="b388bcaa-d14b-4d7f-945e-a6fcb60142f2"))
+        setattr(cls, "56f093ea-9aaf-4dc6-b939-1e99b6d90e5d",
+            PermissibleValue(
+                text="56f093ea-9aaf-4dc6-b939-1e99b6d90e5d",
+                description="56f093ea-9aaf-4dc6-b939-1e99b6d90e5d"))
+        setattr(cls, "a119e72b-4988-434b-aba3-4b8153bdca89",
+            PermissibleValue(
+                text="a119e72b-4988-434b-aba3-4b8153bdca89",
+                description="a119e72b-4988-434b-aba3-4b8153bdca89"))
+        setattr(cls, "5566be4f-8277-45a9-9141-c50cc9b5528b",
+            PermissibleValue(
+                text="5566be4f-8277-45a9-9141-c50cc9b5528b",
+                description="5566be4f-8277-45a9-9141-c50cc9b5528b"))
+        setattr(cls, "d5fc2bc2-79b9-4f56-9b14-e6053c7723a8",
+            PermissibleValue(
+                text="d5fc2bc2-79b9-4f56-9b14-e6053c7723a8",
+                description="d5fc2bc2-79b9-4f56-9b14-e6053c7723a8"))
+        setattr(cls, "523aa2bb-0bae-474b-a028-d1ecdee8780a",
+            PermissibleValue(
+                text="523aa2bb-0bae-474b-a028-d1ecdee8780a",
+                description="523aa2bb-0bae-474b-a028-d1ecdee8780a"))
+        setattr(cls, "a8139c11-9202-4328-a74c-277fe4610a82",
+            PermissibleValue(
+                text="a8139c11-9202-4328-a74c-277fe4610a82",
+                description="a8139c11-9202-4328-a74c-277fe4610a82"))
+        setattr(cls, "4929a6ad-370c-48c6-941f-6cd154162315",
+            PermissibleValue(
+                text="4929a6ad-370c-48c6-941f-6cd154162315",
+                description="4929a6ad-370c-48c6-941f-6cd154162315"))
+        setattr(cls, "a7aa7c91-aa65-44e1-b76f-3012b0e6a8bc",
+            PermissibleValue(
+                text="a7aa7c91-aa65-44e1-b76f-3012b0e6a8bc",
+                description="a7aa7c91-aa65-44e1-b76f-3012b0e6a8bc"))
+        setattr(cls, "99d9d426-700b-49b0-aed6-e8917165e57e",
+            PermissibleValue(
+                text="99d9d426-700b-49b0-aed6-e8917165e57e",
+                description="99d9d426-700b-49b0-aed6-e8917165e57e"))
+        setattr(cls, "e5954727-4892-43f7-97d0-73389170712e",
+            PermissibleValue(
+                text="e5954727-4892-43f7-97d0-73389170712e",
+                description="e5954727-4892-43f7-97d0-73389170712e"))
+        setattr(cls, "b01a5da6-a464-43cf-86de-839e2cdd28c1",
+            PermissibleValue(
+                text="b01a5da6-a464-43cf-86de-839e2cdd28c1",
+                description="b01a5da6-a464-43cf-86de-839e2cdd28c1"))
+        setattr(cls, "6629231d-4ef0-48e3-a21e-df8db6dfbb72",
+            PermissibleValue(
+                text="6629231d-4ef0-48e3-a21e-df8db6dfbb72",
+                description="6629231d-4ef0-48e3-a21e-df8db6dfbb72"))
+        setattr(cls, "814ab824-3cda-49cb-b838-904236720041",
+            PermissibleValue(
+                text="814ab824-3cda-49cb-b838-904236720041",
+                description="814ab824-3cda-49cb-b838-904236720041"))
+        setattr(cls, "91d5d36c-5f6c-4a1b-be95-868da36dfe2f",
+            PermissibleValue(
+                text="91d5d36c-5f6c-4a1b-be95-868da36dfe2f",
+                description="91d5d36c-5f6c-4a1b-be95-868da36dfe2f"))
+        setattr(cls, "d48b1e19-799d-405e-a9cb-644321155139",
+            PermissibleValue(
+                text="d48b1e19-799d-405e-a9cb-644321155139",
+                description="d48b1e19-799d-405e-a9cb-644321155139"))
+        setattr(cls, "5fe84549-9a97-47d2-a897-8c18dd8fd34a",
+            PermissibleValue(
+                text="5fe84549-9a97-47d2-a897-8c18dd8fd34a",
+                description="5fe84549-9a97-47d2-a897-8c18dd8fd34a"))
+        setattr(cls, "f1e1a594-a5d5-46da-8766-3576d10a9c32",
+            PermissibleValue(
+                text="f1e1a594-a5d5-46da-8766-3576d10a9c32",
+                description="f1e1a594-a5d5-46da-8766-3576d10a9c32"))
+        setattr(cls, "e23697e0-0c93-406c-8a0f-c6e752b2ece9",
+            PermissibleValue(
+                text="e23697e0-0c93-406c-8a0f-c6e752b2ece9",
+                description="e23697e0-0c93-406c-8a0f-c6e752b2ece9"))
+
+class CategorizationEnum(EnumDefinitionImpl):
+
+    OD = PermissibleValue(
+        text="OD",
+        description="OD")
+    TPOMICS = PermissibleValue(
+        text="TPOMICS",
+        description="TPOMICS")
+    HPLC = PermissibleValue(
+        text="HPLC",
+        description="HPLC")
+    LCMS = PermissibleValue(
+        text="LCMS",
+        description="LCMS")
+    NA = PermissibleValue(
+        text="NA",
+        description="NA")
+
+    _defn = EnumDefinition(
+        name="CategorizationEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "6",
+            PermissibleValue(
+                text="6",
+                description="6"))
+        setattr(cls, "3",
+            PermissibleValue(
+                text="3",
+                description="3"))
+        setattr(cls, "5",
+            PermissibleValue(
+                text="5",
+                description="5"))
+        setattr(cls, "7",
+            PermissibleValue(
+                text="7",
+                description="7"))
+        setattr(cls, "10",
+            PermissibleValue(
+                text="10",
+                description="10"))
+        setattr(cls, "1",
+            PermissibleValue(
+                text="1",
+                description="1"))
+
+class VariantOfIdEnum(EnumDefinitionImpl):
+
+    OD = PermissibleValue(
+        text="OD",
+        description="OD")
+    RAMOS = PermissibleValue(
+        text="RAMOS",
+        description="RAMOS")
+    TPOMICS = PermissibleValue(
+        text="TPOMICS",
+        description="TPOMICS")
+    HPLC = PermissibleValue(
+        text="HPLC",
+        description="HPLC")
+    LCMS = PermissibleValue(
+        text="LCMS",
+        description="LCMS")
+    NA = PermissibleValue(
+        text="NA",
+        description="NA")
+
+    _defn = EnumDefinition(
+        name="VariantOfIdEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "7948",
+            PermissibleValue(
+                text="7948",
+                description="7948"))
+
+# Slots
+class slots:
+    pass
+
+slots.id = Slot(uri=EDD.id, name="id", curie=EDD.curie('id'),
+                   model_uri=EDD.id, domain=None, range=Optional[int])
+
+slots.type_name = Slot(uri=EDD.type_name, name="type_name", curie=EDD.curie('type_name'),
+                   model_uri=EDD.type_name, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.short_name = Slot(uri=EDD.short_name, name="short_name", curie=EDD.curie('short_name'),
+                   model_uri=EDD.short_name, domain=None, range=Optional[str])
+
+slots.type_group = Slot(uri=EDD.type_group, name="type_group", curie=EDD.curie('type_group'),
+                   model_uri=EDD.type_group, domain=None, range=Optional[Union[str, "TypeGroupEnum"]])
+
+slots.uuid = Slot(uri=EDD.uuid, name="uuid", curie=EDD.curie('uuid'),
+                   model_uri=EDD.uuid, domain=None, range=Optional[str])
+
+slots.type_source_id = Slot(uri=EDD.type_source_id, name="type_source_id", curie=EDD.curie('type_source_id'),
+                   model_uri=EDD.type_source_id, domain=None, range=Optional[str])
+
+slots.alt_names = Slot(uri=EDD.alt_names, name="alt_names", curie=EDD.curie('alt_names'),
+                   model_uri=EDD.alt_names, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.provisional = Slot(uri=EDD.provisional, name="provisional", curie=EDD.curie('provisional'),
+                   model_uri=EDD.provisional, domain=None, range=Optional[Union[str, "ProvisionalEnum"]])
+
+slots.db_instance = Slot(uri=EDD.db_instance, name="db_instance", curie=EDD.curie('db_instance'),
+                   model_uri=EDD.db_instance, domain=None, range=Optional[Union[str, "DbInstanceEnum"]])
+
+slots.unit_name = Slot(uri=EDD.unit_name, name="unit_name", curie=EDD.curie('unit_name'),
+                   model_uri=EDD.unit_name, domain=None, range=Optional[Union[str, "UnitNameEnum"]])
+
+slots.display = Slot(uri=EDD.display, name="display", curie=EDD.curie('display'),
+                   model_uri=EDD.display, domain=None, range=Optional[Union[str, "DisplayEnum"]])
+
+slots.alternate_names = Slot(uri=EDD.alternate_names, name="alternate_names", curie=EDD.curie('alternate_names'),
+                   model_uri=EDD.alternate_names, domain=None, range=Optional[Union[str, "AlternateNamesEnum"]])
+
+slots.type_i18n = Slot(uri=EDD.type_i18n, name="type_i18n", curie=EDD.curie('type_i18n'),
+                   model_uri=EDD.type_i18n, domain=None, range=Optional[Union[str, "TypeI18nEnum"]])
+
+slots.type_field = Slot(uri=EDD.type_field, name="type_field", curie=EDD.curie('type_field'),
+                   model_uri=EDD.type_field, domain=None, range=Optional[Union[str, "TypeFieldEnum"]])
+
+slots.input_type = Slot(uri=EDD.input_type, name="input_type", curie=EDD.curie('input_type'),
+                   model_uri=EDD.input_type, domain=None, range=Optional[Union[str, "InputTypeEnum"]])
+
+slots.default_value = Slot(uri=EDD.default_value, name="default_value", curie=EDD.curie('default_value'),
+                   model_uri=EDD.default_value, domain=None, range=Optional[Union[str, "DefaultValueEnum"]])
+
+slots.prefix = Slot(uri=EDD.prefix, name="prefix", curie=EDD.curie('prefix'),
+                   model_uri=EDD.prefix, domain=None, range=Optional[Union[str, "PrefixEnum"]])
+
+slots.postfix = Slot(uri=EDD.postfix, name="postfix", curie=EDD.curie('postfix'),
+                   model_uri=EDD.postfix, domain=None, range=Optional[Union[str, "PostfixEnum"]])
+
+slots.for_context = Slot(uri=EDD.for_context, name="for_context", curie=EDD.curie('for_context'),
+                   model_uri=EDD.for_context, domain=None, range=Optional[Union[str, "ForContextEnum"]])
+
+slots.group_id = Slot(uri=EDD.group_id, name="group_id", curie=EDD.curie('group_id'),
+                   model_uri=EDD.group_id, domain=None, range=Optional[Union[str, "GroupIdEnum"]])
+
+slots.object_ref_id = Slot(uri=EDD.object_ref_id, name="object_ref_id", curie=EDD.curie('object_ref_id'),
+                   model_uri=EDD.object_ref_id, domain=None, range=Optional[int])
+
+slots.categorization = Slot(uri=EDD.categorization, name="categorization", curie=EDD.curie('categorization'),
+                   model_uri=EDD.categorization, domain=None, range=Optional[Union[str, "CategorizationEnum"]])
+
+slots.default_units_id = Slot(uri=EDD.default_units_id, name="default_units_id", curie=EDD.curie('default_units_id'),
+                   model_uri=EDD.default_units_id, domain=None, range=Optional[int])
+
+slots.owned_by_id = Slot(uri=EDD.owned_by_id, name="owned_by_id", curie=EDD.curie('owned_by_id'),
+                   model_uri=EDD.owned_by_id, domain=None, range=Optional[int])
+
+slots.variant_of_id = Slot(uri=EDD.variant_of_id, name="variant_of_id", curie=EDD.curie('variant_of_id'),
+                   model_uri=EDD.variant_of_id, domain=None, range=Optional[Union[str, "VariantOfIdEnum"]])
+
+slots.registry_id = Slot(uri=EDD.registry_id, name="registry_id", curie=EDD.curie('registry_id'),
+                   model_uri=EDD.registry_id, domain=None, range=Optional[str])
+
+slots.registry_url = Slot(uri=EDD.registry_url, name="registry_url", curie=EDD.curie('registry_url'),
+                   model_uri=EDD.registry_url, domain=None, range=Optional[Union[str, HttpsIdentifier]])

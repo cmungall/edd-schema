@@ -1,0 +1,8 @@
+id: 1
+type_name: D-Lactate
+short_name: lac__D
+type_group: m
+uuid: c23ec7d4-9976-48c6-9d04-8da696397be4
+type_source_id: "1"
+provisional: f
+db_instance: metadata_plus.abf-public.sql

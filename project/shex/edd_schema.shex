@@ -1,0 +1,247 @@
+# metamodel_version: 1.7.0
+BASE <https://w3id.org/edd/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX linkml: <https://w3id.org/linkml/>
+
+
+<https://w3id.org/eddHttpsIdentifier> xsd:string
+
+linkml:String xsd:string
+
+linkml:Integer xsd:integer
+
+linkml:Boolean xsd:boolean
+
+linkml:Float xsd:float
+
+linkml:Double xsd:double
+
+linkml:Decimal xsd:decimal
+
+linkml:Time xsd:time
+
+linkml:Date xsd:date
+
+linkml:Datetime xsd:dateTime
+
+linkml:DateOrDatetime linkml:DateOrDatetime
+
+linkml:Uriorcurie IRI
+
+linkml:Curie xsd:string
+
+linkml:Uri IRI
+
+linkml:Ncname xsd:string
+
+linkml:Objectidentifier IRI
+
+linkml:Nodeidentifier NONLITERAL
+
+linkml:Jsonpointer xsd:string
+
+linkml:Jsonpath xsd:string
+
+linkml:Sparqlpath xsd:string
+
+<https://w3id.org/eddGeneIdentifier> CLOSED {
+    (  $<https://w3id.org/eddGeneIdentifier_tes> (  <https://w3id.org/eddmeasurementtype_ptr_id> @linkml:Integer ? ;
+          <https://w3id.org/eddgene_length> @linkml:String ? ;
+          <https://w3id.org/edddb_instance> [ <https://w3id.org/eddDbInstanceEnum#metadata_plus.abf-public.sql>
+             <https://w3id.org/eddDbInstanceEnum#metadata_plus.abf.sql> <https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei.sql>
+             <https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei-public.sql> ] ?
+       ) ;
+       rdf:type [ <https://w3id.org/eddGeneIdentifier> ] ?
+    )
+}
+
+<https://w3id.org/eddMeasurementType> CLOSED {
+    (  $<https://w3id.org/eddMeasurementType_tes> (  <https://w3id.org/eddid> @linkml:Integer ? ;
+          <https://w3id.org/eddtype_name> @linkml:String ? ;
+          <https://w3id.org/eddshort_name> @linkml:String ? ;
+          <https://w3id.org/eddtype_group> [ <https://w3id.org/eddTypeGroupEnum#h> <https://w3id.org/eddTypeGroupEnum#g>
+             <https://w3id.org/eddTypeGroupEnum#m> <https://w3id.org/eddTypeGroupEnum#_> <https://w3id.org/eddTypeGroupEnum#p> ] ?
+          ;
+          <https://w3id.org/edduuid> @linkml:String ? ;
+          <https://w3id.org/eddtype_source_id> @linkml:String ? ;
+          <https://w3id.org/eddalt_names> @linkml:String * ;
+          <https://w3id.org/eddprovisional> [ <https://w3id.org/eddProvisionalEnum#t> <https://w3id.org/eddProvisionalEnum#f> ] ? ;
+          <https://w3id.org/edddb_instance> [ <https://w3id.org/eddDbInstanceEnum#metadata_plus.abf-public.sql>
+             <https://w3id.org/eddDbInstanceEnum#metadata_plus.abf.sql> <https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei.sql>
+             <https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei-public.sql> ] ?
+       ) ;
+       rdf:type [ <https://w3id.org/eddMeasurementType> ] ?
+    )
+}
+
+<https://w3id.org/eddMeasurementUnit> CLOSED {
+    (  $<https://w3id.org/eddMeasurementUnit_tes> (  <https://w3id.org/eddid> @linkml:Integer ? ;
+          <https://w3id.org/eddunit_name> [ <https://w3id.org/eddUnitNameEnum#L/h> <https://w3id.org/eddUnitNameEnum#Liters>
+             <https://w3id.org/eddUnitNameEnum#uM> <https://w3id.org/eddUnitNameEnum#RPKM> <https://w3id.org/eddUnitNameEnum#ug/L>
+             <https://w3id.org/eddUnitNameEnum#Percent> <https://w3id.org/eddUnitNameEnum#TMM>
+             <https://w3id.org/eddUnitNameEnum#nM> <https://w3id.org/eddUnitNameEnum#MEFL>
+             <https://w3id.org/eddUnitNameEnum#milligrams> <https://w3id.org/eddUnitNameEnum#mmol>
+             <https://w3id.org/eddUnitNameEnum#L/m> <https://w3id.org/eddUnitNameEnum#spectral%20count>
+             <https://w3id.org/eddUnitNameEnum#TPM> <https://w3id.org/eddUnitNameEnum#proteins/cell>
+             <https://w3id.org/eddUnitNameEnum#percent> <https://w3id.org/eddUnitNameEnum#Yield%20%28mmole/mmole%29>
+             <https://w3id.org/eddUnitNameEnum#moles%20/%20moles%20glucose> <https://w3id.org/eddUnitNameEnum#intensity>
+             <https://w3id.org/eddUnitNameEnum#counts> <https://w3id.org/eddUnitNameEnum#FPKM>
+             <https://w3id.org/eddUnitNameEnum#Productivity%20%28g/L/hr%29> <https://w3id.org/eddUnitNameEnum#mL>
+             <https://w3id.org/eddUnitNameEnum#relative> <https://w3id.org/eddUnitNameEnum#milliliters>
+             <https://w3id.org/eddUnitNameEnum#RPM> <https://w3id.org/eddUnitNameEnum#g/L>
+             <https://w3id.org/eddUnitNameEnum#mol/L/hr> <https://w3id.org/eddUnitNameEnum#uL>
+             <https://w3id.org/eddUnitNameEnum#Cmol/L> <https://w3id.org/eddUnitNameEnum#mol/L>
+             <https://w3id.org/eddUnitNameEnum#Celsius> <https://w3id.org/eddUnitNameEnum#mg/L>
+             <https://w3id.org/eddUnitNameEnum#grams> <https://w3id.org/eddUnitNameEnum#mol> <https://w3id.org/eddUnitNameEnum#CPM>
+             <https://w3id.org/eddUnitNameEnum#Histogram%200.15%3A7.95%3A0.10> <https://w3id.org/eddUnitNameEnum#mM>
+             <https://w3id.org/eddUnitNameEnum#hours> <https://w3id.org/eddUnitNameEnum#mg%20SolSgr%20/%2010%20mg%20CW>
+             <https://w3id.org/eddUnitNameEnum#mmol/L/h> <https://w3id.org/eddUnitNameEnum#nanograms>
+             <https://w3id.org/eddUnitNameEnum#Cmol> <https://w3id.org/eddUnitNameEnum#lpm> <https://w3id.org/eddUnitNameEnum#ppm>
+             <https://w3id.org/eddUnitNameEnum#g> <https://w3id.org/eddUnitNameEnum#kilograms>
+             <https://w3id.org/eddUnitNameEnum#n/a> ] ? ;
+          <https://w3id.org/edddisplay> [ <https://w3id.org/eddDisplayEnum#t> <https://w3id.org/eddDisplayEnum#f> ] ? ;
+          <https://w3id.org/eddalternate_names> [ <https://w3id.org/eddAlternateNamesEnum#%C2%B5M>
+             <https://w3id.org/eddAlternateNamesEnum#ng> <https://w3id.org/eddAlternateNamesEnum#mmol/L>
+             <https://w3id.org/eddAlternateNamesEnum#uM> <https://w3id.org/eddAlternateNamesEnum#kg>
+             <https://w3id.org/eddAlternateNamesEnum#grams> <https://w3id.org/eddAlternateNamesEnum#L>
+             <https://w3id.org/eddAlternateNamesEnum#g> <https://w3id.org/eddAlternateNamesEnum#Percent>
+             <https://w3id.org/eddAlternateNamesEnum#g/L/hr> <https://w3id.org/eddAlternateNamesEnum#%C2%B5g/L>
+             <https://w3id.org/eddAlternateNamesEnum#nanomolar> <https://w3id.org/eddAlternateNamesEnum#mmole/mmole>
+             <https://w3id.org/eddAlternateNamesEnum#mL> <https://w3id.org/eddAlternateNamesEnum#mg>
+             <https://w3id.org/eddAlternateNamesEnum#%C2%B5L> <https://w3id.org/eddAlternateNamesEnum#mmole/mmodel> ] ? ;
+          <https://w3id.org/eddtype_group> [ <https://w3id.org/eddTypeGroupEnum#h> <https://w3id.org/eddTypeGroupEnum#g>
+             <https://w3id.org/eddTypeGroupEnum#m> <https://w3id.org/eddTypeGroupEnum#_> <https://w3id.org/eddTypeGroupEnum#p> ] ?
+          ;
+          <https://w3id.org/edddb_instance> [ <https://w3id.org/eddDbInstanceEnum#metadata_plus.abf-public.sql>
+             <https://w3id.org/eddDbInstanceEnum#metadata_plus.abf.sql> <https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei.sql>
+             <https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei-public.sql> ] ?
+       ) ;
+       rdf:type [ <https://w3id.org/eddMeasurementUnit> ] ?
+    )
+}
+
+<https://w3id.org/eddMetabolite> CLOSED {
+    (  $<https://w3id.org/eddMetabolite_tes> (  <https://w3id.org/eddmeasurementtype_ptr_id> @linkml:Integer ? ;
+          <https://w3id.org/eddcharge> @linkml:Integer ? ;
+          <https://w3id.org/eddcarbon_count> @linkml:Integer ? ;
+          <https://w3id.org/eddmolar_mass> @linkml:Float ? ;
+          <https://w3id.org/eddmolecular_formula> @linkml:String ? ;
+          <https://w3id.org/eddtags> [ <https://w3id.org/eddTagsEnum#LCMS> <https://w3id.org/eddTagsEnum#Mevalonate>
+             <https://w3id.org/eddTagsEnum#Acetyl-CoA> <https://w3id.org/eddTagsEnum#tag>
+             <https://w3id.org/eddTagsEnum#needs-verification> <https://w3id.org/eddTagsEnum#Mevalonate%20Pathway>
+             <https://w3id.org/eddTagsEnum#HPLC> <https://w3id.org/eddTagsEnum#needs-validation> ] * ;
+          <https://w3id.org/eddid_map> @linkml:String * ;
+          <https://w3id.org/eddsmiles> @linkml:String ? ;
+          <https://w3id.org/eddpubchem_cid> @linkml:Integer ? ;
+          <https://w3id.org/edddb_instance> [ <https://w3id.org/eddDbInstanceEnum#metadata_plus.abf-public.sql>
+             <https://w3id.org/eddDbInstanceEnum#metadata_plus.abf.sql> <https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei.sql>
+             <https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei-public.sql> ] ?
+       ) ;
+       rdf:type [ <https://w3id.org/eddMetabolite> ] ?
+    )
+}
+
+<https://w3id.org/eddMetadataType> CLOSED {
+    (  $<https://w3id.org/eddMetadataType_tes> (  <https://w3id.org/eddid> @linkml:Integer ? ;
+          <https://w3id.org/eddtype_name> @linkml:String ? ;
+          <https://w3id.org/eddtype_i18n> @linkml:String ? ;
+          <https://w3id.org/eddtype_field> [ <https://w3id.org/eddTypeFieldEnum#37> <https://w3id.org/eddTypeFieldEnum#description>
+             <https://w3id.org/eddTypeFieldEnum#control> <https://w3id.org/eddTypeFieldEnum#flush>
+             <https://w3id.org/eddTypeFieldEnum#0.1> <https://w3id.org/eddTypeFieldEnum#contact_extra>
+             <https://w3id.org/eddTypeFieldEnum#strains> <https://w3id.org/eddTypeFieldEnum#200>
+             <https://w3id.org/eddTypeFieldEnum#carbon_source> <https://w3id.org/eddTypeFieldEnum#experimenter>
+             <https://w3id.org/eddTypeFieldEnum#NONE> <https://w3id.org/eddTypeFieldEnum#-->
+             <https://w3id.org/eddTypeFieldEnum#contact> ] ? ;
+          <https://w3id.org/eddinput_type> [ <https://w3id.org/eddInputTypeEnum#replicate>
+             <https://w3id.org/eddInputTypeEnum#strain> <https://w3id.org/eddInputTypeEnum#user>
+             <https://w3id.org/eddInputTypeEnum#textarea> <https://w3id.org/eddInputTypeEnum#carbon_source>
+             <https://w3id.org/eddInputTypeEnum#checkbox> ] ? ;
+          <https://w3id.org/edddefault_value> [ <https://w3id.org/eddDefaultValueEnum#37>
+             <https://w3id.org/eddDefaultValueEnum#%C2%B0C> <https://w3id.org/eddDefaultValueEnum#%C2%BAC>
+             <https://w3id.org/eddDefaultValueEnum#rpm> <https://w3id.org/eddDefaultValueEnum#1>
+             <https://w3id.org/eddDefaultValueEnum#bsa-fast-13min-cold.m> <https://w3id.org/eddDefaultValueEnum#flush>
+             <https://w3id.org/eddDefaultValueEnum#hr> <https://w3id.org/eddDefaultValueEnum#mL>
+             <https://w3id.org/eddDefaultValueEnum#mM> <https://w3id.org/eddDefaultValueEnum#200>
+             <https://w3id.org/eddDefaultValueEnum#--> <https://w3id.org/eddDefaultValueEnum#NONE>
+             <https://w3id.org/eddDefaultValueEnum#mm> <https://w3id.org/eddDefaultValueEnum#Vial%201>
+             <https://w3id.org/eddDefaultValueEnum#0.1> ] ? ;
+          <https://w3id.org/eddprefix> [ <https://w3id.org/eddPrefixEnum#A> <https://w3id.org/eddPrefixEnum#L>
+             <https://w3id.org/eddPrefixEnum#S> ] ? ;
+          <https://w3id.org/eddpostfix> @linkml:String ? ;
+          <https://w3id.org/eddfor_context> [ <https://w3id.org/eddForContextEnum#replicate>
+             <https://w3id.org/eddForContextEnum#string> <https://w3id.org/eddForContextEnum#A>
+             <https://w3id.org/eddForContextEnum#L> <https://w3id.org/eddForContextEnum#strain>
+             <https://w3id.org/eddForContextEnum#user> <https://w3id.org/eddForContextEnum#textarea>
+             <https://w3id.org/eddForContextEnum#S> <https://w3id.org/eddForContextEnum#carbon_source>
+             <https://w3id.org/eddForContextEnum#checkbox> ] ? ;
+          <https://w3id.org/edduuid> @linkml:String ? ;
+          <https://w3id.org/eddgroup_id> @linkml:String ? ;
+          <https://w3id.org/edddb_instance> [ <https://w3id.org/eddDbInstanceEnum#metadata_plus.abf-public.sql>
+             <https://w3id.org/eddDbInstanceEnum#metadata_plus.abf.sql> <https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei.sql>
+             <https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei-public.sql> ] ?
+       ) ;
+       rdf:type [ <https://w3id.org/eddMetadataType> ] ?
+    )
+}
+
+<https://w3id.org/eddProteinIdentifier> CLOSED {
+    (  $<https://w3id.org/eddProteinIdentifier_tes> (  <https://w3id.org/eddmeasurementtype_ptr_id> @linkml:Integer ? ;
+          <https://w3id.org/eddaccession_id> @linkml:String * ;
+          <https://w3id.org/eddlength> @linkml:Float ? ;
+          <https://w3id.org/eddmass> @linkml:String * ;
+          <https://w3id.org/eddaccession_code> @linkml:String ? ;
+          <https://w3id.org/edddb_instance> [ <https://w3id.org/eddDbInstanceEnum#metadata_plus.abf-public.sql>
+             <https://w3id.org/eddDbInstanceEnum#metadata_plus.abf.sql> <https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei.sql>
+             <https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei-public.sql> ] ?
+       ) ;
+       rdf:type [ <https://w3id.org/eddProteinIdentifier> ] ?
+    )
+}
+
+<https://w3id.org/eddProteinStrain> CLOSED {
+    (  $<https://w3id.org/eddProteinStrain_tes> (  <https://w3id.org/eddid> @linkml:Integer ? ;
+          <https://w3id.org/eddprotein_id> @linkml:Integer ? ;
+          <https://w3id.org/eddstrain_id> @linkml:Integer ? ;
+          <https://w3id.org/edddb_instance> [ <https://w3id.org/eddDbInstanceEnum#metadata_plus.abf-public.sql>
+             <https://w3id.org/eddDbInstanceEnum#metadata_plus.abf.sql> <https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei.sql>
+             <https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei-public.sql> ] ?
+       ) ;
+       rdf:type [ <https://w3id.org/eddProteinStrain> ] ?
+    )
+}
+
+<https://w3id.org/eddProtocol> CLOSED {
+    (  $<https://w3id.org/eddProtocol_tes> (  <https://w3id.org/eddobject_ref_id> @linkml:Integer ? ;
+          <https://w3id.org/eddcategorization> [ <https://w3id.org/eddCategorizationEnum#5>
+             <https://w3id.org/eddCategorizationEnum#7> <https://w3id.org/eddCategorizationEnum#OD>
+             <https://w3id.org/eddCategorizationEnum#3> <https://w3id.org/eddCategorizationEnum#10>
+             <https://w3id.org/eddCategorizationEnum#LCMS> <https://w3id.org/eddCategorizationEnum#1>
+             <https://w3id.org/eddCategorizationEnum#6> <https://w3id.org/eddCategorizationEnum#TPOMICS>
+             <https://w3id.org/eddCategorizationEnum#NA> <https://w3id.org/eddCategorizationEnum#HPLC> ] ? ;
+          <https://w3id.org/edddefault_units_id> @linkml:Integer ? ;
+          <https://w3id.org/eddowned_by_id> @linkml:Integer ? ;
+          <https://w3id.org/eddvariant_of_id> [ <https://w3id.org/eddVariantOfIdEnum#OD>
+             <https://w3id.org/eddVariantOfIdEnum#RAMOS> <https://w3id.org/eddVariantOfIdEnum#LCMS>
+             <https://w3id.org/eddVariantOfIdEnum#7948> <https://w3id.org/eddVariantOfIdEnum#TPOMICS>
+             <https://w3id.org/eddVariantOfIdEnum#NA> <https://w3id.org/eddVariantOfIdEnum#HPLC> ] ? ;
+          <https://w3id.org/edddb_instance> [ <https://w3id.org/eddDbInstanceEnum#metadata_plus.abf-public.sql>
+             <https://w3id.org/eddDbInstanceEnum#metadata_plus.abf.sql> <https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei.sql>
+             <https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei-public.sql> ] ?
+       ) ;
+       rdf:type [ <https://w3id.org/eddProtocol> ] ?
+    )
+}
+
+<https://w3id.org/eddStrain> CLOSED {
+    (  $<https://w3id.org/eddStrain_tes> (  <https://w3id.org/eddobject_ref_id> @linkml:Integer ? ;
+          <https://w3id.org/eddregistry_id> @linkml:String ? ;
+          <https://w3id.org/eddregistry_url> @<https://w3id.org/eddHttpsIdentifier> ? ;
+          <https://w3id.org/edddb_instance> [ <https://w3id.org/eddDbInstanceEnum#metadata_plus.abf-public.sql>
+             <https://w3id.org/eddDbInstanceEnum#metadata_plus.abf.sql> <https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei.sql>
+             <https://w3id.org/eddDbInstanceEnum#metadata_plus.jbei-public.sql> ] ?
+       ) ;
+       rdf:type [ <https://w3id.org/eddStrain> ] ?
+    )
+}
+

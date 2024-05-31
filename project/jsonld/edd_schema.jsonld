@@ -1,0 +1,2030 @@
+{
+  "name": "edd",
+  "description": "NON-OFFICIAL rendering of EDD schema as LinkML (for demo purposes)",
+  "id": "https://w3id.org/edd",
+  "imports": [
+    "linkml:types"
+  ],
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "prefixes": [
+    {
+      "prefix_prefix": "linkml",
+      "prefix_reference": "https://w3id.org/linkml/"
+    },
+    {
+      "prefix_prefix": "edd",
+      "prefix_reference": "https://w3id.org/edd"
+    }
+  ],
+  "default_prefix": "edd",
+  "default_range": "string",
+  "types": [
+    {
+      "name": "https_identifier",
+      "definition_uri": "https://w3id.org/eddHttpsIdentifier",
+      "from_schema": "https://w3id.org/edd",
+      "typeof": "string",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "string",
+      "definition_uri": "https://w3id.org/linkml/String",
+      "description": "A character string",
+      "notes": [
+        "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Text"
+      ],
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "integer",
+      "definition_uri": "https://w3id.org/linkml/Integer",
+      "description": "An integer",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"integer\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Integer"
+      ],
+      "base": "int",
+      "uri": "http://www.w3.org/2001/XMLSchema#integer",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "boolean",
+      "definition_uri": "https://w3id.org/linkml/Boolean",
+      "description": "A binary (true or false) value",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"boolean\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Boolean"
+      ],
+      "base": "Bool",
+      "uri": "http://www.w3.org/2001/XMLSchema#boolean",
+      "repr": "bool",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "float",
+      "definition_uri": "https://w3id.org/linkml/Float",
+      "description": "A real number that conforms to the xsd:float specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"float\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Float"
+      ],
+      "base": "float",
+      "uri": "http://www.w3.org/2001/XMLSchema#float",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "double",
+      "definition_uri": "https://w3id.org/linkml/Double",
+      "description": "A real number that conforms to the xsd:double specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"double\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "close_mappings": [
+        "schema:Float"
+      ],
+      "base": "float",
+      "uri": "http://www.w3.org/2001/XMLSchema#double",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "decimal",
+      "definition_uri": "https://w3id.org/linkml/Decimal",
+      "description": "A real number with arbitrary precision that conforms to the xsd:decimal specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"decimal\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "broad_mappings": [
+        "schema:Number"
+      ],
+      "base": "Decimal",
+      "uri": "http://www.w3.org/2001/XMLSchema#decimal",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "time",
+      "definition_uri": "https://w3id.org/linkml/Time",
+      "description": "A time object represents a (local) time of day, independent of any particular day",
+      "notes": [
+        "URI is dateTime because OWL reasoners do not work with straight date or time",
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"time\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Time"
+      ],
+      "base": "XSDTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#time",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "date",
+      "definition_uri": "https://w3id.org/linkml/Date",
+      "description": "a date (year, month and day) in an idealized calendar",
+      "notes": [
+        "URI is dateTime because OWL reasoners don't work with straight date or time",
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Date"
+      ],
+      "base": "XSDDate",
+      "uri": "http://www.w3.org/2001/XMLSchema#date",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "datetime",
+      "definition_uri": "https://w3id.org/linkml/Datetime",
+      "description": "The combination of a date and time",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"datetime\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:DateTime"
+      ],
+      "base": "XSDDateTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "date_or_datetime",
+      "definition_uri": "https://w3id.org/linkml/DateOrDatetime",
+      "description": "Either a date or a datetime",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date_or_datetime\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "https://w3id.org/linkml/DateOrDatetime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "uriorcurie",
+      "definition_uri": "https://w3id.org/linkml/Uriorcurie",
+      "description": "a URI or a CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uriorcurie\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "URIorCURIE",
+      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "curie",
+      "definition_uri": "https://w3id.org/linkml/Curie",
+      "conforms_to": "https://www.w3.org/TR/curie/",
+      "description": "a compact URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"curie\"."
+      ],
+      "comments": [
+        "in RDF serializations this MUST be expanded to a URI",
+        "in non-RDF serializations MAY be serialized as the compact representation"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "Curie",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "uri",
+      "definition_uri": "https://w3id.org/linkml/Uri",
+      "conforms_to": "https://www.ietf.org/rfc/rfc3987.txt",
+      "description": "a complete URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uri\"."
+      ],
+      "comments": [
+        "in RDF serializations a slot with range of uri is treated as a literal or type xsd:anyURI unless it is an identifier or a reference to an identifier, in which case it is translated directly to a node"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "close_mappings": [
+        "schema:URL"
+      ],
+      "base": "URI",
+      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "ncname",
+      "definition_uri": "https://w3id.org/linkml/Ncname",
+      "description": "Prefix part of CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"ncname\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "NCName",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "objectidentifier",
+      "definition_uri": "https://w3id.org/linkml/Objectidentifier",
+      "description": "A URI or CURIE that represents an object in the model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"objectidentifier\"."
+      ],
+      "comments": [
+        "Used for inheritance and type checking"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "ElementIdentifier",
+      "uri": "http://www.w3.org/ns/shex#iri",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "nodeidentifier",
+      "definition_uri": "https://w3id.org/linkml/Nodeidentifier",
+      "description": "A URI, CURIE or BNODE that represents a node in a model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"nodeidentifier\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "NodeIdentifier",
+      "uri": "http://www.w3.org/ns/shex#nonLiteral",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "jsonpointer",
+      "definition_uri": "https://w3id.org/linkml/Jsonpointer",
+      "conforms_to": "https://datatracker.ietf.org/doc/html/rfc6901",
+      "description": "A string encoding a JSON Pointer. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to a valid object within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpointer\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "jsonpath",
+      "definition_uri": "https://w3id.org/linkml/Jsonpath",
+      "conforms_to": "https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html",
+      "description": "A string encoding a JSON Path. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpath\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "sparqlpath",
+      "definition_uri": "https://w3id.org/linkml/Sparqlpath",
+      "conforms_to": "https://www.w3.org/TR/sparql11-query/#propertypaths",
+      "description": "A string encoding a SPARQL Property Path. The value of the string MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded as RDF.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"sparqlpath\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    }
+  ],
+  "enums": [
+    {
+      "name": "db_instance_enum",
+      "definition_uri": "https://w3id.org/eddDbInstanceEnum",
+      "from_schema": "https://w3id.org/edd",
+      "permissible_values": [
+        {
+          "text": "metadata_plus.abf-public.sql",
+          "description": "metadata_plus.abf-public.sql"
+        },
+        {
+          "text": "metadata_plus.abf.sql",
+          "description": "metadata_plus.abf.sql"
+        },
+        {
+          "text": "metadata_plus.jbei.sql",
+          "description": "metadata_plus.jbei.sql"
+        },
+        {
+          "text": "metadata_plus.jbei-public.sql",
+          "description": "metadata_plus.jbei-public.sql"
+        }
+      ]
+    },
+    {
+      "name": "type_group_enum",
+      "definition_uri": "https://w3id.org/eddTypeGroupEnum",
+      "from_schema": "https://w3id.org/edd",
+      "permissible_values": [
+        {
+          "text": "h",
+          "description": "h"
+        },
+        {
+          "text": "g",
+          "description": "g"
+        },
+        {
+          "text": "m",
+          "description": "m"
+        },
+        {
+          "text": "_",
+          "description": "_"
+        },
+        {
+          "text": "p",
+          "description": "p"
+        }
+      ]
+    },
+    {
+      "name": "provisional_enum",
+      "definition_uri": "https://w3id.org/eddProvisionalEnum",
+      "from_schema": "https://w3id.org/edd",
+      "permissible_values": [
+        {
+          "text": "t",
+          "description": "t"
+        },
+        {
+          "text": "f",
+          "description": "f"
+        }
+      ]
+    },
+    {
+      "name": "unit_name_enum",
+      "definition_uri": "https://w3id.org/eddUnitNameEnum",
+      "from_schema": "https://w3id.org/edd",
+      "permissible_values": [
+        {
+          "text": "L/h",
+          "description": "L/h"
+        },
+        {
+          "text": "Liters",
+          "description": "Liters"
+        },
+        {
+          "text": "uM",
+          "description": "uM"
+        },
+        {
+          "text": "RPKM",
+          "description": "RPKM"
+        },
+        {
+          "text": "ug/L",
+          "description": "ug/L"
+        },
+        {
+          "text": "Percent",
+          "description": "Percent"
+        },
+        {
+          "text": "TMM",
+          "description": "TMM"
+        },
+        {
+          "text": "nM",
+          "description": "nM"
+        },
+        {
+          "text": "MEFL",
+          "description": "MEFL"
+        },
+        {
+          "text": "milligrams",
+          "description": "milligrams"
+        },
+        {
+          "text": "mmol",
+          "description": "mmol"
+        },
+        {
+          "text": "L/m",
+          "description": "L/m"
+        },
+        {
+          "text": "spectral count",
+          "description": "spectral count"
+        },
+        {
+          "text": "TPM",
+          "description": "TPM"
+        },
+        {
+          "text": "proteins/cell",
+          "description": "proteins/cell"
+        },
+        {
+          "text": "percent",
+          "description": "percent"
+        },
+        {
+          "text": "Yield (mmole/mmole)",
+          "description": "Yield (mmole/mmole)"
+        },
+        {
+          "text": "moles / moles glucose",
+          "description": "moles / moles glucose"
+        },
+        {
+          "text": "intensity",
+          "description": "intensity"
+        },
+        {
+          "text": "counts",
+          "description": "counts"
+        },
+        {
+          "text": "FPKM",
+          "description": "FPKM"
+        },
+        {
+          "text": "Productivity (g/L/hr)",
+          "description": "Productivity (g/L/hr)"
+        },
+        {
+          "text": "mL",
+          "description": "mL"
+        },
+        {
+          "text": "relative",
+          "description": "relative"
+        },
+        {
+          "text": "milliliters",
+          "description": "milliliters"
+        },
+        {
+          "text": "RPM",
+          "description": "RPM"
+        },
+        {
+          "text": "g/L",
+          "description": "g/L"
+        },
+        {
+          "text": "mol/L/hr",
+          "description": "mol/L/hr"
+        },
+        {
+          "text": "uL",
+          "description": "uL"
+        },
+        {
+          "text": "Cmol/L",
+          "description": "Cmol/L"
+        },
+        {
+          "text": "mol/L",
+          "description": "mol/L"
+        },
+        {
+          "text": "Celsius",
+          "description": "Celsius"
+        },
+        {
+          "text": "mg/L",
+          "description": "mg/L"
+        },
+        {
+          "text": "grams",
+          "description": "grams"
+        },
+        {
+          "text": "mol",
+          "description": "mol"
+        },
+        {
+          "text": "CPM",
+          "description": "CPM"
+        },
+        {
+          "text": "Histogram 0.15:7.95:0.10",
+          "description": "Histogram 0.15:7.95:0.10"
+        },
+        {
+          "text": "mM",
+          "description": "mM"
+        },
+        {
+          "text": "hours",
+          "description": "hours"
+        },
+        {
+          "text": "mg SolSgr / 10 mg CW",
+          "description": "mg SolSgr / 10 mg CW"
+        },
+        {
+          "text": "mmol/L/h",
+          "description": "mmol/L/h"
+        },
+        {
+          "text": "nanograms",
+          "description": "nanograms"
+        },
+        {
+          "text": "Cmol",
+          "description": "Cmol"
+        },
+        {
+          "text": "lpm",
+          "description": "lpm"
+        },
+        {
+          "text": "ppm",
+          "description": "ppm"
+        },
+        {
+          "text": "g",
+          "description": "g"
+        },
+        {
+          "text": "kilograms",
+          "description": "kilograms"
+        },
+        {
+          "text": "n/a",
+          "description": "n/a"
+        }
+      ]
+    },
+    {
+      "name": "display_enum",
+      "definition_uri": "https://w3id.org/eddDisplayEnum",
+      "from_schema": "https://w3id.org/edd",
+      "permissible_values": [
+        {
+          "text": "t",
+          "description": "t"
+        },
+        {
+          "text": "f",
+          "description": "f"
+        }
+      ]
+    },
+    {
+      "name": "alternate_names_enum",
+      "definition_uri": "https://w3id.org/eddAlternateNamesEnum",
+      "from_schema": "https://w3id.org/edd",
+      "permissible_values": [
+        {
+          "text": "\u00b5M",
+          "description": "\u00b5M"
+        },
+        {
+          "text": "ng",
+          "description": "ng"
+        },
+        {
+          "text": "mmol/L",
+          "description": "mmol/L"
+        },
+        {
+          "text": "uM",
+          "description": "uM"
+        },
+        {
+          "text": "kg",
+          "description": "kg"
+        },
+        {
+          "text": "grams",
+          "description": "grams"
+        },
+        {
+          "text": "L",
+          "description": "L"
+        },
+        {
+          "text": "g",
+          "description": "g"
+        },
+        {
+          "text": "Percent",
+          "description": "Percent"
+        },
+        {
+          "text": "g/L/hr",
+          "description": "g/L/hr"
+        },
+        {
+          "text": "\u00b5g/L",
+          "description": "\u00b5g/L"
+        },
+        {
+          "text": "nanomolar",
+          "description": "nanomolar"
+        },
+        {
+          "text": "mmole/mmole",
+          "description": "mmole/mmole"
+        },
+        {
+          "text": "mL",
+          "description": "mL"
+        },
+        {
+          "text": "mg",
+          "description": "mg"
+        },
+        {
+          "text": "\u00b5L",
+          "description": "\u00b5L"
+        },
+        {
+          "text": "mmole/mmodel",
+          "description": "mmole/mmodel"
+        }
+      ]
+    },
+    {
+      "name": "tags_enum",
+      "definition_uri": "https://w3id.org/eddTagsEnum",
+      "from_schema": "https://w3id.org/edd",
+      "permissible_values": [
+        {
+          "text": "LCMS",
+          "description": "LCMS"
+        },
+        {
+          "text": "Mevalonate",
+          "description": "Mevalonate"
+        },
+        {
+          "text": "Acetyl-CoA",
+          "description": "Acetyl-CoA"
+        },
+        {
+          "text": "tag",
+          "description": "tag"
+        },
+        {
+          "text": "needs-verification",
+          "description": "needs-verification"
+        },
+        {
+          "text": "Mevalonate Pathway",
+          "description": "Mevalonate Pathway"
+        },
+        {
+          "text": "HPLC",
+          "description": "HPLC"
+        },
+        {
+          "text": "needs-validation",
+          "description": "needs-validation"
+        }
+      ]
+    },
+    {
+      "name": "type_field_enum",
+      "definition_uri": "https://w3id.org/eddTypeFieldEnum",
+      "from_schema": "https://w3id.org/edd",
+      "permissible_values": [
+        {
+          "text": "37",
+          "description": "37"
+        },
+        {
+          "text": "description",
+          "description": "description"
+        },
+        {
+          "text": "control",
+          "description": "control"
+        },
+        {
+          "text": "flush",
+          "description": "flush"
+        },
+        {
+          "text": "0.1",
+          "description": "0.1"
+        },
+        {
+          "text": "contact_extra",
+          "description": "contact_extra"
+        },
+        {
+          "text": "strains",
+          "description": "strains"
+        },
+        {
+          "text": "200",
+          "description": "200"
+        },
+        {
+          "text": "carbon_source",
+          "description": "carbon_source"
+        },
+        {
+          "text": "experimenter",
+          "description": "experimenter"
+        },
+        {
+          "text": "NONE",
+          "description": "None"
+        },
+        {
+          "text": "--",
+          "description": "--"
+        },
+        {
+          "text": "contact",
+          "description": "contact"
+        }
+      ]
+    },
+    {
+      "name": "input_type_enum",
+      "definition_uri": "https://w3id.org/eddInputTypeEnum",
+      "from_schema": "https://w3id.org/edd",
+      "permissible_values": [
+        {
+          "text": "replicate",
+          "description": "replicate"
+        },
+        {
+          "text": "strain",
+          "description": "strain"
+        },
+        {
+          "text": "user",
+          "description": "user"
+        },
+        {
+          "text": "textarea",
+          "description": "textarea"
+        },
+        {
+          "text": "carbon_source",
+          "description": "carbon_source"
+        },
+        {
+          "text": "checkbox",
+          "description": "checkbox"
+        }
+      ]
+    },
+    {
+      "name": "default_value_enum",
+      "definition_uri": "https://w3id.org/eddDefaultValueEnum",
+      "from_schema": "https://w3id.org/edd",
+      "permissible_values": [
+        {
+          "text": "37",
+          "description": "37"
+        },
+        {
+          "text": "\u00b0C",
+          "description": "\u00b0C"
+        },
+        {
+          "text": "\u00baC",
+          "description": "\u00baC"
+        },
+        {
+          "text": "rpm",
+          "description": "rpm"
+        },
+        {
+          "text": "1",
+          "description": "1"
+        },
+        {
+          "text": "bsa-fast-13min-cold.m",
+          "description": "bsa-fast-13min-cold.m"
+        },
+        {
+          "text": "flush",
+          "description": "flush"
+        },
+        {
+          "text": "hr",
+          "description": "hr"
+        },
+        {
+          "text": "mL",
+          "description": "mL"
+        },
+        {
+          "text": "mM",
+          "description": "mM"
+        },
+        {
+          "text": "200",
+          "description": "200"
+        },
+        {
+          "text": "--",
+          "description": "--"
+        },
+        {
+          "text": "NONE",
+          "description": "None"
+        },
+        {
+          "text": "mm",
+          "description": "mm"
+        },
+        {
+          "text": "Vial 1",
+          "description": "Vial 1"
+        },
+        {
+          "text": "0.1",
+          "description": "0.1"
+        }
+      ]
+    },
+    {
+      "name": "prefix_enum",
+      "definition_uri": "https://w3id.org/eddPrefixEnum",
+      "from_schema": "https://w3id.org/edd",
+      "permissible_values": [
+        {
+          "text": "A",
+          "description": "A"
+        },
+        {
+          "text": "L",
+          "description": "L"
+        },
+        {
+          "text": "S",
+          "description": "S"
+        }
+      ]
+    },
+    {
+      "name": "for_context_enum",
+      "definition_uri": "https://w3id.org/eddForContextEnum",
+      "from_schema": "https://w3id.org/edd",
+      "permissible_values": [
+        {
+          "text": "replicate",
+          "description": "replicate"
+        },
+        {
+          "text": "string",
+          "description": "string"
+        },
+        {
+          "text": "A",
+          "description": "A"
+        },
+        {
+          "text": "L",
+          "description": "L"
+        },
+        {
+          "text": "strain",
+          "description": "strain"
+        },
+        {
+          "text": "user",
+          "description": "user"
+        },
+        {
+          "text": "textarea",
+          "description": "textarea"
+        },
+        {
+          "text": "S",
+          "description": "S"
+        },
+        {
+          "text": "carbon_source",
+          "description": "carbon_source"
+        },
+        {
+          "text": "checkbox",
+          "description": "checkbox"
+        }
+      ]
+    },
+    {
+      "name": "categorization_enum",
+      "definition_uri": "https://w3id.org/eddCategorizationEnum",
+      "from_schema": "https://w3id.org/edd",
+      "permissible_values": [
+        {
+          "text": "5",
+          "description": "5"
+        },
+        {
+          "text": "7",
+          "description": "7"
+        },
+        {
+          "text": "OD",
+          "description": "OD"
+        },
+        {
+          "text": "3",
+          "description": "3"
+        },
+        {
+          "text": "10",
+          "description": "10"
+        },
+        {
+          "text": "LCMS",
+          "description": "LCMS"
+        },
+        {
+          "text": "1",
+          "description": "1"
+        },
+        {
+          "text": "6",
+          "description": "6"
+        },
+        {
+          "text": "TPOMICS",
+          "description": "TPOMICS"
+        },
+        {
+          "text": "NA",
+          "description": "NA"
+        },
+        {
+          "text": "HPLC",
+          "description": "HPLC"
+        }
+      ]
+    },
+    {
+      "name": "variant_of_id_enum",
+      "definition_uri": "https://w3id.org/eddVariantOfIdEnum",
+      "from_schema": "https://w3id.org/edd",
+      "permissible_values": [
+        {
+          "text": "OD",
+          "description": "OD"
+        },
+        {
+          "text": "RAMOS",
+          "description": "RAMOS"
+        },
+        {
+          "text": "LCMS",
+          "description": "LCMS"
+        },
+        {
+          "text": "7948",
+          "description": "7948"
+        },
+        {
+          "text": "TPOMICS",
+          "description": "TPOMICS"
+        },
+        {
+          "text": "NA",
+          "description": "NA"
+        },
+        {
+          "text": "HPLC",
+          "description": "HPLC"
+        }
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "name": "measurementtype_ptr_id",
+      "definition_uri": "https://w3id.org/eddmeasurementtype_ptr_id",
+      "examples": [
+        {
+          "value": "260597",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddmeasurementtype_ptr_id",
+      "owner": "ProteinIdentifier",
+      "domain_of": [
+        "GeneIdentifier",
+        "Metabolite",
+        "ProteinIdentifier"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "gene_length",
+      "definition_uri": "https://w3id.org/eddgene_length",
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddgene_length",
+      "owner": "GeneIdentifier",
+      "domain_of": [
+        "GeneIdentifier"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "db_instance",
+      "definition_uri": "https://w3id.org/edddb_instance",
+      "examples": [
+        {
+          "value": "metadata_plus.jbei.sql",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/edddb_instance",
+      "owner": "Strain",
+      "domain_of": [
+        "GeneIdentifier",
+        "MeasurementType",
+        "MeasurementUnit",
+        "Metabolite",
+        "MetadataType",
+        "ProteinIdentifier",
+        "ProteinStrain",
+        "Protocol",
+        "Strain"
+      ],
+      "range": "db_instance_enum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "id",
+      "definition_uri": "https://w3id.org/eddid",
+      "examples": [
+        {
+          "value": "262274",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddid",
+      "owner": "ProteinStrain",
+      "domain_of": [
+        "MeasurementType",
+        "MeasurementUnit",
+        "MetadataType",
+        "ProteinStrain"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "type_name",
+      "definition_uri": "https://w3id.org/eddtype_name",
+      "examples": [
+        {
+          "value": "pKLJ12",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddtype_name",
+      "owner": "MetadataType",
+      "domain_of": [
+        "MeasurementType",
+        "MetadataType"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "short_name",
+      "definition_uri": "https://w3id.org/eddshort_name",
+      "examples": [
+        {
+          "value": "Total Biomass Input",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddshort_name",
+      "owner": "MeasurementType",
+      "domain_of": [
+        "MeasurementType"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "type_group",
+      "definition_uri": "https://w3id.org/eddtype_group",
+      "examples": [
+        {
+          "value": "p",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddtype_group",
+      "owner": "MeasurementUnit",
+      "domain_of": [
+        "MeasurementType",
+        "MeasurementUnit"
+      ],
+      "range": "type_group_enum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "uuid",
+      "definition_uri": "https://w3id.org/edduuid",
+      "examples": [
+        {
+          "value": "231814",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/edduuid",
+      "owner": "MetadataType",
+      "domain_of": [
+        "MeasurementType",
+        "MetadataType"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "type_source_id",
+      "definition_uri": "https://w3id.org/eddtype_source_id",
+      "examples": [
+        {
+          "value": "5568ac84-29bb-4da2-b8c4-6b3f6685dd29",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddtype_source_id",
+      "owner": "MeasurementType",
+      "domain_of": [
+        "MeasurementType"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "alt_names",
+      "definition_uri": "https://w3id.org/eddalt_names",
+      "examples": [
+        {
+          "value": "DO",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddalt_names",
+      "multivalued": true,
+      "owner": "MeasurementType",
+      "domain_of": [
+        "MeasurementType"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "provisional",
+      "definition_uri": "https://w3id.org/eddprovisional",
+      "examples": [
+        {
+          "value": "f",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddprovisional",
+      "owner": "MeasurementType",
+      "domain_of": [
+        "MeasurementType"
+      ],
+      "range": "provisional_enum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "unit_name",
+      "definition_uri": "https://w3id.org/eddunit_name",
+      "examples": [
+        {
+          "value": "uM",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddunit_name",
+      "owner": "MeasurementUnit",
+      "domain_of": [
+        "MeasurementUnit"
+      ],
+      "range": "unit_name_enum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "display",
+      "definition_uri": "https://w3id.org/edddisplay",
+      "examples": [
+        {
+          "value": "t",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/edddisplay",
+      "owner": "MeasurementUnit",
+      "domain_of": [
+        "MeasurementUnit"
+      ],
+      "range": "display_enum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "alternate_names",
+      "definition_uri": "https://w3id.org/eddalternate_names",
+      "examples": [
+        {
+          "value": "\u00b5M",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddalternate_names",
+      "owner": "MeasurementUnit",
+      "domain_of": [
+        "MeasurementUnit"
+      ],
+      "range": "alternate_names_enum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "charge",
+      "definition_uri": "https://w3id.org/eddcharge",
+      "examples": [
+        {
+          "value": "0",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddcharge",
+      "owner": "Metabolite",
+      "domain_of": [
+        "Metabolite"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "carbon_count",
+      "definition_uri": "https://w3id.org/eddcarbon_count",
+      "examples": [
+        {
+          "value": "6",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddcarbon_count",
+      "owner": "Metabolite",
+      "domain_of": [
+        "Metabolite"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "molar_mass",
+      "definition_uri": "https://w3id.org/eddmolar_mass",
+      "examples": [
+        {
+          "value": "113.16000",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddmolar_mass",
+      "owner": "Metabolite",
+      "domain_of": [
+        "Metabolite"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "molecular_formula",
+      "definition_uri": "https://w3id.org/eddmolecular_formula",
+      "examples": [
+        {
+          "value": "C6H11NO",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddmolecular_formula",
+      "owner": "Metabolite",
+      "domain_of": [
+        "Metabolite"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "tags",
+      "definition_uri": "https://w3id.org/eddtags",
+      "examples": [
+        {
+          "value": "needs-validation",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddtags",
+      "multivalued": true,
+      "owner": "Metabolite",
+      "domain_of": [
+        "Metabolite"
+      ],
+      "range": "tags_enum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "id_map",
+      "definition_uri": "https://w3id.org/eddid_map",
+      "examples": [
+        {
+          "value": "CHEBI:CHEBI:16608|KEGG Compound:C03845|CHEBI:CHEBI:2139|Human Metabolome Database:HMDB06841|MetaNetX (MNX) Chemical:MNXM2494|Human Metabolome Database:HMDB06541|LipidMaps:LMST01010096|BioCyc:META:CPD-8621|CHEBI:CHEBI:12170|CHEBI:CHEBI:20645|SEED Compound:cpd02398|Human Metabolome Database:HMDB59618",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddid_map",
+      "multivalued": true,
+      "owner": "Metabolite",
+      "domain_of": [
+        "Metabolite"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "smiles",
+      "definition_uri": "https://w3id.org/eddsmiles",
+      "examples": [
+        {
+          "value": "C1CCC(=O)NCC1",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddsmiles",
+      "owner": "Metabolite",
+      "domain_of": [
+        "Metabolite"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "pubchem_cid",
+      "definition_uri": "https://w3id.org/eddpubchem_cid",
+      "examples": [
+        {
+          "value": "7768",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddpubchem_cid",
+      "owner": "Metabolite",
+      "domain_of": [
+        "Metabolite"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "type_i18n",
+      "definition_uri": "https://w3id.org/eddtype_i18n",
+      "examples": [
+        {
+          "value": "main.models.Line.replicate",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddtype_i18n",
+      "owner": "MetadataType",
+      "domain_of": [
+        "MetadataType"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "type_field",
+      "definition_uri": "https://w3id.org/eddtype_field",
+      "examples": [
+        {
+          "value": "0.1",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddtype_field",
+      "owner": "MetadataType",
+      "domain_of": [
+        "MetadataType"
+      ],
+      "range": "type_field_enum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "input_type",
+      "definition_uri": "https://w3id.org/eddinput_type",
+      "examples": [
+        {
+          "value": "replicate",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddinput_type",
+      "owner": "MetadataType",
+      "domain_of": [
+        "MetadataType"
+      ],
+      "range": "input_type_enum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "default_value",
+      "definition_uri": "https://w3id.org/edddefault_value",
+      "examples": [
+        {
+          "value": "rpm",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/edddefault_value",
+      "owner": "MetadataType",
+      "domain_of": [
+        "MetadataType"
+      ],
+      "range": "default_value_enum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "prefix",
+      "definition_uri": "https://w3id.org/eddprefix",
+      "examples": [
+        {
+          "value": "L",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddprefix",
+      "owner": "MetadataType",
+      "domain_of": [
+        "MetadataType"
+      ],
+      "range": "prefix_enum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "postfix",
+      "definition_uri": "https://w3id.org/eddpostfix",
+      "examples": [
+        {
+          "value": "10",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddpostfix",
+      "owner": "MetadataType",
+      "domain_of": [
+        "MetadataType"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "for_context",
+      "definition_uri": "https://w3id.org/eddfor_context",
+      "examples": [
+        {
+          "value": "replicate",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddfor_context",
+      "owner": "MetadataType",
+      "domain_of": [
+        "MetadataType"
+      ],
+      "range": "for_context_enum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "group_id",
+      "definition_uri": "https://w3id.org/eddgroup_id",
+      "examples": [
+        {
+          "value": "71f5cd94-4dd4-45ca-a926-9f0717631799",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddgroup_id",
+      "owner": "MetadataType",
+      "domain_of": [
+        "MetadataType"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "accession_id",
+      "definition_uri": "https://w3id.org/eddaccession_id",
+      "examples": [
+        {
+          "value": "575",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddaccession_id",
+      "multivalued": true,
+      "owner": "ProteinIdentifier",
+      "domain_of": [
+        "ProteinIdentifier"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "length",
+      "definition_uri": "https://w3id.org/eddlength",
+      "examples": [
+        {
+          "value": "62153.00000",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddlength",
+      "owner": "ProteinIdentifier",
+      "domain_of": [
+        "ProteinIdentifier"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "mass",
+      "definition_uri": "https://w3id.org/eddmass",
+      "examples": [
+        {
+          "value": "JDK_p00002",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddmass",
+      "multivalued": true,
+      "owner": "ProteinIdentifier",
+      "domain_of": [
+        "ProteinIdentifier"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "accession_code",
+      "definition_uri": "https://w3id.org/eddaccession_code",
+      "examples": [
+        {
+          "value": "P77495",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddaccession_code",
+      "owner": "ProteinIdentifier",
+      "domain_of": [
+        "ProteinIdentifier"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "protein_id",
+      "definition_uri": "https://w3id.org/eddprotein_id",
+      "examples": [
+        {
+          "value": "262274",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddprotein_id",
+      "owner": "ProteinStrain",
+      "domain_of": [
+        "ProteinStrain"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "strain_id",
+      "definition_uri": "https://w3id.org/eddstrain_id",
+      "examples": [
+        {
+          "value": "145508",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddstrain_id",
+      "owner": "ProteinStrain",
+      "domain_of": [
+        "ProteinStrain"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "object_ref_id",
+      "definition_uri": "https://w3id.org/eddobject_ref_id",
+      "examples": [
+        {
+          "value": "134910",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddobject_ref_id",
+      "owner": "Strain",
+      "domain_of": [
+        "Protocol",
+        "Strain"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "categorization",
+      "definition_uri": "https://w3id.org/eddcategorization",
+      "examples": [
+        {
+          "value": "6",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddcategorization",
+      "owner": "Protocol",
+      "domain_of": [
+        "Protocol"
+      ],
+      "range": "categorization_enum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "default_units_id",
+      "definition_uri": "https://w3id.org/edddefault_units_id",
+      "examples": [
+        {
+          "value": "18",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/edddefault_units_id",
+      "owner": "Protocol",
+      "domain_of": [
+        "Protocol"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "owned_by_id",
+      "definition_uri": "https://w3id.org/eddowned_by_id",
+      "examples": [
+        {
+          "value": "1939",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddowned_by_id",
+      "owner": "Protocol",
+      "domain_of": [
+        "Protocol"
+      ],
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "variant_of_id",
+      "definition_uri": "https://w3id.org/eddvariant_of_id",
+      "examples": [
+        {
+          "value": "NA",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddvariant_of_id",
+      "owner": "Protocol",
+      "domain_of": [
+        "Protocol"
+      ],
+      "range": "variant_of_id_enum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "registry_id",
+      "definition_uri": "https://w3id.org/eddregistry_id",
+      "examples": [
+        {
+          "value": "50afc159-ad1d-414e-adf1-38c9307b13b9",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddregistry_id",
+      "owner": "Strain",
+      "domain_of": [
+        "Strain"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "registry_url",
+      "definition_uri": "https://w3id.org/eddregistry_url",
+      "examples": [
+        {
+          "value": "https://registry.jbei.org/entry/1",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/edd",
+      "slot_uri": "https://w3id.org/eddregistry_url",
+      "owner": "Strain",
+      "domain_of": [
+        "Strain"
+      ],
+      "range": "https_identifier",
+      "@type": "SlotDefinition"
+    }
+  ],
+  "classes": [
+    {
+      "name": "GeneIdentifier",
+      "definition_uri": "https://w3id.org/eddGeneIdentifier",
+      "from_schema": "https://w3id.org/edd",
+      "slots": [
+        "measurementtype_ptr_id",
+        "gene_length",
+        "db_instance"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/eddGeneIdentifier",
+      "unique_keys": [
+        {
+          "unique_key_name": "gene_length_key",
+          "unique_key_slots": [
+            "gene_length"
+          ],
+          "@type": "UniqueKey"
+        }
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MeasurementType",
+      "definition_uri": "https://w3id.org/eddMeasurementType",
+      "from_schema": "https://w3id.org/edd",
+      "slots": [
+        "id",
+        "type_name",
+        "short_name",
+        "type_group",
+        "uuid",
+        "type_source_id",
+        "alt_names",
+        "provisional",
+        "db_instance"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/eddMeasurementType",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MeasurementUnit",
+      "definition_uri": "https://w3id.org/eddMeasurementUnit",
+      "from_schema": "https://w3id.org/edd",
+      "slots": [
+        "id",
+        "unit_name",
+        "display",
+        "alternate_names",
+        "type_group",
+        "db_instance"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/eddMeasurementUnit",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Metabolite",
+      "definition_uri": "https://w3id.org/eddMetabolite",
+      "from_schema": "https://w3id.org/edd",
+      "slots": [
+        "measurementtype_ptr_id",
+        "charge",
+        "carbon_count",
+        "molar_mass",
+        "molecular_formula",
+        "tags",
+        "id_map",
+        "smiles",
+        "pubchem_cid",
+        "db_instance"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/eddMetabolite",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MetadataType",
+      "definition_uri": "https://w3id.org/eddMetadataType",
+      "from_schema": "https://w3id.org/edd",
+      "slots": [
+        "id",
+        "type_name",
+        "type_i18n",
+        "type_field",
+        "input_type",
+        "default_value",
+        "prefix",
+        "postfix",
+        "for_context",
+        "uuid",
+        "group_id",
+        "db_instance"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/eddMetadataType",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ProteinIdentifier",
+      "definition_uri": "https://w3id.org/eddProteinIdentifier",
+      "from_schema": "https://w3id.org/edd",
+      "slots": [
+        "measurementtype_ptr_id",
+        "accession_id",
+        "length",
+        "mass",
+        "accession_code",
+        "db_instance"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/eddProteinIdentifier",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ProteinStrain",
+      "definition_uri": "https://w3id.org/eddProteinStrain",
+      "from_schema": "https://w3id.org/edd",
+      "slots": [
+        "id",
+        "protein_id",
+        "strain_id",
+        "db_instance"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/eddProteinStrain",
+      "unique_keys": [
+        {
+          "unique_key_name": "protein_id_key",
+          "unique_key_slots": [
+            "protein_id"
+          ],
+          "@type": "UniqueKey"
+        },
+        {
+          "unique_key_name": "strain_id_key",
+          "unique_key_slots": [
+            "strain_id"
+          ],
+          "@type": "UniqueKey"
+        }
+      ],
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Protocol",
+      "definition_uri": "https://w3id.org/eddProtocol",
+      "from_schema": "https://w3id.org/edd",
+      "slots": [
+        "object_ref_id",
+        "categorization",
+        "default_units_id",
+        "owned_by_id",
+        "variant_of_id",
+        "db_instance"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/eddProtocol",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Strain",
+      "definition_uri": "https://w3id.org/eddStrain",
+      "from_schema": "https://w3id.org/edd",
+      "slots": [
+        "object_ref_id",
+        "registry_id",
+        "registry_url",
+        "db_instance"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/eddStrain",
+      "@type": "ClassDefinition"
+    }
+  ],
+  "metamodel_version": "1.7.0",
+  "source_file": "edd_schema.yaml",
+  "source_file_date": "2024-05-31T15:59:45",
+  "source_file_size": 15147,
+  "generation_date": "2024-05-31T16:01:00",
+  "@type": "SchemaDefinition",
+  "@context": [
+    "project/jsonld/edd_schema.context.jsonld",
+    "https://w3id.org/linkml/types.context.jsonld",
+    {
+      "@base": "https://w3id.org/edd"
+    }
+  ]
+}
